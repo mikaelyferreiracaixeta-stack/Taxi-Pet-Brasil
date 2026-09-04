@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taxi-pet-Brasil</title>
+</head>
+<body>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">       
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+ <style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin';
+ 
+}
+
+ul {
+    list-style-type: none; 
+    padding: 0;            
+    margin: 0;        
+}
+.area-navegacao{
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    width: 95%;
+    margin: auto;
+
+}
+header {
+    background-color: green;
+    width: 100%;
+    height: 110px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+ 
+#home {
+    scroll-margin-top: 110px;
+ 
+}
+.icones {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 0 20px;
+    padding: 10px 50px;
+ 
+}
+ .logo {
+        display: none;
+ 
+    }
+.icones:hover {
+    background-color: greenyellow;
+    color: white;
+    border: none;
+ 
+}
+ 
+.icones:focus {
+    background-color: white;
+    color: green;
+ 
+}
+ 
+main {
+    margin-top: 110px;
+ 
+}
+ 
+ 
+#banner {
+    width: 1600;
+}
+ 
+#banner__image {
+    margin-top: 10px;
+    width: 1600;
+}
+ 
+    #agendar {
+        width: 400px;
+        border-width: 2px;
+    }
+ 
+    #agendar__titulo {
+        font-size: 22px;
+ 
+    }
+ 
+    #agendar__botao {
+        padding: 15px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+ </style>
+<body>
+    <header>
+        <nav class="area-navegacao">
+            <img class="logo" src="img/logo.png" alt="logo do site" width="100px">
+            <ul>
+                <li><a class="icones" href="home"><i class=""></i></a></li>
+                <li><a class="icones" href="banho"><i class=""></i></a></li>
+                <li><a class="icones" href="consultas"><i class=""></i></a></li>
+                <li><a class="icones" href="produtos"><i class=""></i></a></li>
+            </ul>
+            
+        </nav>
+    </header>
+    <main>
+<main>
+        <article class="area-banner" id="Home">
+            <section id="banner">
+                <img src="img/banner.png" alt="banner" id="banner__image" width="1600" height="400">
+            </section>
+            <section id="agendar">
+                <h2 id="agendar-titulo">dias disponível para agendar</h2>
+                <button id="agendar__botao">agendar</button>
+            </section>
+        </article>
+          <article class="area-sobre">
+        <section class="sobre">
+            <h1 class="sobre__titulo">Conheça o nosso site!</h1>
+            <p class="sobre__texto"> Somos um pet shop, com afinalidade de ajudar os nossos pets 
+                para serem bem cuidados e tratados. Temos profissonais de altissima qualidades, sejam bem- </p>
+        </section>
+    </main>
+</body>
+</html>
