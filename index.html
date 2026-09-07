@@ -3,53 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>taxi pet
-  </title>
+  <title>Taxi Pet</title>
+  <!-- LINK CORRIGIDO DO BOOTSTRAP ICONS -->
+  <link rel="stylesheet" href="https://jsdelivr.net">
 </head>
+<style>
+.header{
+    background-color: green;
+}
+</style>
 <body>
-    <nav class="area-navegação">
+    <header>
+        <nav class="area-navegação">
             <img class="logo" src="img/logo.png" alt="logo do site" width="100px">
-          <ul> 
-    <li><a class="icones" href="Home"><i class=""></i> Home</a></li> 
-    <li><a class="icones" href="banhos&tosas"><i class=""></i> Banhos & Tosas</a></li> 
-    <li><a class="icones" href="produtos"><i class=""></i> Produtos</a></li> 
-    <li><a class="icones" href="veterinario"><i class=""></i> Veterinário</a></li> 
-    <li><a class="icones" href="conta"><i class=""></i> Conta</a></li> 
-    <li><a class="icones" href="carrinho"><i class=""></i> Carrinho</a></li> 
-  </ul>
-<main>
+            <ul> 
+              <li><a class="icones" href="Home"><i class=""></i> Home</a></li> 
+              <li><a class="icones" href="banhos&tosas"><i class=""></i> Banhos & Tosas</a></li> 
+              <li><a class="icones" href="Produtos"><i class=""></i> Produtos</a></li> 
+              <li><a class="icones" href="veterinario"><i class=""></i> Veterinário</a></li> 
+              <li><a class="icones" href="conta"><i class=""></i> Conta</a></li> 
+              <li><a class="icones" href="carrinho"><i class=""></i> Carrinho</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
         <article class="area-banner" id="Home">
             <section id="banner">
-                <img src="img/banner.png" alt="banner" id="banner__image">
+                <img src="img/banner.png" alt="banner" id="banner__image" width="1600" height="400">
             </section>
             <section id="agendar">
-                <h2 id="agendar__titulo">Dias disponível !</h2>
+                <h2 id="agendar__titulo">Dias disponíveis!</h2>
                 <button id="agendar__botao">Agendar</button>
             </section>
         </article>
-    </main>
-     <article class="area-sobre">
-        <section class="sobre">
-            <h1 class="sobre__titulo">Sejam Bem-Vindos(as)!</h1>
-            <p class="sobre__texto">Estamos super feliz em ter vocês como nossos clientes! Esse site é para ajudar vocês para ficarem mais tranquilos 
-              pois os seus pets estão sendo bem cuidados pois 
-              temos os melhores profissonais cuidando deles.</p>
-        </section>
-        <section>
-            <img class="foto" src="img/mulher dando banho em um shitus.jpg" alt="mulher dando banho em um shitus">
-        </section>
-          <article class="area-busca" id="Produtos">
-        <!--Formulário de busca-->
-        <h2 class="catalogo-titulo">Catálogo de produtos para o seu pet!</h2>
-        <form class="busca">
-            <input type="text" class="busca__campo">
-            <button class="busca__botao" type="submit"><i class=""></i>
-            </button>
+
+        <article class="area-sobre">
+            <section class="sobre">
+                <h1 class="sobre__titulo">Sejam Bem-Vindos(as)!</h1>
+                <p class="sobre__texto">Estamos super felizes em ter vocês como nossos clientes! Esse site é para ajudar vocês a ficarem mais tranquilos, pois os seus pets estão sendo bem cuidados por termos os melhores profissionais cuidando deles.</p>
+            </section>
+            <section>
+                <img class="foto" src="img/mulher dando banho em um shitus.jpg" alt="mulher dando banho em um shitus" width="300" height="400">
+            </section>
+        </article>
+
+        <article class="area-busca" id="Produtos">
+            <h2 class="catalogo-titulo">Catálogo de produtos para o seu pet!</h2>
+            <!-- Formulário de busca -->
+            <form class="busca">
+                <input type="text" class="busca__campo" placeholder="Buscar...">
+                <!-- Ícone de lupa adicionado aqui -->
+                <button class="busca__botao" type="submit"><i class="bi bi-search"></i> Buscar</button>
             </form>
-        </section>
-    </article>
-    </article>
-        </nav>
-    </header>
+
+            <div class="card" style="width: 18rem;">
+                <img src="img/camas.png" class="card-img-top" alt="camas">
+                <div class="card-body">
+                    <h5 class="card-title">Camas</h5>
+                    <p class="card-text">Preço: R$ 40.00</p>
+                    <!-- Ícone de carrinho adicionado no final do botão -->
+                    <a href="#" class="btn btn-primary btn-adicionar text-success fw-bold" data-nome="camas" data-preco="40.00">
+                        Adicionar ao <i class="bi bi-cart-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
 </body>
 </html>
