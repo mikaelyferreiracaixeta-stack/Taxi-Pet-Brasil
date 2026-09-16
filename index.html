@@ -1,74 +1,354 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taxi Pet</title>
-  <!-- LINK CORRIGIDO DO BOOTSTRAP ICONS -->
-  <link rel="stylesheet" href="https://jsdelivr.net">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Pet Brasil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
-.header{
+    @import url('https://googleapis.com');
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+ 
+header {
     background-color: green;
+    width: 100%;
+    height: 110px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+ 
+.area-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+ 
+.menu-header {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+}
+ 
+.icones {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    border: 2px solid white;
+    padding: 10px 30px;
+    border-radius: 0 20px;
+    transition: 0.3s ease;
+}
+ 
+.icones:hover {
+    background-color: white;
+    color: green;
+}
+ 
+main {
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+ 
+.area-banner {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 0 15px;
+}
+ 
+#banner {
+    width: 100%;
+}
+ 
+#banner_image {
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+ 
+#agendar {
+    width: 100%;
+    height: 144px;
+    border: 2px dashed green;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+ 
+#agendar_titulo {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+}
+ 
+#agendar_botao {
+    padding: 15px 60px;
+    color: white;
+    font-size: 20px;
+    background-color: green;
+    border: none;
+    border-radius: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+ 
+#agendar_botao:hover {
+    background-color: darkgreen;
+}
+ 
+.area-sobre {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto 20px auto;
+    padding: 0 15px;
+    text-align: center;
+}
+ 
+.sobre h1 {
+    color: green;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+ 
+.subtitulo {
+    font-size: 20px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 20px;
+}
+ 
+.conteudo-inferior {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin-bottom: 50px;
+}
+ 
+.conteudo-inferior section {
+    margin-top: 30px;
+}
+ 
+.conteudo-inferior h2 {
+    color: green;
+    border-bottom: 2px solid green;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+ 
+.lista-padrao {
+    list-style: disc;
+    margin-left: 20px;
+    display: block;
+}
+ 
+.lista-padrao li {
+    margin-bottom: 8px;
+    font-size: 16px;
 }
 </style>
 <body>
+ 
     <header>
-        <nav class="area-navegação">
-            <img class="logo" src="img/logo.png" alt="logo do site" width="100px">
-            <ul> 
-              <li><a class="icones" href="Home"><i class=""></i> Home</a></li> 
-              <li><a class="icones" href="banhos&tosas"><i class=""></i> Banhos & Tosas</a></li> 
-              <li><a class="icones" href="Produtos"><i class=""></i> Produtos</a></li> 
-              <li><a class="icones" href="veterinario"><i class=""></i> Veterinário</a></li> 
-              <li><a class="icones" href="conta"><i class=""></i> Conta</a></li> 
-              <li><a class="icones" href="carrinho"><i class=""></i> Carrinho</a></li> 
+        <nav class="area-navegacao">
+            <img class="logo" src="Logo.png" alt="logo" width="200px" height="100px">
+            <ul class="menu-header">
+                <li><a class="icones" href="cadastro.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a class="icones" href="Banho-Tosa.html"><i class="fa-solid fa-scissors"></i></a></li>
+                <li><a class="icones" href="Contato.html"><i class="fa-solid fa-phone"></i></a></li>
+                <li><a class="icones" href="Produtos.html"><i class="fa-solid fa-info-circle"></i></a></li>
+                <li><a class="icones" href="Carrinho.html"><i class="fa-solid fa-shopping-cart"></i></a></li>
+                <li><a class="icones" href="Conta-pet.html"><i class="fa-solid fa-paw"></i></a></li>
+                <li><a class="icones" href="login.html"><i class="fa-solid fa-right-to-bracket"></i></a></li>
             </ul>
         </nav>
     </header>
-
+ 
     <main>
         <article class="area-banner" id="Home">
             <section id="banner">
-                <img src="img/banner.png" alt="banner" id="banner__image" width="1600" height="400">
+                <img src="Banner.png" alt="banner" id="banner_image">
             </section>
             <section id="agendar">
-                <h2 id="agendar__titulo">Dias disponíveis!</h2>
-                <button id="agendar__botao">Agendar</button>
+            <h2 id="agendar_titulo">dias disponíveis para agendamento!</h2>
+            <button id="agendar_botao" onclick="window.location.href='cadastro.html'">Agendar</button>
             </section>
         </article>
-
         <article class="area-sobre">
             <section class="sobre">
-                <h1 class="sobre__titulo">Sejam Bem-Vindos(as)!</h1>
-                <p class="sobre__texto">Estamos super felizes em ter vocês como nossos clientes! Esse site é para ajudar vocês a ficarem mais tranquilos, pois os seus pets estão sendo bem cuidados por termos os melhores profissionais cuidando deles.</p>
-            </section>
-            <section>
-                <img class="foto" src="img/mulher dando banho em um shitus.jpg" alt="mulher dando banho em um shitus" width="300" height="400">
+                <h1>Táxi Pet Brasil</h1>
+                <p class="subtitulo">Transporte seguro e confortável para o seu animal de estimação</p>
+                <p>O Táxi Pet Brasil é um serviço de transporte especializado para animais de estimação, oferecendo conforto e segurança durante a viagem. Nossa missão é conectar proprietários de pets com motoristas qualificados, garantindo uma experiência tranquila e agradável para todos os envolvidos.</p>
             </section>
         </article>
-
-        <article class="area-busca" id="Produtos">
-            <h2 class="catalogo-titulo">Catálogo de produtos para o seu pet!</h2>
-            <!-- Formulário de busca -->
-            <form class="busca">
-                <input type="text" class="busca__campo" placeholder="Buscar...">
-                <!-- Ícone de lupa adicionado aqui -->
-                <button class="busca__botao" type="submit"><i class="bi bi-search"></i> Buscar</button>
-            </form>
-
-            <div class="card" style="width: 18rem;">
-                <img src="img/camas.png" class="card-img-top" alt="camas">
-                <div class="card-body">
-                    <h5 class="card-title">Camas</h5>
-                    <p class="card-text">Preço: R$ 40.00</p>
-                    <!-- Ícone de carrinho adicionado no final do botão -->
-                    <a href="#" class="btn btn-primary btn-adicionar text-success fw-bold" data-nome="camas" data-preco="40.00">
-                        Adicionar ao <i class="bi bi-cart-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </article>
+         </article>
+    <article class="catalogo">
+        <div class="card Banho" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher negra dar banho em um Rottweiler em um pet shop.jpg" class="card-img-top" alt="Banho">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar banho em um Rottweiler em um pet shop.jpg" class="card-img-top" alt="Banho">
+  <div class="card-body">
+    <h3 class="card-title">Banho</h3>
+    <p class="card-text text-success fw-bold">R$ 50.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Ponto Cruz" data-preco="R$ 50.00">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>
+<div class="card Banho" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher negra dar banho em um Pastor Alemão em um pet shop.jpg" class="card-img-top" alt="Banho">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar banho em um Pastor Alemão em um pet shop.jpg" class="card-img-top" alt="Banho">
+  <div class="card-body">
+    <h3 class="card-title">Banho</h3>
+    <p class="card-text text-success fw-bold">R$ 50.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Bordado Livre" data-preco="R$50.00">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>
+<div class="card Banho" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher negra dar banho em um Rottweiler em um pet shop.jpg" class="card-img-top" alt="Banho">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar banho em um Rottweiler em um pet shop.jpg" class="card-img-top" alt="Banho">
+  <div class="card-body">
+    <h3 class="card-title">Banho</h3>
+    <p class="card-text text-success fw-bold">R$ 50.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Ponto Russo (Punch Needlee)" data-preco="50.99">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>
+<div class="card Banho" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher negra dar banho em um Cane Corso em um pet shop.jpg" class="card-img-top" alt="Banho">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar banho em um Cane Corso em um pet shop.jpg" class="card-img-top" alt="Banho">
+  <div class="card-body">
+    <h3 class="card-title">Banho</h3>
+    <p class="card-text text-success fw-bold">R$ 50.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Vagonite" data-preco="R$50.00">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>
+<div class="card Banho" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar banho em um Golden Retriever em um pet shop.jpg" class="card-img-top" alt="Banho">
+    <img src="Img - Taxi Pet Brasil/Mulher negra dar banho em um Golden Retriever em um pet shop.jpg" class="card-img-top" alt="Banho">
+  <div class="card-body">
+    <h3 class="card-title">Banho</h3>
+    <p class="card-text text-success fw-bold">R$ 50.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Bordado em Fita" data-preco="R$50.00">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>            
+<div class="card Banho" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar banho em um Golden Retriever em um pet shop.jpg" class="card-img-top" alt="Banho">
+    <img src="Img - Taxi Pet Brasil/Mulher negra dar banho em um Golden Retriever em um pet shop.jpg" class="card-img-top" alt="Banho">
+  <div class="card-body">
+    <h3 class="card-title">Banho</h3>
+    <p class="card-text text-success fw-bold">R$ 50.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Sashiko" data-preco="R$50.00">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>
+<div class="card Banho" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar banho em um Akita Inu em um pet shop.jpg" class="card-img-top" alt="Banho">
+    <img src="Img - Taxi Pet Brasil/Mulher negra dar banho em um Akita Inu em um pet shop.jpg" class="card-img-top" alt="Banho">
+  <div class="card-body">
+    <h3 class="card-title">Banho</h3>
+    <p class="card-text text-success fw-bold">R$ 50.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Geek e Cultura Pop" data-preco="R$50.00">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>
+<div class="card Banho" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar banho em um Poodle em um pet shop.jpg" class="card-img-top" alt="Banho">
+    <img src="Img - Taxi Pet Brasil/Mulher negra dar banho em um Poodle em um pet shop.jpg" class="card-img-top" alt="Banho">
+ 
+  <div class="card Banho" style="width: 30rem;">
+    <h3 class="card-title">Banho</h3>
+    <p class="card-text text-success fw-bold">R$ 50.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Lettering e Tipografia" data-preco="R$50.00">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>
+<div class="card Tosa" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar tosa em um Golden Retriever em um pet shop.jpg" class="card-img-top" alt="Tosa">
+    <img src="Img - Taxi Pet Brasil/Mulher negra dar tosa em um Golden Retriever em um pet shop.jpg" class="card-img-top" alt="Tosa">
+  <div class="card-body">
+    <h3 class="card-title">Tosa</h3>
+    <p class="card-text text-success fw-bold">R$ 60.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Tosa" data-preco="R$60.00">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>
+<div class="card Tosa" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar tosa em um Poodle em um pet shop.jpg" class="card-img-top" alt="Tosa">
+    <img src="Img - Taxi Pet Brasil/Mulher negra dar tosa em um Poodle em um pet shop.jpg" class="card-img-top" alt="Tosa">
+  <div class="card-body">
+    <h3 class="card-title">Tosa</h3>
+    <p class="card-text text-success fw-bold">R$ 60.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Tosa" data-preco="R$60.00">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>
+<div class="card Tosa" style="width: 30rem;">
+    <img src="Img - Taxi Pet Brasil/uma mulher branca dar tosa em um Poodle em um pet shop.jpg" class="card-img-top" alt="Tosa">
+    <img src="Img - Taxi Pet Brasil/Mulher negra dar tosa em um Poodle em um pet shop.jpg" class="card-img-top" alt="Tosa">
+  <div class="card-body">
+    <h3 class="card-title">Tosa</h3>
+    <p class="card-text text-success fw-bold">R$ 60.00</p>
+    <a href="#" class="btn btn-primary btn-adicionar" data-nome="Tosa" data-preco="R$60.00">Adicionar ao <i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+</div>
+<
+    </article>
+ 
     </main>
+    <footer class="rodape">
+        <nav class="nav-rodape">
+            <p class="card-text text-success fw-bold">A Dona Sônia está muito agradecida pela sua visita. Ficou com alguma dúvida? Entre em contato com ela <a href="https://w.app/bordados-tia-sonia" target="_blank">por aqui</a></p>
+            <p class="card-text text-success fw-bold">Todos os direitos reservados ©</p>
+        </nav>
+    </footer>
+        <div class="conteudo-inferior">
+            <section class="area-servicos">
+                <h2>Nossos Serviços</h2>
+                <ul class="lista-padrao">
+                    <li>Transporte seguro para cães e gatos</li>
+                    <li>Veículos adaptados para o transporte de animais</li>
+                    <li>Motoristas treinados e experientes</li>
+                    <li>Agendamento fácil e rápido</li>
+                </ul>
+            </section>
+ 
+            <section class="area-contato">
+                <h2>Contato</h2>
+                <p>Para mais informações ou para agendar um transporte, entre em contato conosco:</p>
+                <ul class="lista-padrao">
+                    <li>Email: contato@taxipetbrasil.com</li>
+                    <li>Telefone: (61) 1234-5678</li>
+                </ul>
+            </section>
+ 
+            <section class="area-localizacao">
+                <h2>Localização</h2>
+                <p>Estamos localizados em Gama, Brasília-DF. Venha nos visitar ou agende um transporte para o seu pet!</p>
+            </section>
+ 
+            <section class="racoes">
+                <h2>Produtos e Serviços Extras</h2>
+                <ul class="lista-padrao">
+                    <li>Ração para cães e gatos</li>
+                    <li>Acessórios (Brinquedos, Camas e Roupas)</li>
+                    <li>Serviços de tosa, banho e consulta veterinária</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <script src="js/Carrinho.js"></script>
+    <script src="js/busca.js"></script>
 </body>
 </html>
