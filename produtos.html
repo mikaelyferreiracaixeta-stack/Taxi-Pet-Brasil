@@ -1,240 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>produtos</title>
+  <title>Produtos - Pet Shop</title>
 </head>
-
 <body>
-  <article class="rações">rações</article>
-  <section>
-    <img src="img/racao de cachorro adulto de carne.png" alt="Rações" width="500" height="300">
-    <p>Ração para cachorro adulto de carne R$ 23,00 por quilo</p>
-    <label for="racao">Digite a quantidade (kg):</label>
-    <input type="number" id="racao" name="racao" step="0.1" min="0">
-    <button>Comprar</button>
-    <img src="img/racao de cachorro adulto de frango.png" alt="Rações" width="500" height="300">
-    <p>Ração para cachorro adulto de frango R$ 23,00 por quilo</p>
-    <label for="racao">Digite a quantidade (kg):</label>
-    <input type="number" id="racao" name="racao" step="0.1" min="0">
-    <button>Comprar</button>
-    <img src="img/racao de cachorro filhote de carne.png" alt="Rações" width="500" height="300">
-    <p>Ração para cachorro filhote de carne R$ 13,00 por quilo </p>
-    <label for="racao">Digite a quantidade (kg):</label>
-    <input type="number" id="racao" name="racao" step="0.1" min="0">
-    <button>Comprar</button>
-    <img src="img/racao de cachorro filhote de frango.png" alt="Rações" width="500" height="300">
-    <p>Ração para cachorro filhote de frango R$ 13,00 por quilo</p>
-    <label for="racao">Digite a quantidade (kg):</label>
-    <input type="number" id="racao" name="racao" step="0.1" min="0">
-    <button>Comprar</button>
-  </section>
-  </article>
-  <article class="rações para gatos">Rações para gatos</article>
-  <section>
-    <img src="img/racao de gato adulto de carne.png" alt="Rações" width="500" height="300">
-    <p>Ração para gato adulto de carne R$ 20,00 por quilo</p>
-    <label for="racao-gato">Digite a quantidade (kg):</label>
-    <input type="number" id="racao-gato" name="racao-gato" step="0.1" min="0">
-    <button>Comprar</button>
-    <img src="img/racao de gato de salmao.png" alt="Rações" width="500" height="300">
-    <p>Ração para gato de salmao R$ 25,00 por quilo</p>
-    <label for="racao-gato">Digite a quantidade (kg):</label>
-    <input type="number" id="racao-gato" name="racao-gato" step="0.1" min="0">
-    <button>Comprar</button>
-    <img src="img/racao de gato de frango.png" alt="Rações" width="500" height="300">
-    <p>Ração para gato de frango R$ 25,00 por quilo</p>
-    <label for="racao-gato">Digite a quantidade (kg):</label>
-    <input type="number" id="racao-gato" name="racao-gato" step="0.1" min="0">
-    <button>Comprar</button>
-    <img src="img/racao de gato de frango.png" alt="Rações" width="500" height="300">
-    <p>Ração para gato de frango R$ 25,00 por quilo</p>
-    <label for="racao-gato">Digite a quantidade (kg):</label>
-    <input type="number" id="racao-gato" name="racao-gato" step="0.1" min="0">
-    <button>Comprar</button>
-  </section>
-  </article>
-  <article class="brinquedos para cachorros">brinquedos para cachorros</article>
-  <section>
-    <img src="img/pelucia de rosquinha rosa.jpg" alt="pelucia" width="500" height="300">
-    <p>Rosquinha de pelucia cor de rosa R$ 20,00 por quantidade</p>
-    <label for="pelucia">Digite a quantidade:</label>
-    <input type="number" id="pelucia" name="pelucia" step="0.1" min="0">
-    <button>Comprar</button>
 
-    <img src="img/pelucia de um cachorro marron.jpg" alt="pelucia" width="500" height="300">
-    <p>Cachorro de pelucia marrom R$ 20,00 por quantidade</p>
-    <label for="pelucia">Digite a quantidade:</label>
-    <input type="number" id="pelucia" name="pelucia" step="0.1" min="0">
-    <button>Comprar</button>
+  <main>
+    <h1>Nossos Produtos</h1>
 
-    <img src="img/pelucia de um porquinho rosa.jpg" alt="pelucia" width="500" height="300">
-    <p>Porquinho de pelucia rosa R$ 20,00 por quantidade</p>
-    <label for="pelucia">Digite a quantidade:</label>
-    <input type="number" id="pelucia" name="pelucia" step="0.1" min="0">
-    <button>Comprar</button>
+    <!-- CATEGORIA: RAÇÕES PARA CACHORROS -->
+    <section class="categoria-produtos">
+      <h2>Rações para Cachorros</h2>
+      
+      <article class="produto">
+        <img src="img/racao de cachorro adulto de carne.png" alt="Ração para cachorro adulto de carne" width="500" height="300">
+        <p>Ração para cachorro adulto de carne - R$ 23,00 por quilo</p>
+        <label for="racao-cao-carne-adulto">Digite a quantidade (kg):</label>
+        <input type="number" id="racao-cao-carne-adulto" name="racao-cao-carne-adulto" step="0.1" min="0" value="0">
+        <button type="button">Comprar</button>
+      </article>
 
-    <img src="img/plucia de uma cenoura.jpg" alt="pelucia" width="500" height="300">
-    <p>Pelucia de uma cenoura R$ 20,00 por quantidade</p>
-    <label for="pelucia">Digite a quantidade:</label>
-    <input type="number" id="pelucia" name="pelucia" step="0.1" min="0">
-    <button>Comprar</button>
+      <article class="produto">
+        <img src="img/racao de cachorro adulto de frango.png" alt="Ração para cachorro adulto de frango" width="500" height="300">
+        <p>Ração para cachorro adulto de frango - R$ 23,00 por quilo</p>
+        <label for="racao-cao-frango-adulto">Digite a quantidade (kg):</label>
+        <input type="number" id="racao-cao-frango-adulto" name="racao-cao-frango-adulto" step="0.1" min="0" value="0">
+        <button type="button">Comprar</button>
+      </article>
 
-    <img src="img/pelucia de uso da angola azul.jpg" alt="pelucia" width="500" height="300">
-    <p>Pelucia de um uso da angola azul R$ 20,00 por quantidade</p>
-    <label for="pelucia">Digite a quantidade:</label>
-    <input type="number" id="pelucia" name="pelucia" step="0.1" min="0">
-    <button>Comprar</button>
+      <article class="produto">
+        <img src="img/racao de cachorro filhote de carne.png" alt="Ração para cachorro filhote de carne" width="500" height="300">
+        <p>Ração para cachorro filhote de carne - R$ 13,00 por quilo</p>
+        <label for="racao-cao-carne-filhote">Digite a quantidade (kg):</label>
+        <input type="number" id="racao-cao-carne-filhote" name="racao-cao-carne-filhote" step="0.1" min="0" value="0">
+        <button type="button">Comprar</button>
+      </article>
 
-    <img src="img/bola azul claro com patinhas.jpg" alt="bola" width="500" height="300">
-    <p>bola azul claro com patinhas R$ 10,00 por quantidade</p>
-    <label for="bola">Digite a quantidade:</label>
-    <input type="number" id="bola" name="bola" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/bola azul com linhas.jpg" alt="bola" width="500" height="300">
-    <p>bola azul com linhas R$ 10,00 por quantidade</p>
-    <label for="bola">Digite a quantidade:</label>
-    <input type="number" id="bola" name="bola" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/bola azul e branca vazada.jpg" alt="bola" width="500" height="300">
-    <p>bola azul e branca vazada R$ 10,00 por quantidade</p>
-    <label for="bola">Digite a quantidade:</label>
-    <input type="number" id="bola" name="bola" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/bola azul escura com patinhas.jpg" alt="bola" width="500" height="300">
-    <p>bola azul escura com patinhas R$ 10,00 por quantidade</p>
-    <label for="bola">Digite a quantidade:</label>
-    <input type="number" id="bola" name="bola" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/bola colorida.jpg" alt="bola" width="500" height="300">
-    <p>bola colorida R$ 10,00 por quantidade</p>
-    <label for="bola">Digite a quantidade:</label>
-    <input type="number" id="bola" name="bola" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/bola de corda transada.jpg" alt="bola" width="500" height="300">
-    <p>bola de corda transada R$ 10,00 por quantidade</p>
-    <label for="bola">Digite a quantidade:</label>
-    <input type="number" id="bola" name="bola" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/bola geometrica colorida.jpg" alt="bola" width="500" height="300">
-    <p>bola geometrica colorida R$ 10,00 por quantidade</p>
-    <label for="bola">Digite a quantidade:</label>
-    <input type="number" id="bola" name="bola" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/bola rosa com espinhos.jpg" alt="bola" width="500" height="300">
-    <p>bola rosa com espinho R$ 10,00 por quantidade</p>
-    <label for="bola">Digite a quantidade:</label>
-    <input type="number" id="bola" name="bola" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/bola verde para por petiscos.jpg" alt="bola" width="500" height="300">
-    <p>bola verde para por petiscos R$ 10,00 por quantidade</p>
-    <label for="bola">Digite a quantidade:</label>
-    <input type="number" id="bola" name="bola" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/kong vermelho.png" alt="bola" width="500" height="300">
-    <p>bola kong vermelho R$ 10,00 por quantidade</p>
-    <label for="bola">Digite a quantidade:</label>
-    <input type="number" id="bola" name="bola" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/frango de borracha.png" alt="frango" width="500" height="300">
-    <p>bola azul escura com patinhas R$ 15,00 por quantidade</p>
-    <label for="frango">Digite a quantidade:</label>
-    <input type="number" id="frango" name="frango" step="0.1" min="0">
-    <button>Comprar</button>
-    <img src="img/corda azul, verde e branca.jpg" alt="corda" width="500" height="300">
-    <p>corda azul, verde e branca R$ 20,00 por quantidade</p>
-    <label for="corda">Digite a quantidade:</label>
-    <input type="number" id="corda" name="corda" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/Corda colorida em espiral.jpg" alt="corda" width="500" height="300">
-    <p>corda colorida em espiral R$ 20,00 por quantidade</p>
-    <label for="corda">Digite a quantidade:</label>
-    <input type="number" id="corda" name="corda" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/Corda multicolorida horizontal.jpg" alt="corda" width="500" height="300">
-    <p>corda multicolorida horizontalR$ 20,00 por quantidade</p>
-    <label for="corda">Digite a quantidade :</label>
-    <input type="number" id="Corda" name="corda" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/Corda vermelha e branca.jpg" alt="corda" width="500" height="300">
-    <p>corda corda vermla e branca R$ 20,00 por quantidade</p>
-    <label for="corda">Digite a quantidade :</label>
-    <input type="number" id="Corda" name="corda" step="0.1" min="0">
-    <button>Comprar</button>
-  </section>
-  </article>
-  <article class="Brinquedos para Gatos">Brinquedos para gatos</article>
-  <section>
-    <img src="img/Brinquedos Interativos e de Tabuleiro gato.jpg" alt="Brinquedos Interativos e de Tabuleiro gato" width="500" height="300">
-    <p>Brinquedos Interativos e de Tabuleiro gato R$ 25,00 por quantidade</p>
-    <label for="Brinquedos Interativos e de Tabuleiro gato">Digite a quantidade:</label>
-    <input type="number" id="Brinquedos Interativos e de Tabuleiro gato"
-      name="Brinquedos Interativos e de Tabuleiro gato" step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/Varinhas e Varas de Pesca gato.jpg" alt="Varinhas e Varas de Pesca gato" width="500" height="300">
-    <p>Varinhas e Varas de Pesca gato R$ 29,00 por quantidade</p>
-    <label for="Varinhas e Varas de Pesca gato">Digite a quantidade:</label>
-    <input type="number" id="Varinhas e Varas de Pesca gato" name="Brinquedos Interativos e de Tabuleiro gato"
-      step="0.1" min="0">
-    <button>Comprar</button>
-
-    <img src="img/Arranhador de Gato.png" alt="Arranhador para gato" width="500" height="300">
-    <p>Arranhador de gato R$ 30,00 por quantidade</p>
-    <label for="Arranhador de gato">Digite a quantidade:</label>
-    <input type="number" id="Arranhador de gato" name="Arranhador de gato" step="0.1" min="0">
-    <button>Comprar</button>
-  </section>
-  </article>
-
-  <article class="Outros">
-    <section>
-      <img src="img/vazilias.png" alt="vazilias" width="500" height="300">
-      <p>vazilias R$ 20,00 por quantidade</p>
-      <label for="vazilias">Digite a quantidade e a cor:</label>
-      <input type="number" id="vazilias" name="vazilias" step="0.1" min="0">
-      <button>Comprar</button>
-
-      <img src="img/remedios.png" alt="remedios" width="500" height="300">
-      <p>Remedios R$ 20,00 por quantidade</p>
-      <label for="remedios">Digite a quantidade e o nome do remedio:</label>
-      <input type="number" id="remedios" name="remedio" step="0.1" min="0">
-      <button>Comprar</button>
-
-      <img src="img/coleiras.png" alt="coleiras" width="500" height="300">
-      <p>coleiras R$ 20,00 por quantidade</p>
-      <label for="coleiras">Digite a quantidade , a cor e o tamanho:</label>
-      <input type="number" id="coleiras" name="coleiras" step="0.1" min="0">
-      <button>Comprar</button>
-      <img src="img/camas.png" alt="camas" width="500" height="300">
-      <p>camas R$ 40,00 por quantidade</p>
-      <label for="camas">Digite a quantidade :</label>
-      <input type="number" id="camas" name="camas" step="0.1" min="0">
-      <button>Comprar</button>
-
-      <img src="img/roupas.jpg" alt="roupas" width="500" height="300">
-      <p>Roupas para o seu pet R$ 25,00 por quantidade</p>
-      <label for="roupas">Digite a quantidade, cor, tamanho e sexo do animal:</label>
-      <input type="number" id="roupas" name="roupas" step="0.1" min="0">
-      <button>Comprar</button>
+      <article class="produto">
+        <img src="img/racao de cachorro filhote de frango.png" alt="Ração para cachorro filhote de frango" width="500" height="300">
+        <p>Ração para cachorro filhote de frango - R$ 13,00 por quilo</p>
+        <label for="racao-cao-frango-filhote">Digite a quantidade (kg):</label>
+        <input type="number" id="racao-cao-frango-filhote" name="racao-cao-frango-filhote" step="0.1" min="0" value="0">
+        <button type="button">Comprar</button>
+      </article>
     </section>
-  </article>
- 
-</body>
 
-</html>
+    <!-- CATEGORIA: RAÇÕES PARA GATOS -->
+    <section class="categoria-produtos">
+      <h2>Rações para Gatos</h2>
+
+      <article class="produto">
+        <img src="img/racao de gato de carne.png" alt="Ração de gato de carne" width="500" height="300">
+        <p>Ração para gato adulto de carne - R$ 20,00 por quilo</p>
+        <label for="racao-gato-carne">Digite a quantidade (kg):</label>
+        <input type="number" id="racao-gato-carne" name="racao-gato-carne" step="0.1" min="0" value="0">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/racao de gato de salmao.png" alt="Ração para gato de salmão" width="500" height="300">
+        <p>Ração para gato de salmão - R$ 25,00 por quilo</p>
+        <label for="racao-gato-salmao">Digite a quantidade (kg):</label>
+        <input type="number" id="racao-gato-salmao" name="racao-gato-salmao" step="0.1" min="0" value="0">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/racao de gato de frango.png" alt="Ração para gato de frango" width="500" height="300">
+        <p>Ração para gato de frango - R$ 25,00 por quilo</p>
+        <label for="racao-gato-frango-1">Digite a quantidade (kg):</label>
+        <input type="number" id="racao-gato-frango-1" name="racao-gato-frango-1" step="0.1" min="0" value="0">
+        <button type="button">Comprar</button>
+      </article>
+
+    </section>
+
+    <!-- CATEGORIA: BRINQUEDOS PARA CACHORROS -->
+    <section class="categoria-produtos">
+      <h2>Brinquedos para Cachorros</h2>
+
+      <article class="produto">
+        <img src="img/pelucia de rosquinha rosa.jpg" alt="Rosquinha de pelúcia cor de rosa" width="500" height="300">
+        <p>Rosquinha de pelúcia cor de rosa - R$ 20,00 a unidade</p>
+        <label for="pelucia-rosquinha">Digite a quantidade:</label>
+        <input type="number" id="pelucia-rosquinha" name="pelucia-rosquinha" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+       <img src="img/pelucia de um cachorro marrom.jpg" alt="Cachorro de pelúcia marrom" width="500" height="300">
+
+        <p>Cachorro de pelúcia marrom - R$ 20,00 a unidade</p>
+        <label for="pelucia-cachorro">Digite a quantidade:</label>
+        <input type="number" id="pelucia-cachorro" name="pelucia-cachorro" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+       <img src="img/pelucia de um porquinho rosa.png" alt="Porquinho de pelúcia cor de rosa" width="500" height="300">
+
+        <p>Porquinho de pelúcia rosa - R$ 20,00 a unidade</p>
+        <label for="pelucia-porquinho">Digite a quantidade:</label>
+        <input type="number" id="pelucia-porquinho" name="pelucia-porquinho" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+     <img src="img/pelucia de uma cenoura.jpg" alt="Pelúcia de uma cenoura" width="500" height="300">
+        <p>Pelúcia de uma cenoura - R$ 20,00 a unidade</p>
+        <label for="pelucia-cenoura">Digite a quantidade:</label>
+        <input type="number" id="pelucia-cenoura" name="pelucia-cenoura" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/pelucia de uso da angola azul.jpg" alt="Pelúcia de um urso da angola azul" width="500" height="300">
+        <p>Pelúcia de um urso da angola azul - R$ 20,00 a unidade</p>
+        <label for="pelucia-urso">Digite a quantidade:</label>
+        <input type="number" id="pelucia-urso" name="pelucia-urso" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/bola azul claro com patinhas.jpg" alt="Bola azul claro com patinhas" width="500" height="300">
+        <p>Bola azul claro com patinhas - R$ 10,00 a unidade</p>
+        <label for="bola-patinhas-claro">Digite a quantidade:</label>
+        <input type="number" id="bola-patinhas-claro" name="bola-patinhas-claro" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/bola azul com linhas.jpg" alt="Bola azul com linhas" width="500" height="300">
+        <p>Bola azul com linhas - R$ 10,00 a unidade</p>
+        <label for="bola-linhas">Digite a quantidade:</label>
+        <input type="number" id="bola-linhas" name="bola-linhas" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/bola azul e branca vazada.jpg" alt="Bola azul e branca vazada" width="500" height="300">
+        <p>Bola azul e branca vazada - R$ 10,00 a unidade</p>
+        <label for="bola-vazada">Digite a quantidade:</label>
+        <input type="number" id="bola-vazada" name="bola-vazada" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/bola azul escura com patinhas.jpg" alt="Bola azul escura com patinhas" width="500" height="300">
+        <p>Bola azul escura com patinhas - R$ 10,00 a unidade</p>
+        <label for="bola-patinhas-escura">Digite a quantidade:</label>
+        <input type="number" id="bola-patinhas-escura" name="bola-patinhas-escura" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/bola colorida.jpg" alt="Bola colorida" width="500" height="300">
+        <p>Bola colorida - R$ 10,00 a unidade</p>
+        <label for="bola-colorida">Digite a quantidade:</label>
+        <input type="number" id="bola-colorida" name="bola-colorida" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/bola de corda transada.jpg" alt="Bola de corda trançada" width="500" height="300">
+        <p>Bola de corda trançada - R$ 10,00 a unidade</p>
+        <label for="bola-corda">Digite a quantidade:</label>
+        <input type="number" id="bola-corda" name="bola-corda" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/bola geometrica colorida.jpg" alt="Bola geométrica colorida" width="500" height="300">
+        <p>Bola geométrica colorida - R$ 10,00 a unidade</p>
+        <label for="bola-geometrica">Digite a quantidade:</label>
+        <input type="number" id="bola-geometrica" name="bola-geometrica" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+      <article class="produto">
+        <img src="img/bola rosa com espinhos.jpg" alt="Bola rosa com espinhos" width="500" height="300">
+        <p>Bola rosa com espinhos - R$ 10,00 a unidade</p>
+        <label for="bola-espinhos">Digite a quantidade:</label>
+         <input type="number" id="bola-espinhos" name="bola-espinhos" step="1" min="1" value="1">
+        <button type="button">Comprar</button>
+      </article>
+
+
+        
