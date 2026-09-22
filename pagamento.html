@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma de Pagamento</title>
+</head>
+<body>
+    <form action="/processar-pagamento" method="POST">
+    <h3>Escolha a Forma de Pagamento</h3>
+
+    <!-- Seleção do Método -->
+    <div>
+        <input type="radio" id="cartao" name="metodo_pagamento" value="cartao" checked>
+        <label for="cartao">Cartão de Crédito</label>
+
+        <input type="radio" id="pix" name="metodo_pagamento" value="pix">
+        <label for="pix">Pix</label>
+
+        <input type="radio" id="boleto" name="metodo_pagamento" value="boleto">
+        <label for="boleto">Boleto Bancário</label>
+    </div>
+
+    <!-- Dados do Cartão (Exibidos se a opção cartão for selecionada) -->
+    <div id="dados-cartao">
+        <h4>Dados do Cartão</h4>
+        
+        <label for="nome_cartao">Nome no Cartão:</label>
+        <input type="text" id="nome_cartao" name="nome_cartao" required placeholder="Como está no cartão">
+
+        <label for="numero_cartao">Número do Cartão:</label>
+        <input type="text" id="numero_cartao" name="numero_cartao" required placeholder="0000 0000 0000 0000">
+
+        <div style="display: flex; gap: 10px;">
+            <div>
+                <label for="validade">Validade:</label>
+                <input type="text" id="validade" name="validade" required placeholder="MM/AA">
+            </div>
+            <div>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required placeholder="123">
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão de Envio -->
+    <button type="submit" style="margin-top: 20px;">Finalizar Compra</button>
+</form>
+</body>
+</html>

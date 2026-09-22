@@ -1,11 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrinho de Compras Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .produtos, .carrinho-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .produtos { flex: 2; }
+        .carrinho-container { flex: 1; min-width: 300px; }
+        .produto-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover { background-color: #218838; }
+        .carrinho-lista {
+            list-style: none;
+            padding: 0;
+        }
+        .carrinho-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .btn-remover {
+            background-color: #dc3545;
+            padding: 3px 8px;
+            font-size: 12px;
+        }
+        .btn-remover:hover { background-color: #c82333; }
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <!-- VITRINE DE PRODUTOS -->
+    <div class="produtos">
+        <h2>Produtos Disponíveis</h2>
+        <div class="produto-item">
+            <span>Camiseta Oficial - R\$ 80,00</span>
+            <button onclick="adicionarAoCarrinho('Camiseta Oficial', 80.00)">Adicionar</button>
+        </div>
+        <div class="produto-item">
+            <span>Tênis Esportivo - R\$ 250,00</span>
+            <button onclick="adicionarAoCarrinho('Tênis Esportivo', 250.00)">Adicionar</button>
+        </div>
+        <div class="produto-item">
+            <span>Boné Aba Reta - R\$ 45,00</span>
+            <button onclick="adicionarAoCarrinho('Boné Aba Reta', 45.00)">Adicionar</button>
+        </div>
+    </div>
+
+    <!-- SEÇÃO DO CARRINHO -->
+    <div class="carrinho-container">
+        <h2>Meu Carrinho</h2>
+        <ul id="lista-carrinho" class="carrinho-lista">
+            <!-- Os itens adicionados vão aparecer aqui dinamicamente -->
+        </ul>
+        <div class="total">
+            Total: R\$ <span id="valor-total">0,00</span>
+        </div>
+    </div>
+
+    <!-- LÓGICA DO CARRINHO (JAVASCRIPT) -->
+    <script>
+        // Array para armazenar os itens que o usuário escolhe
+        let carrinho = [];
+
+        function adicionarAoCarrinho(nome, preco) {
+            // Verifica se o item já existe no carrinho
+            const itemExistente = carrinho.find(item => item.nome === nome);
+
+            if (itemExistente) {
+                itemExistente.quantidade += 1;
+            } else {
+                carrinho.push({ nome: nome, preco: preco, quantidade: 1 });
+            }
+
+            atualizarInterface();
+        }
+
+        function removerDoCarrinho(nome) {
+            // Filtra o array tirando o item selecionado
+            carrinho = carrinho.filter(item => item.nome !== nome);
+            atualizarInterface();
+        }
+
+        function atualizarInterface() {
+            const listaElemento = document.getElementById('lista-carrinho');
+            const totalElemento = document.getElementById('valor-total');
+            
+            // Limpa a lista antes de redesenhar
+            listaElemento.innerHTML = '';
+            
+            let valorTotalGeral = 0;
+
+            // Percorre o carrinho e cria a estrutura HTML de cada item inserido
+            carrinho.forEach(item => {
+                const subtotal = item.preco * item.quantidade;
+                valorTotalGeral += subtotal;
+
+                const li = document.createElement('li');
+                li.className = 'carrinho-item';
+                li.innerHTML = `
+                    <div>
+                        <strong>${item.nome}</strong> (x${item.quantidade})<br>
+                        <small>R$ ${subtotal.toFixed(2).replace('.', ',')}</small>
+                    </div>
+                    <button class="btn-remover" onclick="removerDoCarrinho('${item.nome}')">Remover</button>
+                `;
+                listaElemento.appendChild(li);
+            });
+
+            // Atualiza o valor total na tela
+            totalElemento.innerText = valorTotalGeral.toFixed(2).replace('.', ',');
+        }
+    </script>
 </body>
 </html>

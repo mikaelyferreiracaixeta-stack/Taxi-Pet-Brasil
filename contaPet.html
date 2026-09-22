@@ -1,11 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro de Animais</title>
 </head>
 <body>
+
+    <h2>Cadastro de Pet</h2>
     
+    <form action="#" method="POST">
+        <!-- Nome do Animal -->
+        <div>
+            <label for="nome">Nome do Animal:</label><br>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        <br>
+
+        <!-- Espécie -->
+        <div>
+            <label for="especie">Espécie:</label><br>
+            <select id="especie" name="especie" required>
+                <option value="">Selecione...</option>
+                <option value="cachorro">Cachorro</option>
+                <option value="gato">Gato</option>
+                <option value="outro">Outro</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- Raça -->
+        <div>
+            <label for="raca">Raça:</label><br>
+            <input type="text" id="raca" name="raca">
+        </div>
+        <br>
+
+        <!-- Idade -->
+        <div>
+            <label for="idade">Idade (anos):</label><br>
+            <input type="number" id="idade" name="idade" min="0">
+        </div>
+        <br>
+
+        <!-- Sexo -->
+        <div>
+            <label>Sexo:</label><br>
+            <input type="radio" id="macho" name="sexo" value="macho">
+            <label for="macho">Macho</label>
+            
+            <input type="radio" id="femea" name="sexo" value="femea">
+            <label for="femea">Fêmea</label>
+        </div>
+        <br>
+
+        <!-- Observações -->
+        <div>
+            <label for="obs">Observações de Saúde/Comportamento:</label><br>
+            <textarea id="obs" name="obs" rows="4" cols="40"></textarea>
+        </div>
+        <br>
+
+        <!-- Botão de Envio -->
+        <div>
+            <button type="submit">Cadastrar Animal</button>
+        </div>
+    </form>
+
 </body>
 </html>

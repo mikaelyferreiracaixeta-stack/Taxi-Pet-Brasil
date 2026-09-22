@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taxi Pet Brasil</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
  
     <header>
+        
         <nav class="area-navegacao">
-            <img class="logo" src="login.html
-            " alt="logo" width="200px" height="100px">
+            <!-- ATENÇÃO: Ajuste "imagens/" caso sua pasta tenha outro nome (ex: img/logo.png ou assets/logo.png) -->
+             <img class="logo" src="img/logo.png" alt="logo" width="200px" height="100px">
+            
             <ul class="menu-header">
                 <li><a class="icones" href="cadastro.html"><i class="fa-solid fa-user"></i></a></li>
                 <li><a class="icones" href="Banho-Tosa.html"><i class="fa-solid fa-scissors"></i></a></li>
@@ -29,13 +31,15 @@
     <main>
         <article class="area-banner" id="Home">
             <section id="banner">
-                <img src="Banner.png" alt="banner" id="banner_image">
+                <!-- ATENÇÃO: Ajuste "imagens/" aqui também para carregar o seu banner de forma correta -->
+                <img src="img/banner.png" alt="banner" id="banner_image">
             </section>
             <section id="agendar">
-            <h2 id="agendar_titulo">dias disponíveis para agendamento!</h2>
-            <button id="agendar_botao" onclick="window.location.href='cadastro.html'">Agendar</button>
+                <h2 id="agendar_titulo">dias disponíveis para agendamento!</h2>
+                <button id="agendar_botao" onclick="window.location.href='cadastro.html'">Agendar</button>
             </section>
         </article>
+
         <article class="area-sobre">
             <section class="sobre">
                 <h1>Táxi Pet Brasil</h1>
@@ -43,8 +47,7 @@
                 <p>O Táxi Pet Brasil é um serviço de transporte especializado para animais de estimação, oferecendo conforto e segurança durante a viagem. Nossa missão é conectar proprietários de pets com motoristas qualificados, garantindo uma experiência tranquila e agradável para todos os envolvidos.</p>
             </section>
         </article>
-         </article>
-    </main>
+
         <div class="conteudo-inferior">
             <section class="area-servicos">
                 <h2>Nossos Serviços</h2>
@@ -80,6 +83,7 @@
             </section>
         </div>
     </main>
+
     <script src="js/Carrinho.js"></script>
     <script src="js/busca.js"></script>
 </body>
