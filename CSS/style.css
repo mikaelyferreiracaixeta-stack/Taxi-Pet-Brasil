@@ -37,6 +37,7 @@ header {
     list-style: none;
     margin: 0;
 }
+
  
 .icones {
     text-decoration: none;
@@ -86,6 +87,7 @@ main {
     border: 2px dashed green;
     margin-top: 15px;
     border-radius: 8px;
+    
 }
  
 #agendar_titulo {
@@ -108,6 +110,25 @@ main {
  
 #agendar_botao:hover {
     background-color: darkgreen;
+}
+.lista-padrao{
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+
+}
+.servico{
+     gap: 2px;
+     border-color: none;
+     border: 2px;
+     display: flex;
+     
+
+
+}
+.servico-titulo{
+    font-size: 10px;
+    margin-bottom: 10px;
 }
  
 .area-sobre {
