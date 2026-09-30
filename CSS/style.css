@@ -8,7 +8,7 @@
 }
  
 header {
-    background-color: green;
+    background-color: rgb(7, 160, 207);
     width: 100%;
     height: 110px;
     position: fixed;
@@ -41,17 +41,17 @@ header {
  
 .icones {
     text-decoration: none;
-    color: white;
+    color: rgb(5, 28, 128);
     font-size: 25px;
-    border: 2px solid white;
+    border: 2px solid rgb(6, 55, 145);
     padding: 10px 30px;
     border-radius: 0 20px;
     transition: 0.3s ease;
 }
  
 .icones:hover {
-    background-color: white;
-    color: green;
+    background-color: rgb(6, 51, 175);
+    color: rgb(65, 125, 214);
 }
  
 main {
@@ -84,7 +84,7 @@ main {
 #agendar {
     width: 100%;
     height: 144px;
-    border: 2px dashed green;
+    border: 2px dashed rgb(0, 188, 245);
     margin-top: 15px;
     border-radius: 8px;
     
@@ -98,9 +98,9 @@ main {
  
 #agendar_botao {
     padding: 15px 60px;
-    color: white;
+    color: rgb(8, 144, 235);
     font-size: 20px;
-    background-color: green;
+    background-color: rgb(6, 67, 146);
     border: none;
     border-radius: 15px;
     margin-top: 15px;
@@ -109,7 +109,7 @@ main {
 }
  
 #agendar_botao:hover {
-    background-color: darkgreen;
+    background-color: rgb(2, 75, 172);
 }
 .lista-padrao{
     justify-content: space-between;
@@ -140,7 +140,7 @@ main {
 }
  
 .sobre h1 {
-    color: green;
+    color: rgb(0, 51, 128);
     font-size: 40px;
     margin-bottom: 10px;
 }
@@ -148,7 +148,7 @@ main {
 .subtitulo {
     font-size: 20px;
     font-weight: 500;
-    color: #666;
+    color: #201f1f;
     margin-bottom: 20px;
 }
  
@@ -164,8 +164,8 @@ main {
 }
  
 .conteudo-inferior h2 {
-    color: green;
-    border-bottom: 2px solid green;
+    color: rgb(16, 34, 196);
+    border-bottom: 2px solid rgb(3, 71, 150);
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
