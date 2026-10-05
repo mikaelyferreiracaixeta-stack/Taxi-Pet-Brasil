@@ -98,9 +98,9 @@ main {
  
 #agendar_botao {
     padding: 15px 60px;
-    color: rgb(8, 144, 235);
+    color: rgb(8, 87, 235);
     font-size: 20px;
-    background-color: rgb(6, 67, 146);
+    background-color: rgb(7, 64, 139);
     border: none;
     border-radius: 15px;
     margin-top: 15px;
@@ -109,7 +109,7 @@ main {
 }
  
 #agendar_botao:hover {
-    background-color: rgb(2, 75, 172);
+    background-color: rgb(67, 147, 250);
 }
 .lista-padrao{
     justify-content: space-between;
