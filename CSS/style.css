@@ -33,20 +33,30 @@ header {
 
 .menu-header {
     display: flex;
-    gap: 40px; /* Aumentado consideravelmente o espaço entre os botões do menu */
+    gap: 15px; /* Reduzido levemente para os botões caberem um ao lado do outro */
     list-style: none;
     margin: 0;
+    flex-wrap: wrap; /* Permite que os botões se organizem caso a tela diminua */
+    justify-content: center; /* Alinha o menu ao centro se houver espaço */
 }
+
+
 
 .icones {
     text-decoration: none;
     color: rgb(5, 28, 128);
-    font-size: 22px; 
+    font-size: 16px; /* Reduzido de 22px para 16px para o texto caber perfeitamente */
+    font-weight: 500;
     border: 2px solid rgb(6, 55, 145);
-    padding: 14px 40px; /* Botões do menu ganharam mais área interna */
+    padding: 10px 20px; /* Reduzido o padding lateral para o botão não estourar */
     border-radius: 0 20px;
     transition: 0.3s ease;
+    white-space: nowrap; /* IMPORTANTE: Impede o texto de quebrar em várias linhas */
+    display: inline-flex; /* Garante alinhamento correto caso use ícone + texto */
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto do botão */
 }
+
  
 .icones:hover {
     background-color: rgb(6, 51, 175);
