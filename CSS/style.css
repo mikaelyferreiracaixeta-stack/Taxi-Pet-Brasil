@@ -1,6 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
+@import url('https://googleapis.com');
 
 * { 
   margin: 0; 
@@ -9,7 +7,6 @@
   font-family: 'Roboto', sans-serif; 
 }
 
- 
 header {
     background-color: rgb(7, 160, 207);
     width: 100%;
@@ -29,25 +26,24 @@ header {
     margin: 0 auto;
     padding: 0 20px;
 }
- .logo {
+
+.logo {
     padding: 0 auto;
-    
-    
- }
+}
+
 .menu-header {
     display: flex;
-    gap: 20px;
+    gap: 40px; /* Aumentado consideravelmente o espaço entre os botões do menu */
     list-style: none;
     margin: 0;
 }
 
- 
 .icones {
     text-decoration: none;
     color: rgb(5, 28, 128);
-    font-size: 25px;
+    font-size: 22px; 
     border: 2px solid rgb(6, 55, 145);
-    padding: 10px 30px;
+    padding: 14px 40px; /* Botões do menu ganharam mais área interna */
     border-radius: 0 20px;
     transition: 0.3s ease;
 }
@@ -77,7 +73,7 @@ main {
 }
  
 #banner_image {
-    margin-top: 10px;
+    margin-top: 40px; /* Maior espaçamento acima do banner */
     width: 100%;
     height: auto;
     max-height: 400px;
@@ -86,100 +82,93 @@ main {
  
 #agendar {
     width: 100%;
-    height: 144px;
+    height: auto; 
+    padding: 50px 30px; /* Caixa pontilhada muito mais ampla por dentro */
     border: 2px dashed rgb(0, 188, 245);
-    margin-top: 15px;
+    margin-top: 60px; /* Distância generosa abaixo do banner */
     border-radius: 8px;
-    
 }
  
 #agendar_titulo {
-    margin-top: 20px;
-    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 35px; /* Mais espaço entre o título interno e o botão */
+    font-size: 26px;
     color: #333;
 }
- 
+
 #agendar_botao {
-    padding: 15px 60px;
-    color: rgb(8, 87, 235);
+    padding: 18px 70px; /* Botão "Fazer pedido" ligeiramente maior e mais imponente */
+    color: rgb(255, 255, 255);
     font-size: 20px;
     background-color: rgb(7, 64, 139);
     border: none;
     border-radius: 15px;
-    margin-top: 15px;
     cursor: pointer;
     transition: 0.3s;
 }
- 
+
 #agendar_botao:hover {
     background-color: rgb(67, 147, 250);
-}
-.lista-padrao{
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-
-}
-.servico{
-     gap: 2px;
-     border-color: none;
-     border: 2px;
-     display: flex;
-     
-
-
-}
-.servico-titulo{
-    font-size: 10px;
-    margin-bottom: 10px;
 }
  
 .area-sobre {
     width: 100%;
     max-width: 1200px;
-    margin: 40px auto 20px auto;
+    margin: 90px auto 40px auto; /* Afasta bastante a seção de apresentação principal */
     padding: 0 15px;
     text-align: center;
 }
  
 .sobre h1 {
     color: rgb(0, 51, 128);
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 42px;
+    margin-bottom: 25px;
 }
  
 .subtitulo {
     font-size: 20px;
+    line-height: 1.7; 
     font-weight: 500;
     color: #201f1f;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.sobre p {
+    line-height: 1.8; /* Adiciona um excelente espaçamento entre as linhas do texto longo */
+    font-size: 17px;
 }
  
 .conteudo-inferior {
     width: 100%;
     max-width: 1200px;
     padding: 0 15px;
-    margin-bottom: 50px;
+    margin-bottom: 100px; /* Garante que o final da página não fique colado no navegador */
 }
  
 .conteudo-inferior section {
-    margin-top: 30px;
+    margin-top: 80px; /* Espaço gigante separando Localização de Contato */
 }
  
 .conteudo-inferior h2 {
     color: rgb(16, 34, 196);
     border-bottom: 2px solid rgb(3, 71, 150);
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+    padding-bottom: 15px; /* Mais respiro antes da linha azul decorativa */
+    margin-bottom: 35px; /* Mais respiro depois da linha azul */
+}
+
+.conteudo-inferior p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
  
 .lista-padrao {
     list-style: disc;
-    margin-left: 20px;
+    margin-left: 30px;
     display: block;
 }
  
 .lista-padrao li {
-    margin-bottom: 8px;
+    margin-bottom: 18px; /* Afasta consideravelmente as linhas de Email e Telefone */
     font-size: 16px;
 }
