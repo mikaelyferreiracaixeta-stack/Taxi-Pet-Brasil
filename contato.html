@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - PetTaxi</title>
+    <link rel="stylesheet" href="contato.css">  
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação -->
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">🐾 PetTaxi</a>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="frota.html">Nossa Frota</a>
+                <a href="agendamentos.html">Agendamento</a>
+                <a href="contato.html" class="active">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <h1>Fale Conosco</h1>
+        <p>Tire suas dúvidas, envie sugestões ou solicite parcerias com o nosso serviço de transporte pet.</p>
+    </section>
+
+    <!-- Seção de Contato -->
+    <main class="contact-container">
+        
+        <!-- Lado Esquerdo: Info de Canais Rápidos -->
+        <div class="contact-info">
+            
+            <div class="info-card">
+                <div class="info-title">📞 Telefones e WhatsApp</div>
+                <p>Central de Atendimento: <a href="https://wa.me" target="_blank">(11) 99999-9999</a></p>
+                <p>Plantão de Emergências: (11) 98888-8888</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-title">✉️ E-mail</div>
+                <p>Suporte e Orçamentos: <a href="mailto:contato@pettaxi.com">contato@pettaxi.com</a></p>
+                <p>Parcerias e Clínicas: <a href="mailto:parcerias@pettaxi.com">parcerias@pettaxi.com</a></p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-title">🕒 Horário de Funcionamento</div>
+                <p>Segunda a Sexta: 07h às 20h</p>
+                <p>Sábados e Feriados: 08h às 16h</p>
+                <p><em>*Corridas fora do horário comercial devem ser agendadas previamente.</em></p>
+            </div>
+
+        </div>
+
+        <!-- Lado Direito: Formulário Web -->
+        <div class="contact-form-container">
+            <h2>Envie uma Mensagem</h2>
+            <form action="#" method="POST" onsubmit="alert('Obrigado! Sua mensagem foi enviada com sucesso.'); return false;">
+                
+                <div class="form-group">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" required placeholder="Ex: João Silva">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Seu E-mail</label>
+                    <input type="email" id="email" required placeholder="Ex: joao@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto">Assunto</label>
+                    <select id="assunto" required>
+                        <option value="" disabled selected>Selecione um motivo...</option>
+                        <option value="duvidas">Dúvidas Gerais</option>
+                        <option value="orcamentos">Solicitação de Orçamento Especial</option>
+                        <option value="reclamacoes">Elogios ou Reclamações</option>
+                        <option value="parcerias">Parcerias (Veterinários/PetShops)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" required placeholder="Digite detalhadamente o que você precisa..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-send">Enviar Mensagem</button>
+
+            </form>
+        </div>
+    </main>

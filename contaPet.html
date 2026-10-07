@@ -3,69 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Animais</title>
+    <title>Minha Conta Pet - PetTaxi</title>
+    <link rel="stylesheet" href="contaPet.css">
 </head>
 <body>
 
-    <h2>Cadastro de Pet</h2>
-    
-    <form action="#" method="POST">
-        <!-- Nome do Animal -->
-        <div>
-            <label for="nome">Nome do Animal:</label><br>
-            <input type="text" id="nome" name="nome" required>
-        </div>
-        <br>
+    <!-- Cabeçalho / Navegação -->
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">🐾 PetTaxi</a>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="frota.html">Nossa Frota</a>
+                <a href="agendamentos.html">Agendamento</a>
+                <a href="conta-pet.html" class="active">Minha Conta</a>
+            </div>
+        </nav>
+    </header>
 
-        <!-- Espécie -->
-        <div>
-            <label for="especie">Espécie:</label><br>
-            <select id="especie" name="especie" required>
-                <option value="">Selecione...</option>
-                <option value="cachorro">Cachorro</option>
-                <option value="gato">Gato</option>
-                <option value="outro">Outro</option>
-            </select>
-        </div>
-        <br>
+    <!-- Painel do Cliente (Dashboard) -->
+    <div class="dashboard-container">
+        
+        <!-- Menu Lateral (Sidebar) -->
+        <aside class="sidebar">
+            <div class="profile-summary">
+                <div class="avatar">👤</div>
+                <h3>Maria Silva</h3>
+                <p>maria@email.com</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active">🐾 Meus Pets</a></li>
+                <li><a href="agendamentos.html">🚗 Nova Corrida</a></li>
+                <li><a href="#">📜 Histórico</a></li>
+                <li><a href="#">⚙️ Configurações</a></li>
+                <li><a href="#" style="color: var(--danger);">🚪 Sair</a></li>
+            </ul>
+        </aside>
 
-        <!-- Raça -->
-        <div>
-            <label for="raca">Raça:</label><br>
-            <input type="text" id="raca" name="raca">
-        </div>
-        <br>
-
-        <!-- Idade -->
-        <div>
-            <label for="idade">Idade (anos):</label><br>
-            <input type="number" id="idade" name="idade" min="0">
-        </div>
-        <br>
-
-        <!-- Sexo -->
-        <div>
-            <label>Sexo:</label><br>
-            <input type="radio" id="macho" name="sexo" value="macho">
-            <label for="macho">Macho</label>
+        <!-- Área de Conteúdo -->
+        <main class="main-content">
             
-            <input type="radio" id="femea" name="sexo" value="femea">
-            <label for="femea">Fêmea</label>
-        </div>
-        <br>
-
-        <!-- Observações -->
-        <div>
-            <label for="obs">Observações de Saúde/Comportamento:</label><br>
-            <textarea id="obs" name="obs" rows="4" cols="40"></textarea>
-        </div>
-        <br>
-
-        <!-- Botão de Envio -->
-        <div>
-            <button type="submit">Cadastrar Animal</button>
-        </div>
-    </form>
-
-</body>
-</html>
+            <!-- Bloco 1: Meus Animais Cadastrados -->
+            <section class="card">
+                <div class="card-header">
+                    <h2 class="card-title">🐾 Meus Pets Cadastrados</h2>
+                    <button class="btn-small" onclick="alert('Funcionalidade de cadastro será aberta!')">+ Adicionar Pet</button>
+                </div>
+                
+                <div class="pet-grid">
+                    <!-- Pet 1 -->
+                    <div class="pet-item-card">
+                        <div class="pet-avatar">🐶</div>
+                        <div class="pet-details">
+                            <h4>Thor</h4>
+                            <p>Raça: Labrador</p>
+                            <p>Idade: 3 anos</p>                
+                            <span class="badge-status">Ativo</span>
+                        </div>
+                    </div>
+                    <!-- Pet 2 -->
+                    <div class="pet-item-card">
+                        <div class="pet-avatar">🐱</div>
+                        <div class="pet-details">
+                            <h4>Luna</h4>
+                            <p>Raça: Siamês</p>
+                            <p>Idade: 2 anos</p>                
+                            <span class="badge-status">Ativo</span>
+                        </div>      
+                    </div>
+                    <!-- Pet 3 -->
+                    <div class="pet-item-card">
+                        <div class="pet-avatar">🐰</div>
+                        <div class="pet-details">
+                            <h4>Coelho</h4>
+                            <p>Raça: Angorá</p>
+                            <p>Idade: 1 ano</p>                
+                            <span class="badge-status">Inativo</span>
+                        </div>
+                    </div>
+                </div>
+            </section>

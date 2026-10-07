@@ -1,318 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Táxi Pet Brasil</title>
+    <title>Entrar - PetTaxi</title>
     <link rel="stylesheet" href="login.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
 </head>
-<style>
-       
-</style>
 <body>
+
+    <!-- Cabeçalho / Navegação -->
     <header>
-        <nav class="area-navegação">
-            <img class="logo" src="" alt="logo" width="100px">
-            <ul>
-               <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i></a></li>
-                <li><a class="icones" href="cadastro.html"><i class="fa-solid fa-cart-user"></i></a></li>
-            </ul>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">🐾 PetTaxi</a>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="frota.html">Nossa Frota</a>
+                <a href="agendamentos.html">Agendamento</a>
+                <a href="contato.html">Contato</a>
+            </div>
         </nav>
     </header>
-    <main>
-        <section class="area-login">
-            <h1>Login</h1>
-            <form action="processar_login.php" method="POST">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+
+    <!-- Área do Formulário de Login -->
+    <main class="login-container">
+        <div class="login-box">
+            <h1>Bem-vindo de Volta!</h1>
+            <p>Acesse seu painel para acompanhar as viagens do seu pet.</p>
+
+            <form action="conta-pet.html" method="GET" onsubmit="alert('Login efetuado com sucesso!');">
+                
+                <!-- Campo E-mail -->
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" required placeholder="seuemail@dominio.com">
                 </div>
-                <div class="mb-3">
-                    <label for="senha" class="form-label">Senha:</label>
-                    <input type="password" class="form-control" id="senha" name="senha" required>
+
+                <!-- Campo Senha -->
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" required placeholder="Digite sua senha">
                 </div>
-                <button type="submit" class="btn btn-primary">Entrar</button>
+
+                <!-- Opções extras -->
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox"> Lembrar de mim
+                    </label>
+                    <a href="#" class="forgot-password" onclick="alert('Um link de recuperação foi enviado ao e-mail informado.');">Esqueceu a senha?</a>
+                </div>
+
+                <!-- Botão de Login -->
+                <button type="submit" class="btn-login">Entrar</button>
+
+                <!-- Link para Criar Conta -->
+                <div class="register-link">
+                    Ainda não tem cadastro? <a href="cadastro.html">Cadastre-se</a>
+                </div>
+
             </form>
-        </section>
+        </div>
     </main>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
-    const emailInput = document.getElementById('email');
-    const senhaInput = document.getElementById('senha');
- 
-    form.addEventListener('submit', (event) => {
-        let isValid = true;
- 
-        // Limpa mensagens de erro anteriores
-        document.querySelectorAll('.invalid-feedback').forEach(el => el.remove());
-        emailInput.classList.remove('is-invalid');
-        senhaInput.classList.remove('is-invalid');
- 
-        // Validação de E-mail
-        const emailValue = emailInput.value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-       
-        if (!emailValue) {
-            mostrarErro(emailInput, 'Por favor, informe seu e-mail.');
-            isValid = false;
-        } else if (!emailRegex.test(emailValue)) {
-            mostrarErro(emailInput, 'Digite um e-mail válido.');
-            isValid = false;
-        }
- 
-        // Validação de Senha
-        const senhaValue = senhaInput.value;
-       
-        if (!senhaValue) {
-            mostrarErro(senhaInput, 'Por favor, informe sua senha.');
-            isValid = false;
-        } else if (senhaValue.length < 6) {
-            mostrarErro(senhaInput, 'A senha deve ter pelo menos 6 caracteres.');
-            isValid = false;
-        }
- 
-        // Cancela o envio se o formulário for inválido
-        if (!isValid) {
-            event.preventDefault();
-        }
-    });
- 
-    function mostrarErro(input, mensagem) {
-        input.classList.add('is-invalid');
-       
-        const feedback = document.createElement('div');
-        feedback.className = 'invalid-feedback';
-        feedback.innerText = mensagem;
-       
-        input.parentElement.appendChild(feedback);
-    }
-});
-    </script>
-    <form class="tutor" action="">
-     <div class="formulario-tutor">
-        <div >
-         <label for="nome">Nome:</label>
-         <input type="text" id="nome" name="nome" required maxlength="100">
-        </div>
-        <div>
-         <label for="cep">CEP:</label>
-         <input type="text" id="cep" name="cep" required maxlength="8">
-        </div>
-        <div>
-         <label for="RG">RG:</label>
-         <input type="text" id="RG" name="RG" required maxlength="20">
-        </div>
-        <div>
-         <label for="telefone">Telefone:</label>
-         <input type="text" id="telefone" name="telefone" required maxlength="20">
-        </div>
-        <div>
-         <label for="email">E-mail:</label>
-         <input type="email" id="email" name="email" required maxlength="100">
-        </div>
-        <div>
-         <label for="CPF">CPF:</label>
-         <input type="text" id="CPF" name="CPF" required maxlength="11">
-        </div>
-        <div>
-         <label for="numero">Número:</label>
-         <input type="text" id="numero" name="numero" required maxlength="10">
-        </div>
-        <div>
-         <label for="bairro">Bairro:</label>
-         <input type="text" id="bairro" name="bairro" required maxlength="50">
-        </div>
-        <div>
-         <label for="complemento">Complemento:</label>
-         <input type="text" id="complemento" name="complemento" maxlength="100">
-        </div>
-        <div>
-         <label for="cidade">Cidade:</label>
-         <input type="text" id="cidade" name="cidade" required maxlength="50">
-        </div>
-        
-         
 
-     </div>
+    <footer>
+        <p>&copy;Táxi Pet Serviços Automotivos. Todos os direitos reservados.</p>
+    </footer>
 
-    </form>
-    <form class="clinica" action="">
-        <div>
-            <label for="clinica-telefone">Telefone:</label>
-            <input type="tel" id="clinica-telefone" name="telefone" maxlength="20">
-        </div>
-        <div>
-            <label for="clinica-id">ID:</label>
-            <input type="text" id="clinica-id" name="id" maxlength="20">
-        </div>
-        <div>
-            <label for="clinica-email">E-mail:</label>
-            <input type="email" id="clinica-email" name="email" maxlength="100">
-        </div>
-        <div>
-            <label for="clinica-nome">Nome:</label>
-            <input type="text" id="clinica-nome" name="nome" maxlength="100">
-        </div>
-        <div>
-            <label for="clinica-numero">Número:</label>
-            <input type="text" id="clinica-numero" name="numero" maxlength="10">
-        </div>
-        <div>
-            <label for="clinica-bairro-cidade">Bairro/Cidade:</label>
-            <input type="text" id="clinica-bairro-cidade" name="bairro-cidade" maxlength="50">
-        </div>
-        <div>
-            <label for="clinica-complemento">Complemento:</label>
-            <input type="text" id="clinica-complemento" name="complemento" maxlength="100">
-        </div>
-        <div>
-            <label for="clinica-cnpj">CNPJ:</label>
-            <input type="text" id="clinica-cnpj" name="cnpj" maxlength="14">
-        </div>
-        <div>
-            <label for="clinica-agendamento">Agendamento:</label>
-            <input type="datetime-local" id="clinica-agendamento" name="agendamento">
-        </div>
-        <div>
-            <label for="clinica-historico">Histórico:</label>
-            <input type="text" id="clinica-historico" name="historico" maxlength="200">
-        </div>
-        <div>
-            <label for="clinica-alertas-medicos">Alertas médicos:</label>
-            <input type="text" id="clinica-alertas-medicos" name="alertas_medicos" maxlength="200">
-        </div>
-        <div>
-            <label for="clinica-dados-pacientes">Dados dos pacientes:</label>
-            <input type="text" id="clinica-dados-pacientes" name="dados_pacientes" maxlength="200">
-        </div>
-    </form>
-    <form class="pet" action="">
-        <div>
-            <label for="pet-id">ID:</label>
-            <input type="text" id="pet-id" name="id" maxlength="20">
-        </div>
-        <div>
-            <label for="pet-nome">Nome:</label>
-            <input type="text" id="pet-nome" name="nome" maxlength="100">
-        </div>
-        <div>
-            <label for="pet-data-nascimento">Data de nascimento:</label>
-            <input type="date" id="pet-data-nascimento" name="data_nascimento">
-        </div>
-        <div>
-            <label for="pet-porte">Porte:</label>
-            <input type="text" id="pet-porte" name="porte" maxlength="30">
-        </div>
-        <div>
-            <label for="pet-peso">Peso:</label>
-            <input type="number" id="pet-peso" name="peso" min="0" step="0.1">
-        </div>
-        <div>
-            <label for="pet-temperamento">Temperamento:</label>
-            <input type="text" id="pet-temperamento" name="temperamento" maxlength="200">
-        </div>
-        <div>
-            <label for="pet-tutor">Tutor:</label>
-            <input type="text" id="pet-tutor" name="tutor" maxlength="100">
-        </div>
-    </form>
-    <form class="condutor" action="">
-        <div>
-            <label for="condutor-id">ID:</label>
-            <input type="text" id="condutor-id" name="id" maxlength="20">
-        </div>
-        <div>
-            <label for="condutor-cpf">CPF:</label>
-            <input type="text" id="condutor-cpf" name="cpf" maxlength="11">
-        </div>
-        <div>
-            <label for="condutor-cnh">CNH:</label>
-            <input type="text" id="condutor-cnh" name="cnh" maxlength="20">
-        </div>
-        <div>
-            <label for="condutor-telefone">Telefone:</label>
-            <input type="tel" id="condutor-telefone" name="telefone" maxlength="20">
-        </div>
-        <div>
-            <label for="condutor-whatzapp">WhatsApp:</label>
-            <input type="tel" id="condutor-whatzapp" name="whatzapp" maxlength="20">
-        </div>
-        <div>
-            <label for="condutor-email">E-mail:</label>
-            <input type="email" id="condutor-email" name="email" maxlength="100">
-        </div>
-        <div>
-            <label for="condutor-endereco">Endereço:</label>
-            <input type="text" id="condutor-endereco" name="endereco" maxlength="150">
-        </div>
-        <div>
-            <label for="condutor-numero">Número:</label>
-            <input type="text" id="condutor-numero" name="numero" maxlength="10">
-        </div>
-        <div>
-            <label for="condutor-cep">CEP:</label>
-            <input type="text" id="condutor-cep" name="cep" maxlength="8">
-        </div>
-        <div>
-            <label for="condutor-bairro-cidade">Bairro/Cidade:</label>
-            <input type="text" id="condutor-bairro-cidade" name="bairro-cidade" maxlength="100">
-        </div>
-        <div>
-            <label for="condutor-informacao">Informação:</label>
-            <input type="text" id="condutor-informacao" name="informacao" maxlength="200">
-        </div>
-        <div>
-            <label for="condutor-dados-do-pet">Dados do pet:</label>
-            <input type="text" id="condutor-dados-do-pet" name="dados_do_pet" maxlength="200">
-        </div>
-        <div>
-            <label for="nome_pet">Nome do Pet:</label>
-            <input type="text" id="nome_pet" name="nome_pet" maxlength="100">
-        </div>
-        <div>
-            <label for="especia/raça">Espécie/Raça:</label>
-            <input type="text" id="especia/raça" name="especia/raça" maxlength="100">
-        </div>
-        <div>
-            <label for="temperamento_pet">Histórico:</label>
-            <input type="text" id="temperamento_pet" name="temperamento_pet" maxlength="200">
-        </div>
-    </form>
-    <form class="carro">
-        <div>
-            <label for="carro-id">ID:</label>
-            <input type="text" id="carro-id" name="id" maxlength="20">
-        </div>
-        <div>
-            <label for="carro-marca">Marca:</label>
-            <input type="text" id="carro-marca" name="marca" maxlength="50">
-        </div>
-        <div>
-            <label for="carro-modelo">Modelo:</label>
-            <input type="text" id="carro-modelo" name="modelo" maxlength="50">
-        </div>
-        <div>
-            <label for="carro-ano">Ano:</label>
-            <input type="text" id="carro-ano" name="ano" maxlength="4">
-        </div>
-        <div>
-            <label for="carro-placa">Placa:</label>
-            <input type="text" id="carro-placa" name="placa" maxlength="7">
-        </div>
-        <div>
-            <label for="carro-cor">Cor:</label>
-            <input type="text" id="carro-cor" name="cor" maxlength="20">
-        </div>
-        <div>
-            <label for="id_motorista">id:</label>
-            <input type="text" id="id_motorista" name="id_motorista" maxlength="20">
-        </div>
-    </form>
-    
 </body>
 </html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Táxi Pet - PetTaxi</title>
+    <link rel="stylesheet" href="agendamento.css">
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação -->
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">🐾 PetTaxi</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="frota.html">Nossa Frota</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="agendamentos.html" class="active">Agendamento</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <div class="form-container">
+            <h1>Agende a Viagem do seu Pet</h1>
+            <p class="subtitle">Preencha os dados abaixo e envie o seu pedido direto para o nosso WhatsApp.</p>
+
+            <form id="formAgendamento">
+                
+                <!-- PASSO 1: Dados do Tutor -->
+                <fieldset>
+                    <legend>👤 Dados do Tutor</legend>
+                    
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" required placeholder="Ex: Maria Silva">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp / Telefone</label>
+                            <input type="tel" id="whatsapp" required placeholder="(11) 99999-9999">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" required placeholder="maria@email.com">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- PASSO 2: Dados do Pet -->
+                <fieldset>
+                    <legend>🐶 Dados do Pet</legend>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome-pet">Nome do Pet</label>
+                            <input type="text" id="nome-pet" required placeholder="Ex: Thor">
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo-pet">Espécie</label>
+                            <select id="tipo-pet" required>
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="Cachorro">Cachorro</option>
+                                <option value="Gato">Gato</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="porte-pet">Porte do Animal</label>
+                            <select id="porte-pet" required>
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="Pequeno (Até 10kg)">Pequeno (Até 10kg)</option>
+                                <option value="Médio (11kg a 25kg)">Médio (11kg a 25kg)</option>
+                                <option value="Grande (Acima de 25kg)">Grande (Acima de 25kg)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>O tutor vai acompanhar?</label>
+                            <div class="radio-group">
+                                <label class="radio-item">
+                                    <input type="radio" name="acompanhante" value="Sim" checked> Sim
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="acompanhante" value="Não (O pet vai sozinho)"> Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- PASSO 3: Detalhes da Corrida -->
+                <fieldset>
+                    <legend>📍 Detalhes do Percurso</legend>
+                    
+                    <div class="form-group">
+                        <label for="origem">Endereço de Origem</label>
+                        <input type="text" id="origem" required placeholder="Ex: Rua das Flores, 123, Bairro Jardim">
+                    </div>
+                    <div class="form-group">
+                        <label for="destino">Endereço de Destino</label>
+                        <input type="text" id="destino" required placeholder="Ex: Av. Central, 456, Bairro Centro">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="data">Data da Viagem</label>
+                            <input type="date" id="data" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hora">Hora da Viagem</label>
+                            <input type="time" id="hora" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="observacoes">Observações (opcional)</label>
+                        <textarea id="observacoes" placeholder="Ex: O pet tem alergia a certos alimentos..."></textarea>
+                    </div>
+                </fieldset>
