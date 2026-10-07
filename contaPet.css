@@ -3,9 +3,9 @@
             --primary-hover: rgb(65, 125, 214);
             --secondary: rgb(5, 28, 128);;
               --dark: #333;
-            --light: #f4f6f8;
-            --white: #ffffff;
-            --border: #cccccc;
+            --light: #073985;
+            --white: #1e56c0;
+            --border: #0d3ec4;
         }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
@@ -176,13 +176,13 @@
             display: flex;
             gap: 1rem;
             position: relative;
-            background-color: #fafafa;
+            background-color: #0084ff;
         }
 
         .pet-avatar {
             width: 60px;
             height: 60px;
-            background-color: #fff3e0;
+            background-color: #006af5;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -207,7 +207,7 @@
             padding: 0.1rem 0.5rem;
             border-radius: 10px;
             font-weight: 600;
-            background-color: #e8f5e9;
+            background-color: #006eff;
             color: var(--primary);
         }
 
@@ -230,11 +230,11 @@
         }
 
         .data-table th {
-            background-color: #f8f9fa;
+            background-color: #0f4994;
             font-weight: 600;
             color: #555;
         }
-
+j
         .status-pill {
             display: inline-block;
             padding: 0.25rem 0.5rem;

@@ -2,11 +2,11 @@
             --primary:  rgb(7, 160, 207);;
             --primary-hover: rgb(65, 125, 214);
             --secondary:  rgb(5, 28, 128);;
-              --dark: #333;
-            --light: #f4f6f8;
-            --white: #ffffff;
-            --border: #cccccc;
-        }
+             --dark: #333;
+            --light: #073985;
+            --white: #1e56c0;
+            --border: #0d3ec4;
+    }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
         * {

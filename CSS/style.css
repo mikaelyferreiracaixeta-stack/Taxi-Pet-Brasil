@@ -1,5 +1,14 @@
 @import url('https://googleapis.com');
 
+   :root {
+            --primary:  rgb(7, 160, 207);;
+            --primary-hover: rgb(65, 125, 214);
+            --secondary:  rgb(5, 28, 128);;
+             --dark: #333;
+            --light: #073985;
+            --white: #1e56c0;
+            --border: #0d3ec4;
+    }
 * { 
   margin: 0; 
   padding: 0; 

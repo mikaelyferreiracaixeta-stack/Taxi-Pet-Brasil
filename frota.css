@@ -12,10 +12,10 @@
             --primary:  rgb(7, 160, 207);;
             --primary-hover: rgb(65, 125, 214);
             --secondary:  rgb(5, 28, 128);;
-              --dark: #333;
-            --light: #f4f6f8;
-            --white: #ffffff;
-            --border: #cccccc;
+            --dark: #333;
+            --light: #073985;
+            --white: #1e56c0;
+            --border: #0d3ec4;
         }
         body {
             background-color: var(--white);
@@ -126,7 +126,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            background-color: #ddd;
+            background-color: #0298c5;
         }
 
         .fleet-info {
@@ -141,7 +141,7 @@
 
         .category-badge {
             display: inline-block;
-            background-color: #e8f5e9;
+            background-color: #025cd3;
             color:  var(--primary);
             padding: 0.25rem 0.7rem;
             border-radius: 20px;
@@ -172,7 +172,7 @@
             display: block;
             text-align: center;
             background-color:  var(--primary);
-            color: white;
+            color: rgb(5, 37, 85);
             text-decoration: none;
             padding: 0.8rem;
             border-radius: 5px;
@@ -186,7 +186,7 @@
 
         /* Diferenciais de Segurança */
         .features-safety {
-            background-color: white;
+            background-color: rgb(3, 68, 247);
             padding: 3rem 2rem;
             border-radius: 8px;
             box-shadow: 0 4px 15px var(--primary);
@@ -216,11 +216,11 @@
 
         .safety-item p {
             font-size: 0.9rem;
-            color: #666;
+            color: #0239ec;
         }
 
         footer {
-            background-color: var(--white);
+            background-color:rgb(0, 17, 173);
             color: var(--primary);
             text-align: center;
             padding: 2rem 1rem;
