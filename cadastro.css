@@ -1,219 +1,235 @@
-
-        :root {
-            --primary: rgb(7, 160, 207);
-            --primary-hover: rgb(65, 125, 214);
-            --secondary:  rgb(5, 28, 128);
-            --dark: #333;
-            --light: #073985;
-            --white: #1e56c0;
-            --border: #0d3ec4;
-        }
+/* IMPORTANTE: O @import deve sempre ficar na primeira linha do arquivo */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
+:root {
+  /* Cores Principais do Projeto */
+  --primary: rgb(7, 160, 207);
+  --primary-hover: rgb(65, 125, 214);
+  --secondary: rgb(5, 28, 128);
+  
+  /* Versões corrigidas com tons de azul e neutros */
+  --dark: #2c3e50;           /* Azul escuro sóbrio para textos principais */
+  --white: #f0f8ff;          /* Azul Alice Blue (fundo de cards e caixas claras) */
+  --pure-white: #ffffff;     /* Branco absoluto para textos e contrastes */
+  --border: #d0e4f5;         /* Azul claro suave para linhas e bordas */
+  --light: #f4f8fb;          /* Fundo geral da página */
 
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+  /* Cores de Texto de Apoio */
+  --text-muted: #666666;
+  --text-label: #555555;
+  --input-bg: #fafafa;
+}
 
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+/* Header & Navegação */
+header {
+  background-color: var(--primary);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        /* Container do Formulário */
-        .register-container {
-            max-width: 550px;
-            width: 100%;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-            flex: 1;
-        }
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--pure-white); /* Corrigido para garantir contraste no header azul */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-        .register-box {
-            background-color: var(--white);
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
-        }
+.nav-links a {
+  text-decoration: none;
+  color: var(--pure-white); /* Corrigido para leitura no fundo azul */
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
 
-        .register-box h1 {
-            text-align: center;
-            font-size: 1.8rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
+.nav-links a:hover {
+  color: var(--secondary); /* Destaca ao passar o mouse */
+}
 
-        .register-box p {
-            text-align: center;
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-        }
+/* Container do Formulário de Registro */
+.register-container {
+  max-width: 550px;
+  width: 100%;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  flex: 1;
+}
 
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
+.register-box {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+}
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
+.register-box h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
 
-        label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
+.register-box p {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
 
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="password"] {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 5px;
-            font-size: 1rem;
-            color: var(--dark);
-            background-color: #fafafa;
-            transition: border-color 0.3s, background-color 0.3s;
-        }
+.form-group {
+  margin-bottom: 1.25rem;
+}
 
-        input:focus {
-            outline: none;
-            border-color: var(--primary);
-            background-color: var(--white);
-        }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
 
-        /* Checkbox dos termos */
-        .terms-group {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-            cursor: pointer;
-            font-size: 0.9rem;
-            color: #555;
-        }
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--dark);
+}
 
-        .terms-group input {
-            margin-top: 0.2rem;
-        }
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--dark);
+  background-color: var(--input-bg);
+  transition: border-color 0.3s, background-color 0.3s;
+}
 
-        .terms-group a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-        }
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: var(--pure-white);
+}
 
-        .terms-group a:hover {
-            text-decoration: underline;
-        }
+/* Checkbox de Termos e Condições */
+.terms-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-label);
+}
 
-        .btn-register {
-            display: block;
-            width: 100%;
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            padding: 1rem;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.terms-group input {
+  margin-top: 0.2rem;
+}
 
-        .btn-register:hover {
-            background-color: var(--primary-hover);
-        }
+.terms-group a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
 
-        .login-link {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            color: #666;
-        }
+.terms-group a:hover {
+  text-decoration: underline;
+}
 
-        .login-link a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* Botões e Links de Transição */
+.btn-register {
+  display: block;
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--pure-white);
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-        .login-link a:hover {
-            text-decoration: underline;
-        }
+.btn-register:hover {
+  background-color: var(--primary-hover);
+}
 
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 1rem;
-        }
+.login-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
 
-        /* Responsividade */
-        @media (max-width: 600px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .nav-links a {
-                margin: 0 0.5rem;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-            .register-box {
-                padding: 1.5rem;
-            }
-        }
+.login-link a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--dark);
+  color: var(--pure-white);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-links a {
+    margin: 0 0.5rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .register-box {
+    padding: 1.5rem;
+  }
+}

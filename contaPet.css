@@ -1,12 +1,15 @@
-     :root {
-            --primary: rgb(7, 160, 207);
-            --primary-hover: rgb(65, 125, 214);
-            --secondary: rgb(5, 28, 128);;
-              --dark: #333;
-            --light: #073985;
-            --white: #1e56c0;
-            --border: #0d3ec4;
-        }
+:root {
+    --primary: rgb(7, 160, 207);
+    --primary-hover: rgb(65, 125, 214);
+    --secondary: rgb(5, 28, 128);
+    
+    /* Versões corrigidas com tons de azul: */
+    --dark: #2c3e50;       /* Um azul bem escuro/sóbrio para o texto não sumir */
+    --white: #f0f8ff;      /* Azul "Alice Blue" (um branco com toque azulado bem claro) */
+    --border: #d0e4f5;     /* Um azul claro suave ideal para linhas e bordas */
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
         * {
@@ -23,7 +26,7 @@
         }
 
         header {
-            background-color: var(--white);
+            background-color: var(--primary);
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             padding: 1rem 2rem;
             position: sticky;
