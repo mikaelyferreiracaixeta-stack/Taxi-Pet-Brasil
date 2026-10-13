@@ -1,22 +1,26 @@
-/* IMPORTANTE: O @import deve sempre ficar na primeira linha do arquivo */
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E PALETA DE CORES
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
   /* Cores Principais do Projeto */
   --primary: rgb(7, 160, 207);
-  --primary-hover: rgb(65, 125, 214);
+  --primary-hover: rgb(5, 137, 179);
   --secondary: rgb(5, 28, 128);
+  --whatsapp-color: #25D366;
+  --whatsapp-hover: #1ebd54;
   
-  /* Versões corrigidas com tons de azul e neutros */
+  /* Tons de Fundo e Estrutura */
   --dark: #2c3e50;           /* Azul escuro sóbrio para textos principais */
-  --white: #f0f8ff;          /* Azul Alice Blue (fundo do formulário) */
-  --pure-white: #ffffff;     /* Branco absoluto para textos e contrastes */
+  --white-form: #ffffff;     /* Alterado para branco puro para um visual mais limpo e moderno */
+  --pure-white: #ffffff;     
   --border: #d0e4f5;         /* Azul claro suave para linhas e bordas */
-  --light: #f4f8fb;          /* Fundo geral da página */
+  --light-bg: #f4f8fb;       /* Fundo geral da página */
 
   /* Cores de Texto e Inputs */
   --text-muted: #666666;
-  --input-bg: #fafafa;
+  --input-bg: #fdfdfd;
 }
 
 * {
@@ -27,15 +31,17 @@
 }
 
 body {
-  background-color: var(--light);
+  background-color: var(--light-bg);
   color: var(--dark);
   line-height: 1.6;
 }
 
-/* Header & Navegação */
+/* ==========================================================================
+   HEADER & NAVEGAÇÃO
+   ========================================================================== */
 header {
   background-color: var(--primary);
-  box-shadow: 0 2px 5px rgba(252, 251, 251, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -53,7 +59,7 @@ header {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--pure-white); /* Corrigido para garantir contraste no header */
+  color: var(--pure-white); 
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -62,18 +68,22 @@ header {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--pure-white); /* Corrigido para leitura no fundo azul */
+  color: rgba(255, 255, 255, 0.85); /* Tom suave que ganha destaque no hover */
   margin-left: 1.5rem;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: all 0.2s ease;
 }
 
 .nav-links a:hover, 
 .nav-links a.active {
-  color: var(--secondary); /* Destaca ao passar o mouse */
+  color: var(--pure-white); 
+  border-bottom: 2px solid var(--pure-white);
+  padding-bottom: 4px;
 }
 
-/* Estrutura do Formulário */
+/* ==========================================================================
+   ESTRUTURA DO FORMULÁRIO
+   ========================================================================== */
 .container {
   max-width: 800px;
   margin: 3rem auto;
@@ -81,63 +91,69 @@ header {
 }
 
 .form-container {
-  background-color: var(--white);
-  border-radius: 8px;
-  padding: 2.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background-color: var(--white-form);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 10px 30px rgba(7, 160, 207, 0.05);
 }
 
 h1 {
   text-align: center;
   color: var(--dark);
-  margin-bottom: 0.5rem;
-  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 
 .subtitle {
   text-align: center;
   color: var(--text-muted);
-  margin-bottom: 2.5rem;
-  font-size: 1rem;
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 fieldset {
   border: none;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 legend {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 1rem;
+  color: var(--secondary); /* Destaque elegante para divisão de passos */
+  margin-bottom: 1.2rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   width: 100%;
-  border-bottom: 2px solid var(--border); /* Alinhado com a paleta do projeto */
-  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border); 
+  padding-bottom: 0.6rem;
 }
 
 .form-group {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 label {
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--dark);
 }
 
-/* Customização dos Campos de Entrada */
+/* ==========================================================================
+   CAMPOS DE ENTRADA (INPUTS)
+   ========================================================================== */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -146,13 +162,13 @@ input[type="time"],
 select,
 textarea {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.85rem;
   border: 1px solid var(--border);
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
   color: var(--dark);
   background-color: var(--input-bg);
-  transition: border-color 0.3s, background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 input:focus, 
@@ -160,80 +176,111 @@ select:focus,
 textarea:focus {
   outline: none;
   border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(7, 160, 207, 0.1);
   background-color: var(--pure-white);
 }
 
-.radio-group, 
-.checkbox-group {
+/* Radio & Checkboxes */
+.radio-group {
   display: flex;
-  gap: 1.5rem;
-  margin-top: 0.5rem;
+  gap: 2rem;
+  margin-top: 0.75rem;
 }
 
-.radio-item, 
-.checkbox-item {
+.radio-item {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.radio-item input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
   cursor: pointer;
 }
 
 textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
 }
 
-/* Botões */
-.btn-submit {
-  display: block;
+/* ==========================================================================
+   AÇÕES DO FORMULÁRIO (BOTÃO DE ENVIO WHATSAPP)
+   ========================================================================== */
+.form-actions {
+  margin-top: 2rem;
   width: 100%;
-  background-color: var(--primary);
+}
+
+.btn-enviar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  background-color: var(--whatsapp-color);
   color: var(--pure-white);
   border: none;
-  padding: 1rem;
-  border-radius: 5px;
-  font-size: 1.1rem;
+  padding: 1.1rem;
+  border-radius: 8px;
+  font-size: 1.15rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s;
-  margin-top: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
 }
 
-.btn-submit:hover {
-  background-color: var(--primary-hover);
+.btn-enviar:hover {
+  background-color: var(--whatsapp-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
 }
 
-.btn-submit:active {
-  transform: scale(0.99);
+.btn-enviar:active {
+  transform: translateY(1px);
 }
 
-/* Rodapé */
+/* ==========================================================================
+   RODAPÉ & RESPONSIVIDADE
+   ========================================================================== */
 footer {
   background-color: var(--dark);
-  color: var(--pure-white);
+  color: rgba(255, 255, 255, 0.7);
   text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 5rem;
+  padding: 2.5rem 1rem;
+  margin-top: 6rem;
+  font-size: 0.95rem;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .nav-container {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
+    text-align: center;
   }
+  
   .nav-links a {
-    margin: 0 0.5rem;
+    margin: 0 0.75rem;
   }
+  
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
   }
+  
   .form-container {
-    padding: 1.5rem;
+    padding: 2rem 1.25rem;
   }
+  
   .radio-group {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
   }
 }

@@ -3,61 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taxi Pet Brasil</title>
+    <title>Táxi Pet Brasil - Transporte Seguro de Animais no Gama, Brasília</title>
+    
+    <!-- Folhas de Estilo (CSS) -->
     <link rel="stylesheet" href="CSS/style.css">
-    <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Font Awesome (Ícones Oficiais) -->
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
- 
-    <header>
+
+    <!-- ==========================================
+         CABEÇALHO & NAVEGAÇÃO
+         ========================================== -->
+    <header class="site-header">
         <nav class="area-navegacao">
-             <img class="logo" src="img/logo.png" alt="logo" width="200px" height="100px">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="img/logo.png" alt="Logo Táxi Pet Brasil" width="200" height="100">
+            </a>
             
             <ul class="menu-header">
-    <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-    <li><a class="icones" href="agendamento.html"><i class="fa-solid fa-calendar-check"></i> Agendar Viagem</a></li>
-    <li><a class="icones" href="frota.html"><i class="fa-solid fa-van-shuttle"></i> Nossa Frota</a></li>
-    <li><a class="icones" href="conta-pet.html"><i class="fa-solid fa-paw"></i> Meus Pets</a></li>
-    <li><a class="icones" href="contato.html"><i class="fa-solid fa-headset"></i> contato</a></li>
-    <li><a class="icones" href="login.html"><i class="fa-solid fa-user-lock"></i> Entrar</a></li>
-</ul>
-
+                <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a class="icones" href="agendamento.html"><i class="fa-solid fa-calendar-check"></i> Agendar Viagem</a></li>
+                <li><a class="icones" href="frota.html"><i class="fa-solid fa-van-shuttle"></i> Nossa Frota</a></li>
+                <li><a class="icones" href="conta-pet.html"><i class="fa-solid fa-paw"></i> Meus Pets</a></li>
+                <li><a class="icones" href="contato.html"><i class="fa-solid fa-headset"></i> Contato</a></li>
+                <li><a class="icones" href="login.html"><i class="fa-solid fa-user-lock"></i> Entrar</a></li>
+            </ul>
         </nav>
     </header>
- 
+
+    <!-- ==========================================
+         CONTEÚDO PRINCIPAL
+         ========================================== -->
     <main>
-        <!-- Banner e Bloco de Agendamento -->
-        <article class="area-banner" id="Home">
-            <section id="banner">
-                <img src="img/banner.png" alt="banner" id="banner_image">
-            </section>
-            <section id="agendar">
-                <h2 id="agendar_titulo">Dia Disponível para o atendimento</h2>
-                <button id="agendar_botao" onclick="window.location.href='cadastro.html'">Fazer pedido</button>
-            </section>
-        </article>
+        
+        <!-- 1. Seção Hero (Apresentação Principal) -->
+        <section class="secao-hero">
+            <div class="container-texto">
+                <h1>Transporte Seguro e Confortável para o seu Pet</h1>
+                <p class="subtitulo">Serviço especializado de táxi pet em Gama, Brasília-DF e região.</p>
+                <p class="descricao">Levamos seu melhor amigo ao veterinário, pet shop, hotel ou passeios com o carinho e a segurança que ele merece.</p>
+            </div>
+        </section>
 
-        <!-- Seção Sobre Nós -->
-        <article class="area-sobre">
-            <section class="sobre">
-                <h1>Táxi Pet Brasil</h1>
-                <p class="subtitulo">Transporte seguro e confortável para o seu animal de estimação</p>
-                <p>O Táxi Pet Brasil é um serviço de transporte especializado para animais de estimação, oferecendo conforto e segurança durante a viagem. Nossa missão é conectar proprietários de pets com motoristas qualificados, garantindo uma experiência tranquila e agradável para todos os envolvidos.</p>
-            </section>
-        </article>
- 
-        <!-- Conteúdo Inferior Organizado: Localização primeiro, depois Contato -->
-        <article class="conteudo-inferior">
-            <section class="area-localizacao">
-                <h2>Localização</h2>
-                <p>Temos táxi pet em Gama, Brasília-DF! Levamos seu melhor amigo ao veterinário, pet shop ou passeios com total conforto e segurança. Agende o transporte do seu pet!</p>
-            </section>
+        <!-- 2. Seção de Benefícios (Diferenciais rápidos) -->
+        <section class="secao-beneficios">
+            <div class="grid-beneficios">
+                <div class="beneficio-card">
+                    <i class="fa-solid fa-shield-dog"></i>
+                    <h3>Segurança Máxima</h3>
+                    <p>Caixas higienizadas e cintos adaptados.</p>
+                </div>
+                <div class="beneficio-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>Sempre Pontual</h3>
+                    <p>Compromisso total com horários agendados.</p>
+                </div>
+                <div class="beneficio-card">
+                    <i class="fa-solid fa-heart"></i>
+                    <h3>Amor aos Animais</h3>
+                    <p>Motoristas treinados e carinhosos.</p>
+                </div>
+            </div>
+        </section>
 
-    
-        </article>
+        <!-- 3. Seção do Banner & Chamada para Ação (CTA) -->
+        <section class="secao-cta" id="Home">
+            <div class="banner-wrapper">
+                <img src="img/banner.png" alt="Banner Informativo Táxi Pet" id="banner_image">
+            </div>
+            
+            <div class="cta-acoes">
+                <h2>Pronto para agendar a viagem do seu amigo?</h2>
+                <div class="botoes-grupo">
+                    <button class="btn-principal" onclick="window.location.href='cadastro.html'">
+                        <i class="fa-solid fa-car"></i> Fazer Pedido Online
+                    </button>
+                    <a href="https://wa.me" target="_blank" class="btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Seção de Depoimentos (Prova Social) -->
+        <section class="secao-depoimentos">
+            <h2>O que os tutores dizem sobre nós</h2>
+            <div class="depoimento-container">
+                <blockquote class="depoimento-card">
+                    <p>"Excelente serviço! Levaram o Thor ao veterinário com muito cuidado. Super pontuais e carinhosos."</p>
+                    <cite>— Mariana S., Tutora do Thor 🐕</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- 5. Seção de Localização -->
+        <section class="secao-localizacao">
+            <h2>Região de Atendimento</h2>
+            <p>Atendemos com exclusividade a cidade de <strong>Gama, Brasília-DF</strong> e arredores. Precisa de rotas mais longas? Fale com a gente!</p>
+        </section>
+
     </main>
 
+    <!-- ==========================================
+         RODAPÉ DO SITE
+         ========================================== -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Táxi Pet Brasil. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts JavaScript -->
     <script src="js/Carrinho.js"></script>
     <script src="js/busca.js"></script>
 </body>

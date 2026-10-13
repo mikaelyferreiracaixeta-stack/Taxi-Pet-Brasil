@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar Táxi Pet - PetTaxi</title>
     <link rel="stylesheet" href="agendamento.css">
+    <!-- Font Awesome para adicionar o ícone do WhatsApp no botão -->
+    <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -122,3 +124,71 @@
                         <textarea id="observacoes" placeholder="Ex: O pet tem alergia a certos alimentos..."></textarea>
                     </div>
                 </fieldset>
+
+                <!-- BOTÃO DE ENVIO ADICIONADO -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-enviar">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Agendamento via WhatsApp
+                    </button>
+                </div>
+
+            </form> 
+        </div>
+    </main>
+
+    <!-- SCRIPT PARA ENVIAR OS DADOS AUTOMATICAMENTE VIA WHATSAPP -->
+    <script>
+        document.getElementById('formAgendamento').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o recarregamento padrão da página
+
+            // Substitua pelo número do seu negócio (Exemplo: 55 + DDD + Número)
+            // Não coloque espaços, traços ou parênteses. Apenas números.
+            const numeroTelefone = "5561999999999"; 
+
+            // Coleta os valores digitados no formulário
+            const nome = document.getElementById('nome').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const email = document.getElementById('email').value;
+            const nomePet = document.getElementById('nome-pet').value;
+            const tipoPet = document.getElementById('tipo-pet').value;
+            const portePet = document.getElementById('porte-pet').value;
+            const acompanhante = document.querySelector('input[name="acompanhante"]:checked').value;
+            const origem = document.getElementById('origem').value;
+            const destino = document.getElementById('destino').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+            const observacoes = document.getElementById('observacoes').value || "Nenhuma";
+
+            // Formata a data para o padrão brasileiro (DD/MM/AAAA)
+            const dataFormatada = data.split('-').reverse().join('/');
+
+            // Cria o texto estruturado que será enviado no WhatsApp
+            const textoMensagem = 
+                `Olá! Gostaria de solicitar um agendamento de táxi pet:\n\n` +
+                `👤 *DADOS DO TUTOR*\n` +
+                `• Nome: ${nome}\n` +
+                `• Telefone: ${whatsapp}\n` +
+                `• E-mail: ${email}\n\n` +
+                `🐶 *DADOS DO PET*\n` +
+                `• Nome do Pet: ${nomePet}\n` +
+                `• Espécie: ${tipoPet}\n` +
+                `• Porte: ${portePet}\n` +
+                `• Tutor acompanha?: ${acompanhante}\n\n` +
+                `📍 *DETALHES DO PERCURSO*\n` +
+                `• Origem: ${origem}\n` +
+                `• Destino: ${destino}\n` +
+                `• Data: ${dataFormatada}\n` +
+                `• Hora: ${hora}\n\n` +
+                `📝 *OBSERVAÇÕES*\n` +
+                `${observacoes}`;
+
+            // Codifica o texto para o formato aceito em URLs externas
+            const textoCodificado = encodeURIComponent(textoMensagem);
+
+            // Monta o link da API oficial do WhatsApp e redireciona o visitante
+            const urlWhatsapp = `https://whatsapp.com{numeroTelefone}&text=${textoCodificado}`;
+            window.open(urlWhatsapp, '_blank');
+        });
+    </script>
+</body>
+</html>
