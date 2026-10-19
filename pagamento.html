@@ -4,47 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forma de Pagamento</title>
+    <link rel="stylesheet" href=" pagamento.css">
 </head>
 <body>
-    <form action="/processar-pagamento" method="POST">
-    <h3>Escolha a Forma de Pagamento</h3>
 
-    <!-- Seleção do Método -->
-    <div>
-        <input type="radio" id="cartao" name="metodo_pagamento" value="cartao" checked>
-        <label for="cartao">Cartão de Crédito</label>
+    <div class="checkout-container">
+        <!-- Adicionada a classe payment-card no formulário -->
+        <form action="/processar-pagamento" method="POST" class="payment-card">
+            
+            <!-- Adicionada a classe payment-title no título -->
+            <h3 class="payment-title">Escolha a Forma de Pagamento</h3>
 
-        <input type="radio" id="pix" name="metodo_pagamento" value="pix">
-        <label for="pix">Pix</label>
+            <!-- Seleção do Método com estrutura de botões modernos -->
+            <div class="payment-methods">
+                <label class="method-option" for="cartao">
+                    <input type="radio" id="cartao" name="metodo_pagamento" value="cartao" checked onchange="toggleCartao(true)">
+                    <span>💳 Cartão</span>
+                </label>
 
-        <input type="radio" id="boleto" name="metodo_pagamento" value="boleto">
-        <label for="boleto">Boleto Bancário</label>
+                <label class="method-option" for="pix">
+                    <input type="radio" id="pix" name="metodo_pagamento" value="pix" onchange="toggleCartao(false)">
+                    <span>⚡ Pix</span>
+                </label>
+
+                <label class="method-option" for="boleto">
+                    <input type="radio" id="boleto" name="metodo_pagamento" value="boleto" onchange="toggleCartao(false)">
+                    <span>📄 Boleto</span>
+                </label>
+            </div>
+
+            <!-- Seção de Dados do Cartão organizada com as classes corretas -->
+            <div id="dados-cartao" class="payment-details">
+                <h4 class="section-subtitle">Dados do Cartão</h4>
+                
+                <div class="form-group">
+                    <label for="nome_cartao">Nome no Cartão</label>
+                    <input type="text" id="nome_cartao" name="nome_cartao" class="form-control" required placeholder="Como está no cartão">
+                </div>
+
+                <div class="form-group">
+                    <label for="numero_cartao">Número do Cartão</label>
+                    <input type="text" id="numero_cartao" name="numero_cartao" class="form-control" required placeholder="0000 0000 0000 0000">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="validade">Validade</label>
+                        <input type="text" id="validade" name="validade" class="form-control" required placeholder="MM/AA">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" class="form-control" required placeholder="123">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão de Envio com a classe btn-pay -->
+            <button type="submit" class="btn-pay">Finalizar Compra</button>
+            
+            <div class="security-badge">
+                🔒 Ambiente 100% Seguro e Criptografado
+            </div>
+        </form>
     </div>
 
-    <!-- Dados do Cartão (Exibidos se a opção cartão for selecionada) -->
-    <div id="dados-cartao">
-        <h4>Dados do Cartão</h4>
-        
-        <label for="nome_cartao">Nome no Cartão:</label>
-        <input type="text" id="nome_cartao" name="nome_cartao" required placeholder="Como está no cartão">
-
-        <label for="numero_cartao">Número do Cartão:</label>
-        <input type="text" id="numero_cartao" name="numero_cartao" required placeholder="0000 0000 0000 0000">
-
-        <div style="display: flex; gap: 10px;">
-            <div>
-                <label for="validade">Validade:</label>
-                <input type="text" id="validade" name="validade" required placeholder="MM/AA">
-            </div>
-            <div>
-                <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" name="cvv" required placeholder="123">
-            </div>
-        </div>
-    </div>
-
-    <!-- Botão de Envio -->
-    <button type="submit" style="margin-top: 20px;">Finalizar Compra</button>
-</form>
+    <script>
+        function toggleCartao(show) {
+            const dadosCartao = document.getElementById('dados-cartao');
+            const inputs = dadosCartao.querySelectorAll('input');
+            
+            if (show) {
+                dadosCartao.classList.remove('hidden');
+                inputs.forEach(input => input.required = true);
+            } else {
+                dadosCartao.classList.add('hidden');
+                inputs.forEach(input => input.required = false);
+            }
+        }
+    </script>
 </body>
 </html>
