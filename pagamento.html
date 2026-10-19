@@ -4,49 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forma de Pagamento</title>
-    <link rel="stylesheet" href=" pagamento.css">
+    <link rel="stylesheet" href="pagamento.css">
+    <style>
+        /* Caso não esteja no seu CSS, a classe hidden é necessária para esconder as opções */
+        .hidden { display: none !important; }
+    </style>
 </head>
 <body>
-
     <div class="checkout-container">
-        <!-- Adicionada a classe payment-card no formulário -->
         <form action="/processar-pagamento" method="POST" class="payment-card">
-            
-            <!-- Adicionada a classe payment-title no título -->
             <h3 class="payment-title">Escolha a Forma de Pagamento</h3>
 
-            <!-- Seleção do Método com estrutura de botões modernos -->
+            <!-- Seleção do Método -->
             <div class="payment-methods">
                 <label class="method-option" for="cartao">
-                    <input type="radio" id="cartao" name="metodo_pagamento" value="cartao" checked onchange="toggleCartao(true)">
+                    <input type="radio" id="cartao" name="metodo_pagamento" value="cartao" checked onchange="mudarMetodoPagamento('cartao')">
                     <span>💳 Cartão</span>
                 </label>
-
                 <label class="method-option" for="pix">
-                    <input type="radio" id="pix" name="metodo_pagamento" value="pix" onchange="toggleCartao(false)">
+                    <input type="radio" id="pix" name="metodo_pagamento" value="pix" onchange="mudarMetodoPagamento('pix')">
                     <span>⚡ Pix</span>
                 </label>
-
                 <label class="method-option" for="boleto">
-                    <input type="radio" id="boleto" name="metodo_pagamento" value="boleto" onchange="toggleCartao(false)">
+                    <input type="radio" id="boleto" name="metodo_pagamento" value="boleto" onchange="mudarMetodoPagamento('boleto')">
                     <span>📄 Boleto</span>
                 </label>
             </div>
 
-            <!-- Seção de Dados do Cartão organizada com as classes corretas -->
+            <!-- Seção de Dados do Cartão -->
             <div id="dados-cartao" class="payment-details">
                 <h4 class="section-subtitle">Dados do Cartão</h4>
-                
                 <div class="form-group">
                     <label for="nome_cartao">Nome no Cartão</label>
                     <input type="text" id="nome_cartao" name="nome_cartao" class="form-control" required placeholder="Como está no cartão">
                 </div>
-
                 <div class="form-group">
                     <label for="numero_cartao">Número do Cartão</label>
                     <input type="text" id="numero_cartao" name="numero_cartao" class="form-control" required placeholder="0000 0000 0000 0000">
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
                         <label for="validade">Validade</label>
@@ -59,7 +54,25 @@
                 </div>
             </div>
 
-            <!-- Botão de Envio com a classe btn-pay -->
+            <!-- Seção do Pix (Nova) -->
+            <div id="dados-pix" class="payment-details hidden">
+                <h4 class="section-subtitle">Pagamento via Pix</h4>
+                <div class="pix-instructions">
+                    <p>O código QR Pix será gerado após finalizar a compra.</p>
+                    <p>💡 <strong>Dica:</strong> O pagamento por Pix é aprovado instantaneamente!</p>
+                </div>
+            </div>
+
+            <!-- Seção do Boleto (Nova) -->
+            <div id="dados-boleto" class="payment-details hidden">
+                <h4 class="section-subtitle">Pagamento via Boleto</h4>
+                <div class="boleto-instructions">
+                    <p>O boleto bancário será gerado para impressão após a confirmação.</p>
+                    <p>⚠️ <strong>Atenção:</strong> Boletos podem levar até 3 dias úteis para compensar.</p>
+                </div>
+            </div>
+
+            <!-- Botão de Envio -->
             <button type="submit" class="btn-pay">Finalizar Compra</button>
             
             <div class="security-badge">
@@ -69,16 +82,29 @@
     </div>
 
     <script>
-        function toggleCartao(show) {
-            const dadosCartao = document.getElementById('dados-cartao');
-            const inputs = dadosCartao.querySelectorAll('input');
-            
-            if (show) {
-                dadosCartao.classList.remove('hidden');
-                inputs.forEach(input => input.required = true);
-            } else {
-                dadosCartao.classList.add('hidden');
-                inputs.forEach(input => input.required = false);
+        function mudarMetodoPagamento(metodo) {
+            // Seleciona todas as seções de detalhes
+            const secaoCartao = document.getElementById('dados-cartao');
+            const secaoPix = document.getElementById('dados-pix');
+            const secaoBoleto = document.getElementById('dados-boleto');
+
+            // Esconde todas primeiro
+            secaoCartao.classList.add('hidden');
+            secaoPix.classList.add('hidden');
+            secaoBoleto.classList.add('hidden');
+
+            // Remove a obrigatoriedade dos inputs do cartão por padrão
+            const inputsCartao = secaoCartao.querySelectorAll('input');
+            inputsCartao.forEach(input => input.required = false);
+
+            // Mostra a seção correta baseada na seleção
+            if (metodo === 'cartao') {
+                secaoCartao.classList.remove('hidden');
+                inputsCartao.forEach(input => input.required = true); // Ativa required apenas para cartão
+            } else if (metodo === 'pix') {
+                secaoPix.classList.remove('hidden');
+            } else if (metodo === 'boleto') {
+                secaoBoleto.classList.remove('hidden');
             }
         }
     </script>
