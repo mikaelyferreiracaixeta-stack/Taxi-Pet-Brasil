@@ -21,7 +21,25 @@
             font-size: 16px;
             cursor: pointer;
         }
-        .btn-submit:hover { background-color: #0056b3; }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        .pix-instructions, .boleto-instructions, .dinheiro-instructions {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #28a745;
+            margin-top: 10px;
+        }
+        .boleto-instructions {
+            border-left-color: #ffc107;
+        }
+        .dinheiro-instructions {
+            border-left-color: #17a2b8;
+        }
+        .form-group-inline {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -29,21 +47,33 @@
         <form action="/processar-pagamento" method="POST" class="payment-card">
             <h3 class="payment-title">Escolha a Forma de Pagamento</h3>
 
-            <!-- Seleção do Método (FECHADO CORRETAMENTE AQUI) -->
+            <!-- Seleção do Método -->
             <div class="payment-methods">
                 <label class="method-option" for="cartao">
                     <input type="radio" id="cartao" name="metodo_pagamento" value="cartao" checked onchange="mudarMetodoPagamento('cartao')">
-                    <span>💳 Cartão</span>
+                    <span>💳 Cartão de Crédito</span>
+                </label>
+                <label class="method-option" for="debito">
+                    <input type="radio" id="debito" name="metodo_pagamento" value="debito" onchange="mudarMetodoPagamento('debito')">
+                    <span>💳 Cartão de Débito</span>
                 </label>
                 <label class="method-option" for="pix">
                     <input type="radio" id="pix" name="metodo_pagamento" value="pix" onchange="mudarMetodoPagamento('pix')">
                     <span>⚡ Pix</span>
                 </label>
-            </div> <!-- <--- Faltava fechar esta div -->
+                <label class="method-option" for="boleto">
+                    <input type="radio" id="boleto" name="metodo_pagamento" value="boleto" onchange="mudarMetodoPagamento('boleto')">
+                    <span>📄 Boleto</span>
+                </label>
+                <label class="method-option" for="dinheiro">
+                    <input type="radio" id="dinheiro" name="metodo_pagamento" value="dinheiro" onchange="mudarMetodoPagamento('dinheiro')">
+                    <span>💵 Dinheiro</span>
+                </label>
+            </div>
 
-            <!-- Seção de Dados do Cartão -->
+            <!-- Seção de Dados do Cartão (Crédito ou Débito) -->
             <div id="dados-cartao" class="payment-details">
-                <h4 class="section-subtitle">Dados do Cartão</h4>
+                <h4 id="titulo-cartao" class="section-subtitle">Dados do Cartão</h4>
                 <div class="form-group">
                     <label for="nome_cartao">Nome no Cartão</label>
                     <input type="text" id="nome_cartao" name="nome_cartao" class="form-control" required placeholder="Como está no cartão">
@@ -73,32 +103,64 @@
                 </div>
             </div>
 
+            <!-- Seção do Boleto -->
+            <div id="dados-boleto" class="payment-details hidden">
+                <h4 class="section-subtitle">Pagamento via Boleto</h4>
+                <div class="boleto-instructions">
+                    <p>O boleto bancário será gerado após a finalização do pedido.</p>
+                    <p>⏳ <strong>Aviso:</strong> Boletos podem levar até 3 dias úteis para serem compensados.</p>
+                </div>
+            </div>
+
+            <!-- Seção de Dinheiro -->
+            <div id="dados-dinheiro" class="payment-details hidden">
+                <h4 class="section-subtitle">Pagamento em Dinheiro</h4>
+                <div class="dinheiro-instructions">
+                    <p>O pagamento será realizado no ato da entrega ou retirada.</p>
+                    <div class="form-group form-group-inline">
+                        <label for="troco">Precisa de troco para quanto? (Deixe em branco se não precisar)</label>
+                        <input type="text" id="troco" name="troco" class="form-control" placeholder="Ex: R$ 50,00">
+                    </div>
+                </div>
+            </div>
+
             <!-- Botão para enviar o formulário -->
             <button type="submit" class="btn-submit">Finalizar Compra</button>
-
-        </form> <!-- <--- Faltava fechar o formulário -->
-    </div> <!-- <--- Faltava fechar a div checkout-container -->
+        </form>
+    </div>
 
     <script>
         function mudarMetodoPagamento(metodo) {
-            // Seleciona apenas as seções que realmente existem no HTML
             const secaoCartao = document.getElementById('dados-cartao');
             const secaoPix = document.getElementById('dados-pix');
-
-            // Esconde todas primeiro (Removido o boleto que não existia)
+            const secaoBoleto = document.getElementById('dados-boleto');
+            const secaoDinheiro = document.getElementById('dados-dinheiro');
+            const tituloCartao = document.getElementById('titulo-cartao');
+            
+            // Esconde todas as seções
             if (secaoCartao) secaoCartao.classList.add('hidden');
             if (secaoPix) secaoPix.classList.add('hidden');
+            if (secaoBoleto) secaoBoleto.classList.add('hidden');
+            if (secaoDinheiro) secaoDinheiro.classList.add('hidden');
 
-            // Remove a obrigatoriedade dos inputs do cartão por padrão
+            // Desativa a obrigatoriedade dos campos do cartão por padrão
             const inputsCartao = secaoCartao.querySelectorAll('input');
             inputsCartao.forEach(input => input.required = false);
 
-            // Mostra a seção correta baseada na seleção
-            if (metodo === 'cartao') {
+            // Exibe a seção selecionada e ativa regras específicas
+            if (metodo === 'cartao' || metodo === 'debito') {
                 secaoCartao.classList.remove('hidden');
-                inputsCartao.forEach(input => input.required = true); // Ativa obrigatórios do cartão
+                inputsCartao.forEach(input => input.required = true);
+                
+                // Muda o título dinamicamente para o usuário saber o que selecionou
+                tituloCartao.textContent = metodo === 'cartao' ? 'Dados do Cartão de Crédito' : 'Dados do Cartão de Débito';
+                
             } else if (metodo === 'pix') {
                 secaoPix.classList.remove('hidden');
+            } else if (metodo === 'boleto') {
+                secaoBoleto.classList.remove('hidden');
+            } else if (metodo === 'dinheiro') {
+                secaoDinheiro.classList.remove('hidden');
             }
         }
     </script>
