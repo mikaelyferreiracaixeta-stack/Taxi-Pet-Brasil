@@ -3,32 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar - PetTaxi</title>
+    <title>Entrar - Táxi Pet Brasil</title>
+    
+    <!-- Folhas de Estilo (CSS) -->
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="login.css">
-   
+    
+    <!-- Font Awesome (Ícones Oficiais) -->
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <!-- Cabeçalho / Navegação -->
-    <header>
-        <nav class="nav-container">
-            <a href="index.html" class="logo">🐾 PetTaxi</a>
-            <div class="nav-links">
-                <a href="index.html">Início</a>
-                <a href="frota.html">Nossa Frota</a>
-                <a href="agendamentos.html">Agendamento</a>
-                <a href="contato.html">Contato</a>
-            </div>
+    <!-- ==========================================
+         CABEÇALHO & NAVEGAÇÃO PADRÃO
+         ========================================== -->
+    <header class="site-header">
+        <nav class="area-navegacao">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="img/logo.png" alt="Logo Táxi Pet Brasil" width="200" height="100">
+            </a>
+            
+            <ul class="menu-header">
+                <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a class="icones" href="agendamento.html"><i class="fa-solid fa-calendar-check"></i> Agendar Viagem</a></li>
+                <li><a class="icones" href="frota.html"><i class="fa-solid fa-van-shuttle"></i> Nossa Frota</a></li>
+                <li><a class="icones" href="contaPet.html"><i class="fa-solid fa-paw"></i> Meus Pets</a></li>
+                <li><a class="icones" href="contato.html"><i class="fa-solid fa-headset"></i> Contato</a></li>
+                <li><a class="icones" href="login.html"><i class="fa-solid fa-user-lock"></i> Entrar</a></li>
+                <li><a class="icones" href="pagamento.html"><i class="fa-solid fa-credit-card"></i> Pagamento</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Área do Formulário de Login -->
+    <!-- ==========================================
+         ÁREA DO FORMULÁRIO DE LOGIN
+         ========================================== -->
     <main class="login-container">
         <div class="login-box">
             <h1>Bem-vindo de Volta!</h1>
             <p>Acesse seu painel para acompanhar as viagens do seu pet.</p>
 
-            <form action="conta-pet.html" method="GET" onsubmit="alert('Login efetuado com sucesso!');">
+            <!-- Redirecionamento corrigido para contaPet.html -->
+            <form action="contaPet.html" method="GET" onsubmit="alert('Login efetuado com sucesso!');">
                 
                 <!-- Campo E-mail -->
                 <div class="form-group">
@@ -62,8 +78,11 @@
         </div>
     </main>
 
-    <footer>
-        <p>&copy;Táxi Pet Serviços Automotivos. Todos os direitos reservados.</p>
+    <!-- ==========================================
+         RODAPÉ PADRÃO
+         ========================================== -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Táxi Pet Brasil. Todos os direitos reservados.</p>
     </footer>
 
 </body>

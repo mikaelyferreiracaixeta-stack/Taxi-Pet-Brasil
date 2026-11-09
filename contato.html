@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - PetTaxi</title>
+    <title>Contato - Táxi Pet Brasil</title>
+    
+    <!-- Folhas de Estilo (CSS) -->
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="contato.css">  
+    
+    <!-- Font Awesome (Ícones Oficiais) -->
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <!-- Cabeçalho / Navegação -->
-    <header>
-        <nav class="nav-container">
-            <a href="index.html" class="logo">🐾 PetTaxi</a>
-            <div class="nav-links">
-                <a href="index.html">Início</a>
-                <a href="frota.html">Nossa Frota</a>
-                <a href="agendamentos.html">Agendamento</a>
-                <a href="contato.html" class="active">Contato</a>
-            </div>
+    <!-- ==========================================
+         CABEÇALHO & NAVEGAÇÃO PADRÃO
+         ========================================== -->
+    <header class="site-header">
+        <nav class="area-navegacao">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="img/logo.png" alt="Logo Táxi Pet Brasil" width="200" height="100">
+            </a>
+            
+            <ul class="menu-header">
+                <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a class="icones" href="agendamento.html"><i class="fa-solid fa-calendar-check"></i> Agendar Viagem</a></li>
+                <li><a class="icones" href="frota.html"><i class="fa-solid fa-van-shuttle"></i> Nossa Frota</a></li>
+                <li><a class="icones" href="contaPet.html"><i class="fa-solid fa-paw"></i> Meus Pets</a></li>
+                <li><a class="icones" href="contato.html"><i class="fa-solid fa-headset"></i> Contato</a></li>
+                <li><a class="icones" href="login.html"><i class="fa-solid fa-user-lock"></i> Entrar</a></li>
+                <li><a class="icones" href="pagamento.html"><i class="fa-solid fa-credit-card"></i> Pagamento</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -27,26 +41,29 @@
         <p>Tire suas dúvidas, envie sugestões ou solicite parcerias com o nosso serviço de transporte pet.</p>
     </section>
 
-    <!-- Seção de Contato -->
+    <!-- ==========================================
+         CONTEÚDO DE CONTATO
+         ========================================== -->
     <main class="contact-container">
         
         <!-- Lado Esquerdo: Info de Canais Rápidos -->
         <div class="contact-info">
             
             <div class="info-card">
-                <div class="info-title">📞 Telefones e WhatsApp</div>
+                <div class="info-title"><i class="fa-solid fa-phone"></i> Telefones e WhatsApp</div>
+                <!-- Link do WhatsApp parametrizado corretamente com o número fictício (Código do país 55 + DDD 61) -->
                 <p>Central de Atendimento: <a href="https://wa.me" target="_blank">(61) 99999-9999</a></p>
                 <p>Plantão de Emergências: (61) 98888-8888</p>
             </div>
 
             <div class="info-card">
-                <div class="info-title">✉️ E-mail</div>
+                <div class="info-title"><i class="fa-solid fa-envelope"></i> E-mail</div>
                 <p>Suporte e Orçamentos: <a href="mailto:contato@pettaxi.com">contato@pettaxi.com</a></p>
                 <p>Parcerias e Clínicas: <a href="mailto:parcerias@pettaxi.com">parcerias@pettaxi.com</a></p>
             </div>
 
             <div class="info-card">
-                <div class="info-title">🕒 Horário de Funcionamento</div>
+                <div class="info-title"><i class="fa-solid fa-clock"></i> Horário de Funcionamento</div>
                 <p>Segunda a Sexta: 07h às 20h</p>
                 <p>Sábados e Feriados: 08h às 16h</p>
                 <p><em>*Corridas fora do horário comercial devem ser agendadas previamente.</em></p>
@@ -90,3 +107,13 @@
             </form>
         </div>
     </main>
+
+    <!-- ==========================================
+         RODAPÉ PADRÃO
+         ========================================== -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Táxi Pet Brasil. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

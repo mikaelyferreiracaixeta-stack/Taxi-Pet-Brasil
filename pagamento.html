@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forma de Pagamento</title>
+    <title>Forma de Pagamento - Táxi Pet Brasil</title>
+    
+    <!-- Folhas de Estilo (CSS) -->
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="pagamento.css">
+    
+    <!-- Font Awesome (Ícones Oficiais) -->
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <style>
         /* Garante que a classe hidden esconda os elementos */
         .hidden { display: none !important; }
         
-        /* Estilo básico apenas para o botão se destacar */
+        /* Ajuste de espaçamento para o conteúdo não colar no menu */
+        .checkout-container {
+            margin: 40px auto;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+        
         .btn-submit {
             margin-top: 20px;
             padding: 12px;
@@ -43,6 +56,31 @@
     </style>
 </head>
 <body>
+
+    <!-- ==========================================
+         CABEÇALHO & NAVEGAÇÃO PADRÃO
+         ========================================== -->
+    <header class="site-header">
+        <nav class="area-navegacao">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="img/logo.png" alt="Logo Táxi Pet Brasil" width="200" height="100">
+            </a>
+            
+            <ul class="menu-header">
+                <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a class="icones" href="agendamento.html"><i class="fa-solid fa-calendar-check"></i> Agendar Viagem</a></li>
+                <li><a class="icones" href="frota.html"><i class="fa-solid fa-van-shuttle"></i> Nossa Frota</a></li>
+                <li><a class="icones" href="contaPet.html"><i class="fa-solid fa-paw"></i> Meus Pets</a></li>
+                <li><a class="icones" href="contato.html"><i class="fa-solid fa-headset"></i> Contato</a></li>
+                <li><a class="icones" href="login.html"><i class="fa-solid fa-user-lock"></i> Entrar</a></li>
+                <li><a class="icones" href="pagamento.html"><i class="fa-solid fa-credit-card"></i> Pagamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==========================================
+         CONTEÚDO DE PAGAMENTO
+         ========================================== -->
     <div class="checkout-container">
         <form action="/processar-pagamento" method="POST" class="payment-card">
             <h3 class="payment-title">Escolha a Forma de Pagamento</h3>
@@ -71,25 +109,25 @@
                 </label>
             </div>
 
-            <!-- Seção de Dados do Cartão (Crédito ou Débito) -->
+            <!-- Seção de Dados do Cartão (Crédito ou Débito) - Removido o 'required' bruto das tags -->
             <div id="dados-cartao" class="payment-details">
-                <h4 id="titulo-cartao" class="section-subtitle">Dados do Cartão</h4>
+                <h4 id="titulo-cartao" class="section-subtitle">Dados do Cartão de Crédito</h4>
                 <div class="form-group">
                     <label for="nome_cartao">Nome no Cartão</label>
-                    <input type="text" id="nome_cartao" name="nome_cartao" class="form-control" required placeholder="Como está no cartão">
+                    <input type="text" id="nome_cartao" name="nome_cartao" class="form-control" placeholder="Como está no cartão">
                 </div>
                 <div class="form-group">
                     <label for="numero_cartao">Número do Cartão</label>
-                    <input type="text" id="numero_cartao" name="numero_cartao" class="form-control" required placeholder="0000 0000 0000 0000">
+                    <input type="text" id="numero_cartao" name="numero_cartao" class="form-control" placeholder="0000 0000 0000 0000">
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="validade">Validade</label>
-                        <input type="text" id="validade" name="validade" class="form-control" required placeholder="MM/AA">
+                        <input type="text" id="validade" name="validade" class="form-control" placeholder="MM/AA">
                     </div>
                     <div class="form-group">
                         <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" name="cvv" class="form-control" required placeholder="123">
+                        <input type="text" id="cvv" name="cvv" class="form-control" placeholder="123">
                     </div>
                 </div>
             </div>
@@ -116,7 +154,7 @@
             <div id="dados-dinheiro" class="payment-details hidden">
                 <h4 class="section-subtitle">Pagamento em Dinheiro</h4>
                 <div class="dinheiro-instructions">
-                    <p>O pagamento será realizado no ato da entrega ou retirada.</p>
+                    <p>O pagamento será realizado diretamente ao motorista na execução do serviço.</p>
                     <div class="form-group form-group-inline">
                         <label for="troco">Precisa de troco para quanto? (Deixe em branco se não precisar)</label>
                         <input type="text" id="troco" name="troco" class="form-control" placeholder="Ex: R$ 50,00">
@@ -125,9 +163,16 @@
             </div>
 
             <!-- Botão para enviar o formulário -->
-            <button type="submit" class="btn-submit">Finalizar Compra</button>
+            <button type="submit" class="btn-submit">Finalizar Agendamento</button>
         </form>
     </div>
+
+    <!-- ==========================================
+         RODAPÉ PADRÃO
+         ========================================== -->
+    <footer class="site-footer" style="text-align: center; padding: 20px; margin-top: 40px;">
+        <p>&copy; 2026 Táxi Pet Brasil. Todos os direitos reservados.</p>
+    </footer>
 
     <script>
         function mudarMetodoPagamento(metodo) {
@@ -143,16 +188,14 @@
             if (secaoBoleto) secaoBoleto.classList.add('hidden');
             if (secaoDinheiro) secaoDinheiro.classList.add('hidden');
 
-            // Desativa a obrigatoriedade dos campos do cartão por padrão
+            // Desativa a obrigatoriedade de todos os campos do cartão para não travar o envio
             const inputsCartao = secaoCartao.querySelectorAll('input');
             inputsCartao.forEach(input => input.required = false);
 
-            // Exibe a seção selecionada e ativa regras específicas
+            // Exibe a secao selecionada e aplica validações dinâmicas
             if (metodo === 'cartao' || metodo === 'debito') {
                 secaoCartao.classList.remove('hidden');
                 inputsCartao.forEach(input => input.required = true);
-                
-                // Muda o título dinamicamente para o usuário saber o que selecionou
                 tituloCartao.textContent = metodo === 'cartao' ? 'Dados do Cartão de Crédito' : 'Dados do Cartão de Débito';
                 
             } else if (metodo === 'pix') {
@@ -163,6 +206,4 @@
                 secaoDinheiro.classList.remove('hidden');
             }
         }
-    </script>
-</body>
-</html>
+

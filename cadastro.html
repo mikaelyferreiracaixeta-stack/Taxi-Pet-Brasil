@@ -3,113 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Conta - PetTaxi</title>
-   <link rel="stylesheet" href="cadastro.css">
-    <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Criar Conta - Táxi Pet Brasil</title>
+    
+    <!-- Folhas de Estilo (CSS) -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="cadastro.css">
+    
+    <!-- Font Awesome (Ícones Oficiais Corrigidos) -->
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <!-- Cabeçalho / Navegação -->
-    <header>
-        <nav class="nav-container">
-            <a href="index.html" class="logo">🐾 PetTaxi</a>
-            <div class="nav-links">
-                <a href="index.html">Início</a>
-                <a href="frota.html">Nossa Frota</a>
-                <a href="agendamentos.html">Agendamento</a>
-                <a href="contato.html">Contato</a>
-            </div>
+    <!-- ==========================================
+         CABEÇALHO & NAVEGAÇÃO PADRÃO
+         ========================================== -->
+    <header class="site-header">
+        <nav class="area-navegacao">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="img/logo.png" alt="Logo Táxi Pet Brasil" width="200" height="100">
+            </a>
+            
+            <ul class="menu-header">
+                <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a class="icones" href="agendamento.html"><i class="fa-solid fa-calendar-check"></i> Agendar Viagem</a></li>
+                <li><a class="icones" href="frota.html"><i class="fa-solid fa-van-shuttle"></i> Nossa Frota</a></li>
+                <li><a class="icones" href="contaPet.html"><i class="fa-solid fa-paw"></i> Meus Pets</a></li>
+                <li><a class="icones" href="contato.html"><i class="fa-solid fa-headset"></i> Contato</a></li>
+                <li><a class="icones" href="login.html"><i class="fa-solid fa-user-lock"></i> Entrar</a></li>
+                <li><a class="icones" href="pagamento.html"><i class="fa-solid fa-credit-card"></i> Pagamento</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
+    <!-- ==========================================
+         CONTEÚDO PRINCIPAL DE CADASTRO
+         ========================================== -->
     <main class="register-container">
         <div class="register-box">
             <h1>Crie sua Conta Pet</h1>
             <p>Cadastre-se para gerenciar seus animais e agendar transportes de forma rápida.</p>
 
-            <form action="#" method="POST" onsubmit="alert('Cadastro realizado com sucesso! Bem-vindo ao PetTaxi.'); return false;">
+            <form action="login.html" method="POST" onsubmit="alert('Cadastro realizado com sucesso! Faça seu login para continuar.');">
                 
-                <!-- Nome Completo -->
+                <!-- SEÇÃO 1: DADOS DO TUTOR -->
+                <h3 style="border-bottom: 2px solid #007bff; padding-bottom: 5px; margin-bottom: 15px; color: #333;"><i class="fa-solid fa-user"></i> Seus Dados (Tutor)</h3>
+                
                 <div class="form-group">
                     <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" required placeholder="Digite seu nome completo">
+                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
                 </div>
 
-                <!-- E-mail -->
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" required placeholder="Ex: seuemail@dominio.com">
+                    <input type="email" id="email" name="email" required placeholder="Ex: seuemail@dominio.com">
                 </div>
 
-                <!-- CPF e WhatsApp na mesma linha -->
-                <div class="form-usuario">
-                    <div class="form-group">
+                <!-- CPF e WhatsApp alinhados -->
+                <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <div class="form-group" style="flex: 1;">
                         <label for="cpf">CPF</label>
-                        <input type="text" id="cpf" required placeholder="000.000.000-00">
+                        <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="flex: 1;">
                         <label for="whatsapp">WhatsApp / Celular</label>
-                        <input type="tel" id="whatsapp" required placeholder="(61) 99999-9999">
+                        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(61) 99999-9999">
                     </div>
-                    <!-- Senha e Confirmação de Senha -->
-                <div class="form-row">
-                    <div class="form-group">
+                </div>
+
+                <!-- Senhas realinhadas fora do bloco anterior -->
+                <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 25px;">
+                    <div class="form-group" style="flex: 1;">
                         <label for="senha">Senha</label>
-                        <input type="password" id="senha" required placeholder="No mínimo 6 caracteres">
+                        <input type="password" id="senha" name="senha" required placeholder="Mínimo 6 caracteres">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="flex: 1;">
                         <label for="confirma-senha">Confirmar Senha</label>
                         <input type="password" id="confirma-senha" required placeholder="Repita a senha">
                     </div>
                 </div>
-                </div>
-                <div class="dados cachorro">
-                    <div class="dados  nome">
-                        <label class="nome" for="nome-pet">Nome do Pet</label>
-                        <input type="text" id="nome-pet" required placeholder="Digite o nome do seu pet">
+
+                <!-- SEÇÃO 2: DADOS DO PRIMEIRO PET -->
+                <h3 style="border-bottom: 2px solid #28a745; padding-bottom: 5px; margin-bottom: 15px; color: #333;"><i class="fa-solid fa-paw"></i> Cadastrar Primeiro Pet</h3>
+                
+                <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="nome-pet">Nome do Pet</label>
+                        <input type="text" id="nome-pet" name="nome_pet" required placeholder="Nome do animal">
                     </div>
-                    <div class="dados  especie">
-                        <label class="especie" for="especie-pet">Espécie</label>
-                        <input type="text" id="especie-pet" required placeholder="Ex: Cão, Gato, etc.">
-                    </div>
-                    <div class="dados temperamento">
-                        <label class="temperamento" for="temperamento-pet">Temperamento</label>
-                        <input type="text" id="temperamento-pet" required placeholder="Ex: Amigável, Tranquilo, etc.">
-                    </div>
-                    <div class="dados porte">
-                        <label class="porte" for="porte-pet">Porte</label>
-                        <input type="text" id="porte-pet" required placeholder="Ex: Pequeno, Médio, Grande">
-                    </div>
-                    <div class="dados observacoes">
-                        <label class="observacoes" for="observacoes-pet">Observações</label>
-                        <input type="text" id="observacoes-pet" placeholder="Ex: Necessita de medicação, tem alergias, etc."> 
+                    <div class="form-group" style="flex: 1;">
+                        <label for="especie-pet">Espécie / Raça</label>
+                        <input type="text" id="especie-pet" name="especie" required placeholder="Ex: Cão / Labrador, Gato">
                     </div>
                 </div>
 
-                
+                <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="temperamento-pet">Temperamento</label>
+                        <input type="text" id="temperamento-pet" name="temperamento" required placeholder="Ex: Dócil, Ansioso, Arisco">
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="porte-pet">Porte</label>
+                        <select id="porte-pet" name="porte" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc;">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Pequeno">Pequeno</option>
+                            <option value="Médio">Médio</option>
+                            <option value="Grande">Grande</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="observacoes-pet">Alertas Médicos ou Observações</label>
+                    <input type="text" id="observacoes-pet" name="alertas_medicos" placeholder="Ex: Tem alergias, medo de barulhos altos, idoso..."> 
+                </div>
 
                 <!-- Termos de Uso -->
-                <label class="terms-group">
-                    <input type="checkbox" required>
-                    <span>Eu li e aceito os <a href="#">Termos de Serviço</a> e a <a href="#">Política de Privacidade</a> para o transporte seguro do meu pet.</span>
+                <label class="terms-group" style="display: flex; align-items: flex-start; gap: 10px; margin-top: 20px; cursor: pointer;">
+                    <input type="checkbox" required style="margin-top: 4px;">
+                    <span style="font-size: 14px; color: #555;">Eu li e aceito os <a href="#">Termos de Serviço</a> e a <a href="#">Política de Privacidade</a> para o transporte seguro do meu pet.</span>
                 </label>
 
                 <!-- Botão de Envio -->
-                <button type="submit" class="btn-register">Finalizar Cadastro</button>
+                <button type="submit" class="btn-register" style="margin-top: 20px; padding: 12px; width: 100%; background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Finalizar Cadastro</button>
 
                 <!-- Link para quem já tem login -->
-                <div class="login-link">
-                    Já tem uma conta? <a href="login.html">Faça Login</a>
+                <div class="login-link" style="text-align: center; margin-top: 15px; font-size: 14px;">
+                    Já tem uma conta? <a href="login.html" style="color: #007bff; text-decoration: none; font-weight: bold;">Faça Login</a>
                 </div>
 
             </form>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; Táxi Pet Serviços Automotivos. Todos os direitos reservados.</p>
+    <!-- ==========================================
+         RODAPÉ PADRÃO
+         ========================================== -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Táxi Pet Brasil. Todos os direitos reservados.</p>
     </footer>
 
 </body>

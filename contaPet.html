@@ -3,83 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Conta Pet - PetTaxi</title>
+    <title>Minha Conta Pet - Táxi Pet Brasil</title>
+    
+    <!-- Folhas de Estilo (CSS) -->
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="contaPet.css">
+    
+    <!-- Font Awesome (Ícones Oficiais) -->
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <!-- Cabeçalho / Navegação -->
-    <header>
-        <nav class="nav-container">
-            <a href="index.html" class="logo">🐾 PetTaxi</a>
-            <div class="nav-links">
-                <a href="index.html">Início</a>
-                <a href="frota.html">Nossa Frota</a>
-                <a href="agendamentos.html">Agendamento</a>
-                <a href="conta-pet.html" class="active">Minha Conta</a>
-            </div>
+    <!-- ==========================================
+         CABEÇALHO & NAVEGAÇÃO PADRÃO
+         ========================================== -->
+    <header class="site-header">
+        <nav class="area-navegacao">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="img/logo.png" alt="Logo Táxi Pet Brasil" width="200" height="100">
+            </a>
+            
+            <ul class="menu-header">
+                <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a class="icones" href="agendamento.html"><i class="fa-solid fa-calendar-check"></i> Agendar Viagem</a></li>
+                <li><a class="icones" href="frota.html"><i class="fa-solid fa-van-shuttle"></i> Nossa Frota</a></li>
+                <li><a class="icones" href="contaPet.html"><i class="fa-solid fa-paw"></i> Meus Pets</a></li>
+                <li><a class="icones" href="contato.html"><i class="fa-solid fa-headset"></i> Contato</a></li>
+                <li><a class="icones" href="login.html"><i class="fa-solid fa-user-lock"></i> Entrar</a></li>
+                <li><a class="icones" href="pagamento.html"><i class="fa-solid fa-credit-card"></i> Pagamento</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Painel do Cliente (Dashboard) -->
+    <!-- ==========================================
+         PAINEL DO CLIENTE (DASHBOARD)
+         ========================================== -->
     <div class="dashboard-container">
         
         <!-- Menu Lateral (Sidebar) -->
         <aside class="sidebar">
             <div class="profile-summary">
-                <div class="avatar">👤</div>
+                <div class="avatar"><i class="fa-solid fa-circle-user" style="font-size: 40px;"></i></div>
                 <h3>Maria Silva</h3>
                 <p>maria@email.com</p>
             </div>
             <ul class="sidebar-menu">
-                <li><a href="#" class="active">🐾 Meus Pets</a></li>
-                <li><a href="agendamentos.html">🚗 Nova Corrida</a></li>
-                <li><a href="#">📜 Histórico</a></li>
-                <li><a href="#">⚙️ Configurações</a></li>
-                <li><a href="#" style="color: var(--danger);">🚪 Sair</a></li>
+                <li><a href="contaPet.html" class="active"><i class="fa-solid fa-paw"></i> Meus Pets</a></li>
+                <li><a href="agendamento.html"><i class="fa-solid fa-car"></i> Nova Corrida</a></li>
+                <li><a href="historico.html"><i class="fa-solid fa-clock-rotate-left"></i> Histórico</a></li>
+                <li><a href="pagamento.html"><i class="fa-solid fa-wallet"></i> Formas de Pagamento</a></li>
+                <li><a href="index.html" style="color: #dc3545;"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
             </ul>
         </aside>
 
-        <!-- Área de Conteúdo -->
+        <!-- Área de Conteúdo Principal -->
         <main class="main-content">
             
             <!-- Bloco 1: Meus Animais Cadastrados -->
             <section class="card">
-                <div class="card-header">
-                    <h2 class="card-title">🐾 Meus Pets Cadastrados</h2>
-                    <button class="btn-small" onclick="alert('Funcionalidade de cadastro será aberta!')">+ Adicionar Pet</button>
+                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 class="card-title" style="margin: 0;">🐾 Meus Pets Cadastrados</h2>
+                    <button class="btn-small" style="padding: 8px 12px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;" onclick="alert('Funcionalidade de cadastro de novo pet será aberta!')">+ Adicionar Pet</button>
                 </div>
                 
                 <div class="pet-grid">
-                    <!-- Pet 1 -->
-                    <div class="pet-item-card">
-                        <div class="pet-avatar">🐶</div>
+                    <!-- Pet 1 (Labrador) -->
+                    <div class="pet-item-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+                        <div class="pet-avatar" style="font-size: 30px; margin-bottom: 10px;">🐶</div>
                         <div class="pet-details">
-                            <h4>Thor</h4>
-                            <p>Raça: Labrador</p>
-                            <p>Idade: 3 anos</p>                
-                            <span class="badge-status">Ativo</span>
+                            <h4 style="margin: 0 0 5px 0; font-size: 18px;">Thor</h4>
+                            <p style="margin: 3px 0;"><strong>Espécie/Raça:</strong> Cão / Labrador</p>
+                            <p style="margin: 3px 0;"><strong>Porte/Peso:</strong> Grande / 32kg</p>
+                            <p style="margin: 3px 0;"><strong>Temperamento:</strong> Dócil</p>
+                            <p style="margin: 3px 0; color: #dc3545;"><strong>Alertas:</strong> Alergia a picada de pulga</p>
+                            <span class="badge-status" style="background-color: #28a745; color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px;">Ativo</span>
                         </div>
                     </div>
-                    <!-- Pet 2 -->
-                    <div class="pet-item-card">
-                        <div class="pet-avatar">🐱</div>
+                    
+                    <!-- Pet 2 (Siamês) -->
+                    <div class="pet-item-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+                        <div class="pet-avatar" style="font-size: 30px; margin-bottom: 10px;">🐱</div>
                         <div class="pet-details">
-                            <h4>Luna</h4>
-                            <p>Raça: Siamês</p>
-                            <p>Idade: 2 anos</p>                
-                            <span class="badge-status">Ativo</span>
+                            <h4 style="margin: 0 0 5px 0; font-size: 18px;">Luna</h4>
+                            <p style="margin: 3px 0;"><strong>Espécie/Raça:</strong> Gato / Siamês</p>
+                            <p style="margin: 3px 0;"><strong>Porte/Peso:</strong> Pequeno / 4kg</p>
+                            <p style="margin: 3px 0;"><strong>Temperamento:</strong> Ansioso (Medo de barulho)</p>
+                            <p style="margin: 3px 0; color: #6c757d;"><strong>Alertas:</strong> Nenhum</p>
+                            <span class="badge-status" style="background-color: #28a745; color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px;">Ativo</span>
                         </div>      
                     </div>
-                    <!-- Pet 3 -->
-                    <div class="pet-item-card">
-                        <div class="pet-avatar">🐰</div>
+                    
+                    <!-- Pet 3 (Angorá) -->
+                    <div class="pet-item-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+                        <div class="pet-avatar" style="font-size: 30px; margin-bottom: 10px;">🐰</div>
                         <div class="pet-details">
-                            <h4>Coelho</h4>
-                            <p>Raça: Angorá</p>
-                            <p>Idade: 1 ano</p>                
-                            <span class="badge-status">Inativo</span>
+                            <h4 style="margin: 0 0 5px 0; font-size: 18px;">Baleia</h4>
+                            <p style="margin: 3px 0;"><strong>Espécie/Raça:</strong> Coelho / Angorá</p>
+                            <p style="margin: 3px 0;"><strong>Porte/Peso:</strong> Pequeno / 2kg</p>
+                            <p style="margin: 3px 0;"><strong>Temperamento:</strong> Arisco</p>
+                            <p style="margin: 3px 0; color: #6c757d;"><strong>Alertas:</strong> Tratamento de otite pendente</p>
+                            <span class="badge-status" style="background-color: #dc3545; color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px;">Inativo</span>
                         </div>
                     </div>
                 </div>
             </section>
+        </main>
+    </div>
+
+    <!-- ==========================================
+         RODAPÉ PADRÃO
+         ========================================== -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Táxi Pet Brasil. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -3,68 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendar Táxi Pet - PetTaxi</title>
+    <title>Agendar Táxi Pet - Táxi Pet Brasil</title>
+    
+    <!-- Folhas de Estilo (CSS) -->
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="agendamento.css">
-    <!-- Font Awesome para adicionar o ícone do WhatsApp no botão -->
-    <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Font Awesome (Ícones Oficiais) -->
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <!-- Cabeçalho / Navegação -->
-    <header>
-        <nav class="nav-container">
-            <a href="index.html" class="logo">🐾 PetTaxi</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="frota.html">Nossa Frota</a>
-                <a href="servicos.html">Serviços</a>
-                <a href="agendamentos.html" class="active">Agendamento</a>
-                <a href="contato.html">Contato</a>
-            </div>
+    <!-- ==========================================
+         CABEÇALHO & NAVEGAÇÃO PADRÃO
+         ========================================== -->
+    <header class="site-header">
+        <nav class="area-navegacao">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="img/logo.png" alt="Logo Táxi Pet Brasil" width="200" height="100">
+            </a>
+            
+            <ul class="menu-header">
+                <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a class="icones" href="agendamento.html"><i class="fa-solid fa-calendar-check"></i> Agendar Viagem</a></li>
+                <li><a class="icones" href="frota.html"><i class="fa-solid fa-van-shuttle"></i> Nossa Frota</a></li>
+                <li><a class="icones" href="contaPet.html"><i class="fa-solid fa-paw"></i> Meus Pets</a></li>
+                <li><a class="icones" href="contato.html"><i class="fa-solid fa-headset"></i> Contato</a></li>
+                <li><a class="icones" href="login.html"><i class="fa-solid fa-user-lock"></i> Entrar</a></li>
+                <li><a class="icones" href="pagamento.html"><i class="fa-solid fa-credit-card"></i> Pagamento</a></li>
+            </ul>
         </nav>
     </header>
 
     <!-- Conteúdo Principal -->
-    <main class="container">
+    <main class="container" style="max-width: 700px; margin: 40px auto; padding: 0 20px;">
         <div class="form-container">
-            <h1>Agende a Viagem do seu Pet</h1>
-            <p class="subtitle">Preencha os dados abaixo e envie o seu pedido direto para o nosso WhatsApp.</p>
+            <h1 style="text-align: center; margin-bottom: 5px;">Agende a Viagem do seu Pet</h1>
+            <p class="subtitle" style="text-align: center; color: #666; margin-bottom: 30px;">Preencha os dados abaixo e envie o seu pedido direto para o nosso WhatsApp.</p>
 
             <form id="formAgendamento">
                 
                 <!-- PASSO 1: Dados do Tutor -->
-                <fieldset>
-                    <legend>👤 Dados do Tutor</legend>
+                <fieldset style="border: 1px solid #ccc; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+                    <legend style="padding: 0 10px; font-weight: bold;">👤 Dados do Tutor</legend>
                     
-                    <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" required placeholder="Ex: Maria Silva">
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="nome" style="display:block; margin-bottom:5px;">Nome Completo</label>
+                        <input type="text" id="nome" required placeholder="Ex: Maria Silva" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="whatsapp">WhatsApp / Telefone</label>
-                            <input type="tel" id="whatsapp" required placeholder="(11) 99999-9999">
+                    <div class="form-row" style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="whatsapp" style="display:block; margin-bottom:5px;">WhatsApp / Telefone</label>
+                            <input type="tel" id="whatsapp" required placeholder="(61) 99999-9999" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
                         </div>
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" required placeholder="maria@email.com">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="email" style="display:block; margin-bottom:5px;">E-mail</label>
+                            <input type="email" id="email" required placeholder="maria@email.com" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
                         </div>
                     </div>
                 </fieldset>
 
                 <!-- PASSO 2: Dados do Pet -->
-                <fieldset>
-                    <legend>🐶 Dados do Pet</legend>
+                <fieldset style="border: 1px solid #ccc; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+                    <legend style="padding: 0 10px; font-weight: bold;">🐶 Dados do Pet</legend>
                     
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nome-pet">Nome do Pet</label>
-                            <input type="text" id="nome-pet" required placeholder="Ex: Thor">
+                    <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="nome-pet" style="display:block; margin-bottom:5px;">Nome do Pet</label>
+                            <input type="text" id="nome-pet" required placeholder="Ex: Thor" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
                         </div>
-                        <div class="form-group">
-                            <label for="tipo-pet">Espécie</label>
-                            <select id="tipo-pet" required>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="tipo-pet" style="display:block; margin-bottom:5px;">Espécie</label>
+                            <select id="tipo-pet" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; height: 40px;">
                                 <option value="" disabled selected>Selecione...</option>
                                 <option value="Cachorro">Cachorro</option>
                                 <option value="Gato">Gato</option>
@@ -73,23 +84,23 @@
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="porte-pet">Porte do Animal</label>
-                            <select id="porte-pet" required>
+                    <div class="form-row" style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="porte-pet" style="display:block; margin-bottom:5px;">Porte do Animal</label>
+                            <select id="porte-pet" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; height: 40px;">
                                 <option value="" disabled selected>Selecione...</option>
                                 <option value="Pequeno (Até 10kg)">Pequeno (Até 10kg)</option>
                                 <option value="Médio (11kg a 25kg)">Médio (11kg a 25kg)</option>
                                 <option value="Grande (Acima de 25kg)">Grande (Acima de 25kg)</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>O tutor vai acompanhar?</label>
-                            <div class="radio-group">
-                                <label class="radio-item">
+                        <div class="form-group" style="flex: 1;">
+                            <label style="display:block; margin-bottom:9px;">O tutor vai acompanhar?</label>
+                            <div class="radio-group" style="display: flex; gap: 15px;">
+                                <label class="radio-item" style="cursor:pointer;">
                                     <input type="radio" name="acompanhante" value="Sim" checked> Sim
                                 </label>
-                                <label class="radio-item">
+                                <label class="radio-item" style="cursor:pointer;">
                                     <input type="radio" name="acompanhante" value="Não (O pet vai sozinho)"> Não
                                 </label>
                             </div>
@@ -98,97 +109,36 @@
                 </fieldset>
 
                 <!-- PASSO 3: Detalhes da Corrida -->
-                <fieldset>
-                    <legend>📍 Detalhes do Percurso</legend>
+                <fieldset style="border: 1px solid #ccc; padding: 20px; border-radius: 6px; margin-bottom: 25px;">
+                    <legend style="padding: 0 10px; font-weight: bold;">📍 Detalhes do Percurso</legend>
                     
-                    <div class="form-group">
-                        <label for="origem">Endereço de Origem</label>
-                        <input type="text" id="origem" required placeholder="Ex: Rua das Flores, 123, Bairro Jardim">
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="origem" style="display:block; margin-bottom:5px;">Endereço de Origem</label>
+                        <input type="text" id="origem" required placeholder="Ex: Rua das Flores, 123, Gama - DF" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
                     </div>
-                    <div class="form-group">
-                        <label for="destino">Endereço de Destino</label>
-                        <input type="text" id="destino" required placeholder="Ex: Av. Central, 456, Bairro Centro">
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="destino" style="display:block; margin-bottom:5px;">Endereço de Destino (Clínica/Petshop)</label>
+                        <input type="text" id="destino" required placeholder="Ex: Clínica Veterinária Amigo Pet, Gama Centro" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="data">Data da Viagem</label>
-                            <input type="date" id="data" required>
+                    <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="data" style="display:block; margin-bottom:5px;">Data da Viagem</label>
+                            <input type="date" id="data" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
                         </div>
-                        <div class="form-group">
-                            <label for="hora">Hora da Viagem</label>
-                            <input type="time" id="hora" required>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="hora" style="display:block; margin-bottom:5px;">Hora da Viagem</label>
+                            <input type="time" id="hora" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="observacoes">Observações (opcional)</label>
-                        <textarea id="observacoes" placeholder="Ex: O pet tem alergia a certos alimentos..."></textarea>
+                        <label for="observacoes" style="display:block; margin-bottom:5px;">Observações / Alertas Médicos (opcional)</label>
+                        <textarea id="observacoes" placeholder="Ex: O pet tem medo de barulhos, levar na caixa de transporte..." style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; height: 80px; resize: vertical;"></textarea>
                     </div>
                 </fieldset>
 
-                <!-- BOTÃO DE ENVIO ADICIONADO -->
+                <!-- BOTÃO DE ENVIO -->
                 <div class="form-actions">
-                    <button type="submit" class="btn-enviar">
+                    <button type="submit" class="btn-enviar" style="width: 100%; padding: 14px; background-color: #28a745; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer;">
                         <i class="fa-brands fa-whatsapp"></i> Solicitar Agendamento via WhatsApp
                     </button>
-                </div>
 
-            </form> 
-        </div>
-    </main>
-
-    <!-- SCRIPT PARA ENVIAR OS DADOS AUTOMATICAMENTE VIA WHATSAPP -->
-    <script>
-        document.getElementById('formAgendamento').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o recarregamento padrão da página
-
-            // Substitua pelo número do seu negócio (Exemplo: 55 + DDD + Número)
-            // Não coloque espaços, traços ou parênteses. Apenas números.
-            const numeroTelefone = "5561999999999"; 
-
-            // Coleta os valores digitados no formulário
-            const nome = document.getElementById('nome').value;
-            const whatsapp = document.getElementById('whatsapp').value;
-            const email = document.getElementById('email').value;
-            const nomePet = document.getElementById('nome-pet').value;
-            const tipoPet = document.getElementById('tipo-pet').value;
-            const portePet = document.getElementById('porte-pet').value;
-            const acompanhante = document.querySelector('input[name="acompanhante"]:checked').value;
-            const origem = document.getElementById('origem').value;
-            const destino = document.getElementById('destino').value;
-            const data = document.getElementById('data').value;
-            const hora = document.getElementById('hora').value;
-            const observacoes = document.getElementById('observacoes').value || "Nenhuma";
-
-            // Formata a data para o padrão brasileiro (DD/MM/AAAA)
-            const dataFormatada = data.split('-').reverse().join('/');
-
-            // Cria o texto estruturado que será enviado no WhatsApp
-            const textoMensagem = 
-                `Olá! Gostaria de solicitar um agendamento de táxi pet:\n\n` +
-                `👤 *DADOS DO TUTOR*\n` +
-                `• Nome: ${nome}\n` +
-                `• Telefone: ${whatsapp}\n` +
-                `• E-mail: ${email}\n\n` +
-                `🐶 *DADOS DO PET*\n` +
-                `• Nome do Pet: ${nomePet}\n` +
-                `• Espécie: ${tipoPet}\n` +
-                `• Porte: ${portePet}\n` +
-                `• Tutor acompanha?: ${acompanhante}\n\n` +
-                `📍 *DETALHES DO PERCURSO*\n` +
-                `• Origem: ${origem}\n` +
-                `• Destino: ${destino}\n` +
-                `• Data: ${dataFormatada}\n` +
-                `• Hora: ${hora}\n\n` +
-                `📝 *OBSERVAÇÕES*\n` +
-                `${observacoes}`;
-
-            // Codifica o texto para o formato aceito em URLs externas
-            const textoCodificado = encodeURIComponent(textoMensagem);
-
-            // Monta o link da API oficial do WhatsApp e redireciona o visitante
-            const urlWhatsapp = `https://whatsapp.com{numeroTelefone}&text=${textoCodificado}`;
-            window.open(urlWhatsapp, '_blank');
-        });
-    </script>
-</body>
-</html>
