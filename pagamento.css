@@ -34,6 +34,10 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+   display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que a página tenha no mínimo a altura total da tela */
+  margin: 0; 
 }
 
 /* Container Centralizado */
@@ -225,4 +229,14 @@ body {
   font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 500;
+}
+footer {
+  width: 100%; /* Faz o rodapé ocupar toda a largura da tela */
+  box-sizing: border-box; /* Evita barra de rolagem horizontal por causa do padding */
+  text-align: center;
+  margin-top: auto; /* Empurra o rodapé para o final da página */
+  padding: 25px 15px; /* Aumenta a altura e o espaço interno da faixa escura */
+  font-size: 0.9rem; /* Aumenta um pouco o tamanho da letra (opcional) */
+  color: var(--text-muted);
+  background-color: #2c3e50; /* Mantém a cor escura de fundo que você já usa */
 }

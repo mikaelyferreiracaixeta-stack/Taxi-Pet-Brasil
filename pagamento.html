@@ -174,36 +174,6 @@
         <p>&copy; 2026 Táxi Pet Brasil. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        function mudarMetodoPagamento(metodo) {
-            const secaoCartao = document.getElementById('dados-cartao');
-            const secaoPix = document.getElementById('dados-pix');
-            const secaoBoleto = document.getElementById('dados-boleto');
-            const secaoDinheiro = document.getElementById('dados-dinheiro');
-            const tituloCartao = document.getElementById('titulo-cartao');
-            
-            // Esconde todas as seções
-            if (secaoCartao) secaoCartao.classList.add('hidden');
-            if (secaoPix) secaoPix.classList.add('hidden');
-            if (secaoBoleto) secaoBoleto.classList.add('hidden');
-            if (secaoDinheiro) secaoDinheiro.classList.add('hidden');
-
-            // Desativa a obrigatoriedade de todos os campos do cartão para não travar o envio
-            const inputsCartao = secaoCartao.querySelectorAll('input');
-            inputsCartao.forEach(input => input.required = false);
-
-            // Exibe a secao selecionada e aplica validações dinâmicas
-            if (metodo === 'cartao' || metodo === 'debito') {
-                secaoCartao.classList.remove('hidden');
-                inputsCartao.forEach(input => input.required = true);
-                tituloCartao.textContent = metodo === 'cartao' ? 'Dados do Cartão de Crédito' : 'Dados do Cartão de Débito';
-                
-            } else if (metodo === 'pix') {
-                secaoPix.classList.remove('hidden');
-            } else if (metodo === 'boleto') {
-                secaoBoleto.classList.remove('hidden');
-            } else if (metodo === 'dinheiro') {
-                secaoDinheiro.classList.remove('hidden');
-            }
-        }
-
+    <script src="js/pagamento.js"></script>
+</body> 
+</html>
