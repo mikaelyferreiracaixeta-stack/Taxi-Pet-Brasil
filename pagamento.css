@@ -29,21 +29,19 @@ body {
   color: var(--dark);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin: 0;
-  padding: 40px 20px;
+  padding: 0; /* Zera o padding para o rodapé encostar nas laterais e no fundo */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-height: 100vh;
-   display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Garante que a página tenha no mínimo a altura total da tela */
-  margin: 0; 
 }
 
 /* Container Centralizado */
 .checkout-container {
   width: 100%;
   max-width: 500px;
+  margin: auto; /* Centraliza o cartão no meio da tela */
+  padding: 40px 20px;
 }
 
 /* Cartão do Formulário */
@@ -128,7 +126,7 @@ body {
   transition: opacity 0.3s ease, max-height 0.3s ease, margin-bottom 0.3s ease;
   max-height: 400px;
   opacity: 1;
-  margin-bottom: 20px; /* Margem padrão quando visível */
+  margin-bottom: 20px;
   overflow: hidden;
 }
 
@@ -156,7 +154,7 @@ body {
 }
 
 .pix-instructions p:not(:last-child), .boleto-instructions p:not(:last-child) {
-  margin-bottom: 10px; /* Espaço entre parágrafos de instrução */
+  margin-bottom: 10px;
 }
 
 /* Inputs e Labels */
@@ -230,13 +228,15 @@ body {
   color: var(--text-muted);
   font-weight: 500;
 }
+
+/* Rodapé colado na base da página */
 footer {
-  width: 100%; /* Faz o rodapé ocupar toda a largura da tela */
-  box-sizing: border-box; /* Evita barra de rolagem horizontal por causa do padding */
+  width: 100%;
+  box-sizing: border-box;
   text-align: center;
-  margin-top: auto; /* Empurra o rodapé para o final da página */
-  padding: 25px 15px; /* Aumenta a altura e o espaço interno da faixa escura */
-  font-size: 0.9rem; /* Aumenta um pouco o tamanho da letra (opcional) */
-  color: var(--text-muted);
-  background-color: #2c3e50; /* Mantém a cor escura de fundo que você já usa */
+  margin-top: auto;
+  padding: 20px 15px;
+  font-size: 0.9rem;
+  color: var(--pure-white);
+  background-color: var(--dark);
 }
