@@ -29,19 +29,19 @@ body {
   color: var(--dark);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin: 0;
-  padding: 0; /* Zera o padding para o rodapé encostar nas laterais e no fundo */
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
 }
 
-/* Container Centralizado */
+/* Container Centralizado (Ajustado para não ficar atrás do menu) */
 .checkout-container {
   width: 100%;
   max-width: 500px;
-  margin: auto; /* Centraliza o cartão no meio da tela */
-  padding: 40px 20px;
+  margin: auto;
+  padding: 110px 20px 40px 20px;
 }
 
 /* Cartão do Formulário */
@@ -194,8 +194,8 @@ body {
   gap: 15px;
 }
 
-/* Botão de Pagamento */
-.btn-pay {
+/* Botão de Pagamento (Atualizado para .btn-submit) */
+.btn-submit, .btn-pay {
   width: 100%;
   background-color: var(--primary);
   color: var(--pure-white);
@@ -210,13 +210,13 @@ body {
   margin-top: 10px;
 }
 
-.btn-pay:hover {
+.btn-submit:hover, .btn-pay:hover {
   background-color: var(--primary-hover);
   transform: translateY(-1px);
   box-shadow: 0 6px 12px rgba(65, 125, 214, 0.25);
 }
 
-.btn-pay:active {
+.btn-submit:active, .btn-pay:active {
   transform: translateY(0);
 }
 
