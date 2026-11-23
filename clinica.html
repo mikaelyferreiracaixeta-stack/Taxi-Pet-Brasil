@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clínica Veterinária</title>
+</head>
+<body>
+<div class="container">
+    <h2>Cadastro de Clínica Veterinária</h2>
+    <form action="#" method="POST">
+        
+        <!-- Nome_clinica (VARCHAR 50) -->
+        <div class="form-group">
+            <label for="nome_clinica">Nome da Clínica Veterinária:</label>
+            <input type="text" id="nome_clinica" name="nome_clinica" maxlength="50" required placeholder="Ex: Clínica Veterinária Pet Care">
+        
+        </div>
+
+        <!-- CNPJ (INT 18) -->
+        <div class="form-group">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpj" name="cnpj" maxlength="18" required placeholder="00.000.000/0000-00" oninput="this.value = this.value.replace(/[^0-9.\-\/]/g, '')">
+          
+        </div>
+
+        <!-- Especialidade (VARCHAR 100) -->
+        <div class="form-group">
+            <label for="especialidade">Especialidades Veterinárias:</label>
+            <input type="text" id="especialidade" name="especialidade" maxlength="100" required placeholder="Ex: Clínica Geral, Cirurgia, Silvestres, Dermatologia">
+           
+        </div>
+
+        <!-- Telefone (VARCHAR 20) -->
+        <div class="form-group">
+            <label for="telefone">Telefone / Plantão:</label>
+            <input type="tel" id="telefone" name="telefone" maxlength="20" required placeholder="(00) 0000-0000">
+        </div>
+
+        <!-- E-mail (VARCHAR 100) -->
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" maxlength="100" required placeholder="contato@vetpetcare.com.br">
+        </div>
+
+        <!-- Endereco completo (VARCHAR 255) -->
+        <div class="form-group">
+            <label for="endereco_completo">Endereço Completo:</label>
+            <input type="text" id="endereco_completo" name="endereco_completo" maxlength="255" required placeholder="Rua, Avenida, Número, Bairro, Cidade - UF">
+        </div>
+
+        <!-- Informacao (VARCHAR 100) -->
+        <div class="form-group">
+            <label for="informacao">Informações de Atendimento:</label>
+            <input type="text" id="informacao" name="informacao" maxlength="100" placeholder="Ex: Plantão 24h, atende cães, gatos e animais exóticos">
+            
+        </div>
+
+        <!-- Obs: historico da clinica (TEXT 255) -->
+        <div class="form-group">
+            <label for="obs">Observações / Histórico da Clínica:</label>
+            <textarea id="obs" name="obs" rows="4" maxlength="255" placeholder="Ex: Possui internação, raio-x próprio, laboratório, banho e tosa..."></textarea>
+        </div>
+
+        <div class="btn-group">
+            <button type="submit" class="btn-submit">Salvar Clínica Veterinária</button>
+    
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
