@@ -1,7 +1,7 @@
 /* ==========================================================================
    FONTES E CONFIGURAÇÕES GERAIS
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://googleapis.com');
 
 :root {
   /* Cores Principais */
@@ -43,13 +43,16 @@
 }
 
 body {
-  background-color: var(--pure-white);
+  background-color: var(--white-bg);
   color: var(--dark);
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ==========================================================================
-   CABEÇALHO & NAVEGAÇÃO
+   1. CABEÇALHO & NAVEGAÇÃO (TODAS AS PÁGINAS)
    ========================================================================== */
 .site-header {
   background-color: var(--primary);
@@ -68,7 +71,7 @@ body {
   align-items: center;
   height: 100%;
   width: 100%;
-  max-width: var(--max-width);
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -76,17 +79,18 @@ body {
 .logo-link {
   display: flex;
   align-items: center;
+  margin-right: 40px;
 }
 
 .logo {
-  max-height: 65px;
+  max-height: 76px;
   width: auto;
   object-fit: contain;
 }
 
 .menu-header {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   list-style: none;
   align-items: center;
 }
@@ -94,22 +98,24 @@ body {
 .icones {
   text-decoration: none;
   color: var(--pure-white);
-  font-size: 15px;
+  background-color: transparent;
+  font-size: 14.5px;
   font-weight: 500;
-  padding: 10px 16px;
+  padding: 10px 14px;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
+  white-space: nowrap;
 }
 
-.icones:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+.icones:hover,
+.icones.ativo {
+  background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-1px);
 }
 
-/* Tratamento especial para o botão Entrar */
 .menu-header li:last-child .icones {
   background-color: var(--secondary);
   border: 1px solid transparent;
@@ -120,11 +126,12 @@ body {
 }
 
 /* ==========================================================================
-   CONTEÚDO PRINCIPAL & ESTRUTURA SEÇÕES
+   2. PÁGINA INICIAL (INDEX), FROTA E SERVIÇOS (SEÇÕES E GRIDS)
    ========================================================================== */
 main {
   margin-top: var(--header-height);
   width: 100%;
+  flex: 1;
 }
 
 section {
@@ -134,16 +141,17 @@ section {
   padding: 60px 20px;
 }
 
-/* 1. SEÇÃO HERO (Apresentação Principal) */
 .secao-hero {
   text-align: center;
-  padding-top: 80px;
+  padding-top: 70px;
   padding-bottom: 40px;
+  background-color: var(--pure-white);
+  max-width: 100%;
 }
 
 .secao-hero h1 {
   color: var(--title-accent);
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
@@ -153,7 +161,7 @@ section {
   font-size: 20px;
   font-weight: 400;
   color: var(--primary);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .secao-hero .descricao {
@@ -164,15 +172,17 @@ section {
   margin: 0 auto;
 }
 
-/* 2. SEÇÃO DE BENEFÍCIOS (Grid de Diferenciais) */
-.secao-beneficios {
+/* Grid de Cards (Benefícios, Frota e Serviços) */
+.secao-beneficios,
+.secao-grid {
   background-color: var(--white-bg);
-  max-width: 100%; /* Ocupa a largura total da tela com background */
+  max-width: 100%;
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
 
-.grid-beneficios {
+.grid-beneficios,
+.grid-cards {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
@@ -180,41 +190,76 @@ section {
   gap: 30px;
 }
 
-.beneficio-card {
+.beneficio-card,
+.card-item {
   background: var(--pure-white);
-  padding: 35px 25px;
+  padding: 32px 25px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 86, 179, 0.03);
+  box-shadow: 0 4px 20px rgba(0, 86, 179, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.beneficio-card:hover {
+.beneficio-card:hover,
+.card-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 86, 179, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 86, 179, 0.09);
 }
 
-.beneficio-card i {
+.beneficio-card i,
+.card-item i {
   font-size: 40px;
   color: var(--primary);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   display: inline-block;
 }
 
-.beneficio-card h3 {
+.card-item img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.beneficio-card h3,
+.card-item h3 {
   font-size: 20px;
   color: var(--text-dark);
   margin-bottom: 12px;
 }
 
-.beneficio-card p {
+.beneficio-card p,
+.card-item p {
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.6;
+  margin-bottom: 16px;
 }
 
-/* 3. SEÇÃO BANNER & CHAMADA PARA AÇÃO (CTA) */
+/* Barra de Busca / Filtros (Frota e Serviços) */
+.barra-busca {
+  max-width: 700px;
+  margin: 0 auto 35px auto;
+  display: flex;
+  gap: 12px;
+}
+
+.barra-busca input,
+.barra-busca select {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: var(--pure-white);
+}
+
+/* Banner & CTA */
 .secao-cta {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -238,7 +283,7 @@ section {
   padding: 40px;
   border: 2px dashed var(--border-dashed);
   border-radius: 16px;
-  background-color: var(--white-bg);
+  background-color: var(--pure-white);
 }
 
 .cta-acoes h2 {
@@ -254,11 +299,10 @@ section {
   gap: 15px;
 }
 
-/* Botões do CTA */
 .btn-principal, .btn-whatsapp {
   width: 100%;
-  padding: 16px 24px;
-  font-size: 18px;
+  padding: 15px 24px;
+  font-size: 17px;
   font-weight: 500;
   border-radius: 10px;
   cursor: pointer;
@@ -291,7 +335,7 @@ section {
   transform: translateY(-1px);
 }
 
-/* 4. SEÇÃO DE DEPOIMENTOS (Prova Social) */
+/* Depoimentos e Localização */
 .secao-depoimentos {
   text-align: center;
 }
@@ -308,11 +352,11 @@ section {
 }
 
 .depoimento-card {
-  background-color: var(--white-bg);
+  background-color: var(--pure-white);
   padding: 40px 30px;
   border-radius: 16px;
   border-left: 5px solid var(--primary);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
 .depoimento-card p {
@@ -330,7 +374,6 @@ section {
   font-size: 15px;
 }
 
-/* 5. SEÇÃO LOCALIZAÇÃO */
 .secao-localizacao h2 {
   font-size: 28px;
   color: var(--text-dark);
@@ -346,63 +389,221 @@ section {
 }
 
 /* ==========================================================================
-   RODAPÉ DO SITE
+   3. FORMULÁRIOS DO SISTEMA (CLÍNICA, CONDUTOR, CADASTRO, LOGIN, PETS,
+      AGENDAMENTO, CONTATO E PAGAMENTO)
    ========================================================================== */
-.site-footer {
-  background-color: var(--dark);
-  color: #a0aec0;
+.main-content {
+  margin-top: var(--header-height);
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px 60px 20px;
+}
+
+.container {
+  background-color: var(--pure-white);
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 35px 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  border-top: 6px solid var(--primary);
+  box-shadow: 0 10px 25px rgba(5, 28, 128, 0.06);
+  display: block;
+}
+
+.container.largo {
+  max-width: 780px;
+}
+
+.container.estreito {
+  max-width: 440px;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container h2 {
   text-align: center;
-  padding: 30px 20px;
+  color: var(--secondary);
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-light);
+  width: 100%;
+}
+
+.container hr {
+  border: none;
+  border-top: 2px dashed var(--border-light);
+  margin: 32px 0;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+}
+
+.col {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-size: 14.5px;
+  color: var(--text-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--text-dark);
+  background-color: var(--pure-white);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.65;
   font-size: 14px;
-  border-top: 1px solid #1a252f;
 }
 
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 3px rgba(7, 160, 207, 0.18);
+}
+.form-group textarea {
+resize: vertical;
+min-height: 90px;
+}
+.btn-group {
+margin-top: 24px;
+width: 100%;
+display: flex;
+gap: 12px;
+}
+.btn-submit {
+width: 100%;
+padding: 14px;
+background-color: var(--secondary);
+color: var(--pure-white);
+border: none;
+border-radius: 8px;
+font-size: 16px;
+font-weight: 500;
+cursor: pointer;
+transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn-submit:hover {
+background-color: var(--secondary-hover);
+}
+.btn-submit:active {
+transform: scale(0.99);
+}
 /* ==========================================================================
-   RESPONSIVIDADE (MOBILE-FRIENDLY)
-   ========================================================================== */
-@media (max-width: 992px) {
-  .grid-beneficios {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .secao-cta {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .secao-hero h1 {
-    font-size: 32px;
-  }
+4. RODAPÉ DO SITE
+========================================================================== */
+.site-footer {
+background-color: var(--dark);
+color: #a0aec0;
+text-align: center;
+padding: 30px 20px;
+font-size: 14px;
+border-top: 1px solid #1a252f;
+width: 100%;
+margin-top: auto;
 }
-
-@media (max-width: 768px) {
-  .area-navegacao {
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-  }
-  
-  .site-header {
-    height: auto;
-    position: relative; /* Evita sobreposição confusa em telas muito pequenas */
-  }
-  
-  main {
-    margin-top: 0;
-  }
-  
-  .menu-header {
-    gap: 5px;
-  }
-  
-  .icones {
-    font-size: 13px;
-    padding: 8px 12px;
-  }
-  
-  section {
-    padding: 40px 20px;
-  }
+/* ==========================================================================
+5. RESPONSIVIDADE (MOBILE-FRIENDLY)
+========================================================================== */
+@media (max-width: 1120px) {
+.area-navegacao {
+flex-direction: column;
+justify-content: center;
+gap: 10px;
+padding: 12px;
+}
+.logo-link {
+margin-right: 0;
+}
+.site-header {
+height: auto;
+position: relative;
+}
+main,
+.main-content {
+margin-top: 0;
+}
+.menu-header {
+flex-wrap: wrap;
+justify-content: center;
+gap: 6px;
+}
+.icones {
+font-size: 13.5px;
+padding: 8px 12px;
+}
+}
+@media (max-width: 992px) {
+.grid-beneficios,
+.grid-cards {
+grid-template-columns: 1fr;
+gap: 20px;
+}
+.secao-cta {
+grid-template-columns: 1fr;
+gap: 30px;
+}
+.secao-hero h1 {
+font-size: 32px;
+}
+}
+@media (max-width: 640px) {
+section {
+padding: 40px 20px;
+}
+.row,
+.btn-group {
+flex-direction: column;
+gap: 0;
+}
+.container {
+padding: 25px 20px;
+}
+.container h2 {
+font-size: 22px;
+}
 }

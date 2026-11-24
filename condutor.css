@@ -22,29 +22,27 @@
 }
 
 body {
-  background-color: var(--light);
-  color: var(--dark);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: var(--light) !important;
+  color: var(--dark) !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 /* --- CABEÇALHO E MENU (COR PRIMÁRIA) --- */
-header,
 .site-header {
-  background-color: var(--primary);
-  width: 100%;
-  padding: 10px 24px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
-  position: relative;
+  background-color: var(--primary) !important;
+  width: 100% !important;
+  padding: 10px 24px !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12) !important;
+  position: relative !important;
   z-index: 1000;
 }
 
-nav,
 .area-navegacao {
   max-width: 1280px;
   margin: 0 auto;
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -56,7 +54,6 @@ nav,
   align-items: center;
 }
 
-header img,
 .logo {
   height: 55px;
   width: auto;
@@ -65,18 +62,17 @@ header img,
   display: block;
 }
 
-header ul,
 .menu-header {
   list-style: none;
-  display: flex;
+  display: flex !important;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-header ul li a,
 .menu-header li a.icones {
-  color: var(--pure-white);
+  color: var(--pure-white) !important;
+  background-color: transparent !important;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -85,56 +81,54 @@ header ul li a,
   display: flex;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-header ul li a:hover,
-.menu-header li a.icones:hover,
-.menu-header li a.icones.ativo {
-  background-color: var(--primary-hover);
-  color: var(--pure-white);
+/* Transparência branca ao passar o mouse */
+.menu-header li a.icones:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: var(--pure-white) !important;
 }
 
-/* --- ÁREA CENTRAL DO FORMULÁRIO (COM ESPAÇAMENTO NO TOPO) --- */
-main,
+/* --- ÁREA CENTRAL DO FORMULÁRIO --- */
 .main-content {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 90px 20px 40px 20px;
-}
-
-form,
-.container {
-  background-color: var(--white);
   width: 100%;
-  max-width: 650px;
-  margin: 40px auto;
-  padding: 35px 40px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  border-top: 6px solid var(--primary);
-  box-shadow: 0 10px 25px rgba(5, 28, 128, 0.06);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  padding: 60px 20px 50px 20px !important;
 }
 
-/* Evita espaçamento duplicado quando o form está dentro de main ou .container */
-main form,
-.main-content .container,
+.container {
+  background-color: var(--white) !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  padding: 35px 40px !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--border) !important;
+  border-top: 6px solid var(--primary) !important;
+  box-shadow: 0 10px 25px rgba(5, 28, 128, 0.06) !important;
+  display: block !important;
+}
+
+/* Força o formulário a empilhar os blocos verticalmente */
 .container form {
-  margin-top: 0;
-  margin-bottom: 0;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  gap: 0 !important;
 }
 
-.container form {
-  padding: 0;
-  border: none;
-  box-shadow: none;
-  max-width: 100%;
-}
-
-/* Títulos do formulário e seções */
-h2 {
+.container h2 {
   text-align: center;
   color: var(--secondary);
   font-size: 1.55rem;
@@ -142,42 +136,46 @@ h2 {
   margin-bottom: 24px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--light);
+  width: 100%;
 }
 
-/* Linha divisória (ex: Condutor / Carro) */
-hr {
+/* Linha divisória entre Condutor e Carro */
+.container hr {
   border: none;
   border-top: 2px dashed var(--border);
   margin: 32px 0;
+  width: 100%;
 }
 
-/* Espaçamento entre campos */
+/* --- SISTEMA DE COLUNAS (.row e .col) --- */
+.row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 16px;
+  width: 100%;
+}
+
+.col {
+  flex: 1;
+  min-width: 0;
+}
+
 .form-group {
   margin-bottom: 18px;
+  width: 100%;
 }
 
-/* Rótulos (Labels) */
-label {
+.form-group label {
   display: block;
   font-weight: 600;
   margin-bottom: 6px;
-  margin-top: 14px;
   font-size: 0.92rem;
   color: var(--dark);
 }
 
-.form-group label {
-  margin-top: 0;
-}
-
-/* Campos de texto, e-mail, número e textarea */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-select,
-textarea {
-  width: 100%;
+.form-group input,
+.form-group textarea {
+  width: 100% !important;
   padding: 12px 14px;
   border: 1.5px solid var(--border);
   border-radius: 8px;
@@ -187,39 +185,36 @@ textarea {
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-input::placeholder,
-textarea::placeholder {
+.form-group input::placeholder,
+.form-group textarea::placeholder {
   color: var(--text-muted);
   opacity: 0.7;
   font-size: 0.9rem;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(7, 160, 207, 0.18);
 }
 
-textarea {
+.form-group textarea {
   resize: vertical;
   min-height: 90px;
 }
 
+/* --- BOTÃO DE SALVAR (COR SECUNDÁRIA) --- */
 .btn-group {
-  margin-top: 28px;
+  margin-top: 24px;
+  width: 100%;
 }
 
-/* --- BOTÃO DE SALVAR (COR SECUNDÁRIA) --- */
-button[type="submit"],
-input[type="submit"],
 .btn-submit {
-  width: 100%;
-  margin-top: 24px;
+  width: 100% !important;
   padding: 14px;
-  background-color: var(--secondary);
-  color: var(--pure-white);
+  background-color: var(--secondary) !important;
+  color: var(--pure-white) !important;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
@@ -228,56 +223,53 @@ input[type="submit"],
   transition: filter 0.2s ease, transform 0.1s ease;
 }
 
-.btn-group .btn-submit {
-  margin-top: 0;
-}
-
-button[type="submit"]:hover,
-input[type="submit"]:hover,
 .btn-submit:hover {
-  background-color: var(--secondary);
+  background-color: var(--secondary) !important;
   filter: brightness(1.25);
 }
 
-button[type="submit"]:active,
-input[type="submit"]:active,
 .btn-submit:active {
   transform: scale(0.99);
 }
 
+/* --- RODAPÉ (FOOTER CINZA ESCURO) --- */
+.site-footer {
+  background-color: var(--dark) !important;
+  color: var(--pure-white) !important;
+  text-align: center;
+  padding: 22px 15px;
+  font-size: 0.88rem;
+  width: 100%;
+  margin-top: auto;
+}
+
+.site-footer p {
+  margin: 0;
+  opacity: 0.9;
+}
+
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 960px) {
-  nav,
   .area-navegacao {
     flex-direction: column;
   }
 
-  header ul,
   .menu-header {
     justify-content: center;
   }
+}
 
-  main,
-  .main-content {
-    padding-top: 130px;
+@media (max-width: 640px) {
+  .row {
+    flex-direction: column !important;
+    gap: 0;
   }
-}
-footer {
-  background-color: var(--dark);
-  color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  padding: 2.5rem 1rem;
-  margin-top: 6rem;
-  font-size: 0.95rem;
-}
 
-@media (max-width: 480px) {
-  form,
   .container {
-    padding: 25px 20px;
+    padding: 25px 20px !important;
   }
 
-  h2 {
+  .container h2 {
     font-size: 1.35rem;
   }
 }

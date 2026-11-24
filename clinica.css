@@ -69,6 +69,7 @@ body {
 
 .menu-header li a.icones {
   color: var(--pure-white);
+  background-color: transparent;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -77,12 +78,13 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.menu-header li a.icones:hover,
-.menu-header li a.icones.ativo {
-  background-color: var(--primary-hover);
+/* Transparência branca ao passar o mouse */
+.menu-header li a.icones:hover {
+  background-color: rgba(255, 255, 255, 0.2);
   color: var(--pure-white);
 }
 
@@ -183,6 +185,7 @@ body {
 .btn-submit:active {
   transform: scale(0.99);
 }
+
 footer {
   background-color: var(--dark);
   color: rgba(255, 255, 255, 0.7);

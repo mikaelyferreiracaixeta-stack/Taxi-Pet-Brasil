@@ -1,7 +1,7 @@
 /* ==========================================================================
    CONFIGURAÇÕES GERAIS E PALETA DE CORES
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://googleapis.com');
 
 :root {
   /* Cores Principais do Projeto */
@@ -12,11 +12,11 @@
   --whatsapp-hover: #1ebd54;
   
   /* Tons de Fundo e Estrutura */
-  --dark: #2c3e50;           /* Azul escuro sóbrio para textos principais */
-  --white-form: #ffffff;     /* Alterado para branco puro para um visual mais limpo e moderno */
+  --dark: #2c3e50;
+  --white-form: #ffffff;
   --pure-white: #ffffff;     
-  --border: #d0e4f5;         /* Azul claro suave para linhas e bordas */
-  --light-bg: #f4f8fb;       /* Fundo geral da página */
+  --border: #d0e4f5;
+  --light-bg: #f4f8fb;
 
   /* Cores de Texto e Inputs */
   --text-muted: #666666;
@@ -37,64 +37,25 @@ body {
 }
 
 /* ==========================================================================
-   HEADER & NAVEGAÇÃO
-   ========================================================================== */
-header {
-  background-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--pure-white); 
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.85); /* Tom suave que ganha destaque no hover */
-  margin-left: 1.5rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.nav-links a:hover, 
-.nav-links a.active {
-  color: var(--pure-white); 
-  border-bottom: 2px solid var(--pure-white);
-  padding-bottom: 4px;
-}
-
-/* ==========================================================================
-   ESTRUTURA DO FORMULÁRIO
+   ESTRUTURA DO FORMULÁRIO (SEM CARTÃO DUPLO)
    ========================================================================== */
 .container {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
+  max-width: 800px !important;
+  margin: 150px auto 4rem auto !important;
+  padding: 0 1.5rem !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-top: none !important;
+  box-shadow: none !important;
 }
 
 .form-container {
   background-color: var(--white-form);
   border-radius: 12px;
   padding: 3rem 2.5rem;
-  box-shadow: 0 10px 30px rgba(7, 160, 207, 0.05);
+  box-shadow: 0 10px 30px rgba(7, 160, 207, 0.08);
+  border: 1px solid var(--border);
+  border-top: 6px solid var(--primary);
 }
 
 h1 {
@@ -116,14 +77,15 @@ h1 {
 }
 
 fieldset {
-  border: none;
-  margin-bottom: 2.5rem;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 0 2.5rem 0 !important;
 }
 
 legend {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--secondary); /* Destaque elegante para divisão de passos */
+  color: var(--secondary);
   margin-bottom: 1.2rem;
   display: flex;
   align-items: center;
@@ -251,21 +213,17 @@ footer {
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
   padding: 2.5rem 1rem;
-  margin-top: 6rem;
+  margin-top: 4rem;
   font-size: 0.95rem;
 }
 
+@media (max-width: 1120px) {
+  .container {
+    margin-top: 2.5rem !important;
+  }
+}
+
 @media (max-width: 650px) {
-  .nav-container {
-    flex-direction: column;
-    gap: 1.2rem;
-    text-align: center;
-  }
-  
-  .nav-links a {
-    margin: 0 0.75rem;
-  }
-  
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
