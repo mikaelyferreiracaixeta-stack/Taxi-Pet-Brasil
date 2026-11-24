@@ -1,0 +1,283 @@
+:root {
+  /* Cores Principais do Projeto */
+  --primary: rgb(7, 160, 207);
+  --primary-hover: rgb(65, 125, 214);
+  --secondary: rgb(5, 28, 128);
+  
+  /* Tons do Layout */
+  --dark: #2c3e50;
+  --white: #ffffff;
+  --pure-white: #ffffff;
+  --border: #d0e4f5;
+  --light: #f4f8fb;
+  --text-muted: #555555;
+  --input-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- CABEÇALHO E MENU (COR PRIMÁRIA) --- */
+header,
+.site-header {
+  background-color: var(--primary);
+  width: 100%;
+  padding: 10px 24px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 1000;
+}
+
+nav,
+.area-navegacao {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+header img,
+.logo {
+  height: 55px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  display: block;
+}
+
+header ul,
+.menu-header {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+header ul li a,
+.menu-header li a.icones {
+  color: var(--pure-white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header ul li a:hover,
+.menu-header li a.icones:hover,
+.menu-header li a.icones.ativo {
+  background-color: var(--primary-hover);
+  color: var(--pure-white);
+}
+
+/* --- ÁREA CENTRAL DO FORMULÁRIO (COM ESPAÇAMENTO NO TOPO) --- */
+main,
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 90px 20px 40px 20px;
+}
+
+form,
+.container {
+  background-color: var(--white);
+  width: 100%;
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 35px 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-top: 6px solid var(--primary);
+  box-shadow: 0 10px 25px rgba(5, 28, 128, 0.06);
+}
+
+/* Evita espaçamento duplicado quando o form está dentro de main ou .container */
+main form,
+.main-content .container,
+.container form {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.container form {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  max-width: 100%;
+}
+
+/* Títulos do formulário e seções */
+h2 {
+  text-align: center;
+  color: var(--secondary);
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--light);
+}
+
+/* Linha divisória (ex: Condutor / Carro) */
+hr {
+  border: none;
+  border-top: 2px dashed var(--border);
+  margin: 32px 0;
+}
+
+/* Espaçamento entre campos */
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* Rótulos (Labels) */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 14px;
+  font-size: 0.92rem;
+  color: var(--dark);
+}
+
+.form-group label {
+  margin-top: 0;
+}
+
+/* Campos de texto, e-mail, número e textarea */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--dark);
+  background-color: var(--input-bg);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(7, 160, 207, 0.18);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.btn-group {
+  margin-top: 28px;
+}
+
+/* --- BOTÃO DE SALVAR (COR SECUNDÁRIA) --- */
+button[type="submit"],
+input[type="submit"],
+.btn-submit {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  background-color: var(--secondary);
+  color: var(--pure-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.1s ease;
+}
+
+.btn-group .btn-submit {
+  margin-top: 0;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover,
+.btn-submit:hover {
+  background-color: var(--secondary);
+  filter: brightness(1.25);
+}
+
+button[type="submit"]:active,
+input[type="submit"]:active,
+.btn-submit:active {
+  transform: scale(0.99);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 960px) {
+  nav,
+  .area-navegacao {
+    flex-direction: column;
+  }
+
+  header ul,
+  .menu-header {
+    justify-content: center;
+  }
+
+  main,
+  .main-content {
+    padding-top: 130px;
+  }
+}
+footer {
+  background-color: var(--dark);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin-top: 6rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+  form,
+  .container {
+    padding: 25px 20px;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+}

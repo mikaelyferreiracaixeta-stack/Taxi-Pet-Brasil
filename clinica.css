@@ -1,0 +1,214 @@
+:root {
+  /* Cores Principais do Projeto */
+  --primary: rgb(7, 160, 207);
+  --primary-hover: rgb(65, 125, 214);
+  --secondary: rgb(5, 28, 128);
+  
+  /* Tons do Layout */
+  --dark: #2c3e50;
+  --white: #ffffff;
+  --pure-white: #ffffff;
+  --border: #d0e4f5;
+  --light: #f4f8fb;
+  --text-muted: #555555;
+  --input-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- CABEÇALHO E MENU (COR PRIMÁRIA) --- */
+.site-header {
+  background-color: var(--primary);
+  width: 100%;
+  padding: 10px 24px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.area-navegacao {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.menu-header {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.menu-header li a.icones {
+  color: var(--pure-white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-header li a.icones:hover,
+.menu-header li a.icones.ativo {
+  background-color: var(--primary-hover);
+  color: var(--pure-white);
+}
+
+/* --- ÁREA CENTRAL DO FORMULÁRIO --- */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 20px;
+}
+
+.container {
+  background-color: var(--white);
+  width: 100%;
+  max-width: 600px;
+  padding: 35px 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-top: 6px solid var(--primary);
+  box-shadow: 0 10px 25px rgba(5, 28, 128, 0.06);
+}
+
+.container h2 {
+  text-align: center;
+  color: var(--secondary);
+  margin-bottom: 28px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+  color: var(--dark);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--dark);
+  background-color: var(--input-bg);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(7, 160, 207, 0.18);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.btn-group {
+  margin-top: 28px;
+}
+
+/* --- BOTÃO DE SALVAR (COR SECUNDÁRIA) --- */
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--secondary);
+  color: var(--pure-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--secondary);
+  filter: brightness(1.25);
+}
+
+.btn-submit:active {
+  transform: scale(0.99);
+}
+footer {
+  background-color: var(--dark);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin-top: 6rem;
+  font-size: 0.95rem;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 960px) {
+  .area-navegacao {
+    flex-direction: column;
+  }
+
+  .menu-header {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  .container h2 {
+    font-size: 1.35rem;
+  }
+}

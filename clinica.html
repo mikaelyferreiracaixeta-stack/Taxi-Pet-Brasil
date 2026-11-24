@@ -1,74 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Clínica Veterinária</title>
+    <title>Cadastro de Clínica Veterinária - Táxi Pet Brasil</title>
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="clinica.css">
 </head>
 <body>
-<div class="container">
-    <h2>Cadastro de Clínica Veterinária</h2>
-    <form action="#" method="POST">
-        
-        <!-- Nome_clinica (VARCHAR 50) -->
-        <div class="form-group">
-            <label for="nome_clinica">Nome da Clínica Veterinária:</label>
-            <input type="text" id="nome_clinica" name="nome_clinica" maxlength="50" required placeholder="Ex: Clínica Veterinária Pet Care">
-        
-        </div>
 
-        <!-- CNPJ (INT 18) -->
-        <div class="form-group">
-            <label for="cnpj">CNPJ:</label>
-            <input type="text" id="cnpj" name="cnpj" maxlength="18" required placeholder="00.000.000/0000-00" oninput="this.value = this.value.replace(/[^0-9.\-\/]/g, '')">
-          
-        </div>
-
-        <!-- Especialidade (VARCHAR 100) -->
-        <div class="form-group">
-            <label for="especialidade">Especialidades Veterinárias:</label>
-            <input type="text" id="especialidade" name="especialidade" maxlength="100" required placeholder="Ex: Clínica Geral, Cirurgia, Silvestres, Dermatologia">
-           
-        </div>
-
-        <!-- Telefone (VARCHAR 20) -->
-        <div class="form-group">
-            <label for="telefone">Telefone / Plantão:</label>
-            <input type="tel" id="telefone" name="telefone" maxlength="20" required placeholder="(00) 0000-0000">
-        </div>
-
-        <!-- E-mail (VARCHAR 100) -->
-        <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" maxlength="100" required placeholder="contato@vetpetcare.com.br">
-        </div>
-
-        <!-- Endereco completo (VARCHAR 255) -->
-        <div class="form-group">
-            <label for="endereco_completo">Endereço Completo:</label>
-            <input type="text" id="endereco_completo" name="endereco_completo" maxlength="255" required placeholder="Rua, Avenida, Número, Bairro, Cidade - UF">
-        </div>
-
-        <!-- Informacao (VARCHAR 100) -->
-        <div class="form-group">
-            <label for="informacao">Informações de Atendimento:</label>
-            <input type="text" id="informacao" name="informacao" maxlength="100" placeholder="Ex: Plantão 24h, atende cães, gatos e animais exóticos">
+    <!-- Cabeçalho e Menu de Navegação -->
+    <header class="site-header">
+        <nav class="area-navegacao">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="img/logo.png" alt="Logo Táxi Pet Brasil">
+            </a>
             
+            <ul class="menu-header">
+                <li><a class="icones" href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a class="icones" href="agendamento.html"><i class="fa-solid fa-calendar-check"></i> Agendar Viagem</a></li>
+                <li><a class="icones" href="frota.html"><i class="fa-solid fa-van-shuttle"></i> Nossa Frota</a></li>
+                <li><a class="icones" href="contaPet.html"><i class="fa-solid fa-paw"></i> Meus Pets</a></li>
+                <li><a class="icones ativo" href="clinica.html"><i class="fa-solid fa-hospital"></i> Clínica</a></li>
+                <li><a class="icones" href="condutor.html"><i class="fa-solid fa-user"></i> Condutor</a></li>
+                <li><a class="icones" href="contato.html"><i class="fa-solid fa-headset"></i> Contato</a></li>
+                <li><a class="icones" href="login.html"><i class="fa-solid fa-user-lock"></i> Entrar</a></li>
+                <li><a class="icones" href="pagamento.html"><i class="fa-solid fa-credit-card"></i> Pagamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <h2>Cadastro de Clínica Veterinária</h2>
+            
+            <form action="#" method="POST">
+                <!-- Nome_clinica (VARCHAR 50) -->
+                <div class="form-group">
+                    <label for="nome_clinica">Nome da Clínica Veterinária:</label>
+                    <input type="text" id="nome_clinica" name="nome_clinica" maxlength="50" required placeholder="Ex: Clínica Veterinária Pet Care">
+                </div>
+
+                <!-- CNPJ (VARCHAR 18) -->
+                <div class="form-group">
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" id="cnpj" name="cnpj" maxlength="18" required placeholder="00.000.000/0000-00">
+                </div>
+
+                <!-- Especialidade (VARCHAR 100) -->
+                <div class="form-group">
+                    <label for="especialidade">Especialidades Veterinárias:</label>
+                    <input type="text" id="especialidade" name="especialidade" maxlength="100" required placeholder="Ex: Clínica Geral, Cirurgia, Silvestres, Dermatologia">
+                </div>
+
+                <!-- Telefone (VARCHAR 20) -->
+                <div class="form-group">
+                    <label for="telefone">Telefone / Plantão:</label>
+                    <input type="tel" id="telefone" name="telefone" maxlength="15" required placeholder="(00) 00000-0000">
+                </div>
+
+                <!-- E-mail (VARCHAR 100) -->
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" maxlength="100" required placeholder="contato@vetpetcare.com.br">
+                </div>
+
+                <!-- Endereco completo (VARCHAR 255) -->
+                <div class="form-group">
+                    <label for="endereco_completo">Endereço Completo:</label>
+                    <input type="text" id="endereco_completo" name="endereco_completo" maxlength="255" required placeholder="Rua, Avenida, Número, Bairro, Cidade - UF">
+                </div>
+
+                <!-- Informacao (VARCHAR 100) -->
+                <div class="form-group">
+                    <label for="informacao">Informações de Atendimento:</label>
+                    <input type="text" id="informacao" name="informacao" maxlength="100" placeholder="Ex: Plantão 24h, atende cães, gatos e animais exóticos">
+                </div>
+
+                <!-- Obs: historico da clinica (TEXT 255) -->
+                <div class="form-group">
+                    <label for="obs">Observações / Histórico da Clínica:</label>
+                    <textarea id="obs" name="obs" rows="4" maxlength="255" placeholder="Ex: Possui internação, raio-x próprio, laboratório, banho e tosa..."></textarea>
+                </div>
+
+                <!-- Botão Salvar -->
+                <div class="btn-group">
+                    <button type="submit" class="btn-submit">Salvar Clínica Veterinária</button>
+                </div>
+            </form>
         </div>
+    </main>
 
-        <!-- Obs: historico da clinica (TEXT 255) -->
-        <div class="form-group">
-            <label for="obs">Observações / Histórico da Clínica:</label>
-            <textarea id="obs" name="obs" rows="4" maxlength="255" placeholder="Ex: Possui internação, raio-x próprio, laboratório, banho e tosa..."></textarea>
-        </div>
+    <!-- Máscaras automáticas para CNPJ e Telefone -->
+    <script  src="js/clinica.js"></script>
 
-        <div class="btn-group">
-            <button type="submit" class="btn-submit">Salvar Clínica Veterinária</button>
-    
-        </div>
-
-    </form>
-</div>
-
+        <!-- Rodapé padrão do projeto -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Táxi Pet Brasil. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
