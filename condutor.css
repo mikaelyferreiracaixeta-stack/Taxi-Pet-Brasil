@@ -1,3 +1,4 @@
+@import url('https://googleapis.com');
 :root {
   /* Cores Principais do Projeto */
   --primary: rgb(7, 160, 207);
@@ -18,7 +19,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: ' Roboto', sans-serif;
 }
 
 body {

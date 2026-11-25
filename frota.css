@@ -99,10 +99,12 @@ header,
   line-height: 1;           
 }
 
+/* ✅ ALTERAÇÃO APLICADA AQUI: Mantém a escrita branca com sombreamento branco */
 .menu-header a:hover,
 .nav-links a:hover, 
 .icones:hover {
-  color: var(--secondary); 
+  color: var(--pure-white);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Ajuste do botão de Pagamento para se destacar no canto e manter alinhamento */
